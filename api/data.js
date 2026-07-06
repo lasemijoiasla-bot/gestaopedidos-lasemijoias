@@ -56,8 +56,9 @@ export default async function handler(req, res) {
       };
     }
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const now = new Date();
+    const todaySaoPauloStr = now.toLocaleDateString("en-CA", { timeZone: "America/Sao_Paulo" });
+    const today = new Date(todaySaoPauloStr + "T00:00:00");
 
     function diffDias(a, b) {
       return Math.floor((a - b) / 86400000);
@@ -95,8 +96,7 @@ export default async function handler(req, res) {
 
     res.setHeader("Cache-Control", "no-store");
     res.status(200).json({
-      updatedAt: today.toLocaleString("pt-BR"),
-      generatedAt: new Date().toLocaleString("pt-BR"),
+      updatedAt: now.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
       items,
     });
   } catch (err) {
