@@ -208,9 +208,14 @@ var ciclo1 = DATA.filter(function(d){ return d.primeiroCiclo; });
 
 var colSemMov = document.getElementById("col-semmov");
 var searchSemMov = document.getElementById("search-semmov");
+function ordenarPorDiasAcerto(lista){
+  return lista.slice().sort(function(a, b){ return a.diasAteAcerto - b.diasAteAcerto; });
+}
+
 function renderSemMov(){
   var termo = norm(searchSemMov.value);
   var lista = termo ? semMov.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }) : semMov;
+  lista = ordenarPorDiasAcerto(lista);
   colSemMov.innerHTML = "";
   document.getElementById("count-semmov").textContent = lista.length;
   lista.forEach(function(d){ colSemMov.appendChild(pedidoCard(d)); });
@@ -223,6 +228,7 @@ var searchAbaixoMeta = document.getElementById("search-abaixometa");
 function renderAbaixoMeta(){
   var termo = norm(searchAbaixoMeta.value);
   var lista = termo ? abaixoMeta.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }) : abaixoMeta;
+  lista = ordenarPorDiasAcerto(lista);
   colAbaixoMeta.innerHTML = "";
   document.getElementById("count-abaixometa").textContent = lista.length;
   lista.forEach(function(d){ colAbaixoMeta.appendChild(pedidoCard(d)); });
@@ -239,6 +245,7 @@ function renderCiclo1(){
   var lista = ciclo1;
   if (soZerados) { lista = lista.filter(function(d){ return d.valorPreBaixa === 0; }); }
   if (termo) { lista = lista.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }); }
+  lista = ordenarPorDiasAcerto(lista);
   colCiclo1.innerHTML = "";
   document.getElementById("count-ciclo1").textContent = lista.length;
   lista.forEach(function(d){ colCiclo1.appendChild(pedidoCard(d)); });
@@ -282,7 +289,7 @@ function renderTodos(){
     if (termo && norm(d.revendedora).indexOf(termo) < 0) { return false; }
     return true;
   });
-  lista.sort(function(a, b){ return b.valorPreBaixa - a.valorPreBaixa; });
+  lista = ordenarPorDiasAcerto(lista);
 
   colTodos.innerHTML = "";
   document.getElementById("count-todos").textContent = lista.length;
