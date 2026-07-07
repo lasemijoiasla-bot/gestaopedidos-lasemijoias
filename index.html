@@ -22,7 +22,11 @@
   .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
-  .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)); gap: 12px; align-items: start; }
+  .board { display: grid; grid-template-columns: repeat(5, minmax(240px, 1fr)); gap: 12px; align-items: start; }
+  .nivel-filter { display: flex; gap: 10px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+  .nivel-filter label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+  .valor-filter { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+  .valor-filter input[type="number"] { width: 100px; font-size: 12px; padding: 4px 6px; }
   .col { background: var(--surface-2); border-radius: 12px; padding: 10px; display: flex; flex-direction: column; max-height: 82vh; }
   .col-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 0 2px; }
   .col-title { font-size: 13px; font-weight: 500; }
@@ -102,6 +106,20 @@
       </div>
       <input type="text" class="col-search" id="search-ranking" placeholder="Buscar consultora...">
       <div class="col-list" id="col-ranking"></div>
+    </div>
+    <div class="col">
+      <div class="col-header"><span class="col-title">Todos os Pedidos</span><span class="col-count" id="count-todos">-</span></div>
+      <div class="valor-filter">
+        <label for="filter-valor-todos">Pré-baixa até:</label>
+        <input type="number" id="filter-valor-todos" placeholder="Sem limite" min="0" step="1">
+      </div>
+      <div class="nivel-filter">
+        <label><input type="checkbox" class="filter-nivel-todos" value="BASICA" checked> Básica</label>
+        <label><input type="checkbox" class="filter-nivel-todos" value="VIP" checked> Vip</label>
+        <label><input type="checkbox" class="filter-nivel-todos" value="PREMIUM" checked> Premium</label>
+      </div>
+      <input type="text" class="col-search" id="search-todos" placeholder="Buscar consultora...">
+      <div class="col-list" id="col-todos"></div>
     </div>
   </div>
 
@@ -200,6 +218,33 @@ filterZeradosCiclo1.addEventListener("change", renderCiclo1);
 searchCiclo1.addEventListener("input", renderCiclo1);
 renderCiclo1();
 
+var colTodos = document.getElementById("col-todos");
+var searchTodos = document.getElementById("search-todos");
+var filterValorTodos = document.getElementById("filter-valor-todos");
+var filterNivelTodosEls = Array.prototype.slice.call(document.querySelectorAll(".filter-nivel-todos"));
+
+function renderTodos(){
+  var termo = norm(searchTodos.value);
+  var limite = filterValorTodos.value !== "" ? parseFloat(filterValorTodos.value) : null;
+  var niveisAtivos = filterNivelTodosEls.filter(function(el){ return el.checked; }).map(function(el){ return el.value; });
+
+  var lista = DATA.filter(function(d){
+    if (niveisAtivos.indexOf(normNivel(d.nivel)) === -1) { return false; }
+    if (limite !== null && !(d.valorPreBaixa < limite)) { return false; }
+    if (termo && norm(d.revendedora).indexOf(termo) < 0) { return false; }
+    return true;
+  });
+  lista.sort(function(a, b){ return b.valorPreBaixa - a.valorPreBaixa; });
+
+  colTodos.innerHTML = "";
+  document.getElementById("count-todos").textContent = lista.length;
+  lista.forEach(function(d){ colTodos.appendChild(pedidoCard(d)); });
+}
+searchTodos.addEventListener("input", renderTodos);
+filterValorTodos.addEventListener("input", renderTodos);
+filterNivelTodosEls.forEach(function(el){ el.addEventListener("change", renderTodos); });
+renderTodos();
+
 var months = Array.from(new Set(RANKING.map(function(r){ return r.mes; }))).sort().reverse();
 var monthSelect = document.getElementById("month-select");
 var monthNames = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
@@ -258,6 +303,7 @@ function recomputeDerivedAndRender(){
   renderSemMov();
   renderAbaixoMeta();
   renderCiclo1();
+  renderTodos();
 }
 
 async function atualizarAoVivo(btn){
