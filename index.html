@@ -27,6 +27,8 @@
   .nivel-filter label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
   .valor-filter { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
   .valor-filter input[type="number"] { width: 100px; font-size: 12px; padding: 4px 6px; }
+  .mes-multiselect { width: 100%; margin-bottom: 8px; font-size: 13px; padding: 4px; }
+  .mes-multiselect option { padding: 6px 8px; }
   .col { background: var(--surface-2); border-radius: 12px; padding: 10px; display: flex; flex-direction: column; max-height: 82vh; }
   .col-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding: 0 2px; }
   .col-title { font-size: 13px; font-weight: 500; }
@@ -103,7 +105,7 @@
         <label><input type="checkbox" class="filter-nivel-todos" value="PREMIUM" checked> Premium</label>
       </div>
       <label for="filter-mesacerto-todos" style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:4px;">Mês do acerto (nenhum selecionado = todos):</label>
-      <select id="filter-mesacerto-todos" class="col-search" multiple size="4"></select>
+      <select id="filter-mesacerto-todos" class="mes-multiselect" multiple size="6"></select>
       <input type="text" class="col-search" id="search-todos" placeholder="Buscar consultora...">
       <div class="col-list" id="col-todos"></div>
     </div>
