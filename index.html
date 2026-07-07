@@ -22,7 +22,7 @@
   .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
-  .board { display: grid; grid-template-columns: repeat(5, minmax(240px, 1fr)); gap: 12px; align-items: start; }
+  .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)) minmax(340px, 1.6fr); gap: 12px; align-items: start; }
   .nivel-filter { display: flex; gap: 10px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
   .nivel-filter label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
   .valor-filter { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
@@ -94,7 +94,7 @@
       <div class="col-list" id="col-ciclo1"></div>
     </div>
     <div class="col">
-      <div class="col-header"><span class="col-title">Todos os Pedidos</span><span class="col-count" id="count-todos">-</span></div>
+      <div class="col-header"><span class="col-title">Todos os Pedidos em Aberto</span><span class="col-count" id="count-todos">-</span></div>
       <div class="valor-filter">
         <label for="filter-valor-todos">Pré-baixa até:</label>
         <input type="number" id="filter-valor-todos" placeholder="Sem limite" min="0" step="1">
