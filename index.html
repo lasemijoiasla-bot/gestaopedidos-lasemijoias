@@ -102,22 +102,22 @@
         <label><input type="checkbox" class="filter-nivel-todos" value="VIP" checked> Vip</label>
         <label><input type="checkbox" class="filter-nivel-todos" value="PREMIUM" checked> Premium</label>
       </div>
+      <label for="filter-mesacerto-todos" style="font-size:12px; color:var(--text-secondary); display:block; margin-bottom:4px;">Mês do acerto (nenhum selecionado = todos):</label>
+      <select id="filter-mesacerto-todos" class="col-search" multiple size="4"></select>
       <input type="text" class="col-search" id="search-todos" placeholder="Buscar consultora...">
       <div class="col-list" id="col-todos"></div>
     </div>
     <div class="col">
       <div class="col-header">
         <span class="col-title">Ranking do mês</span>
-        <div style="display:flex; gap:6px;">
-          <select id="level-select">
-            <option value="TODOS">Todos os niveis</option>
-            <option value="PREMIUM">Premium</option>
-            <option value="VIP">Vip</option>
-            <option value="BASICA">Basica</option>
-          </select>
-          <select id="month-select"></select>
-        </div>
       </div>
+      <select id="level-select" class="col-search">
+        <option value="TODOS">Todos os niveis</option>
+        <option value="PREMIUM">Premium</option>
+        <option value="VIP">Vip</option>
+        <option value="BASICA">Basica</option>
+      </select>
+      <select id="month-select" class="col-search"></select>
       <input type="text" class="col-search" id="search-ranking" placeholder="Buscar consultora...">
       <div class="col-list" id="col-ranking"></div>
     </div>
@@ -222,15 +222,34 @@ var colTodos = document.getElementById("col-todos");
 var searchTodos = document.getElementById("search-todos");
 var filterValorTodos = document.getElementById("filter-valor-todos");
 var filterNivelTodosEls = Array.prototype.slice.call(document.querySelectorAll(".filter-nivel-todos"));
+var filterMesAcertoTodos = document.getElementById("filter-mesacerto-todos");
+var monthNamesCurto = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];
+
+function mesAcertoKey(dataAcertoStr){
+  var partes = (dataAcertoStr || "").split("/");
+  if (partes.length !== 3) { return null; }
+  return partes[2] + "-" + partes[1];
+}
+
+var mesesAcertoDisponiveis = Array.from(new Set(DATA.map(function(d){ return mesAcertoKey(d.dataAcerto); }).filter(Boolean))).sort();
+mesesAcertoDisponiveis.forEach(function(m){
+  var partes = m.split("-");
+  var opt = document.createElement("option");
+  opt.value = m;
+  opt.textContent = monthNamesCurto[parseInt(partes[1],10)-1] + "/" + partes[0];
+  filterMesAcertoTodos.appendChild(opt);
+});
 
 function renderTodos(){
   var termo = norm(searchTodos.value);
   var limite = filterValorTodos.value !== "" ? parseFloat(filterValorTodos.value) : null;
   var niveisAtivos = filterNivelTodosEls.filter(function(el){ return el.checked; }).map(function(el){ return el.value; });
+  var mesesAtivos = Array.prototype.slice.call(filterMesAcertoTodos.selectedOptions).map(function(o){ return o.value; });
 
   var lista = DATA.filter(function(d){
     if (niveisAtivos.indexOf(normNivel(d.nivel)) === -1) { return false; }
     if (limite !== null && !(d.valorPreBaixa < limite)) { return false; }
+    if (mesesAtivos.length > 0 && mesesAtivos.indexOf(mesAcertoKey(d.dataAcerto)) === -1) { return false; }
     if (termo && norm(d.revendedora).indexOf(termo) < 0) { return false; }
     return true;
   });
@@ -243,6 +262,7 @@ function renderTodos(){
 searchTodos.addEventListener("input", renderTodos);
 filterValorTodos.addEventListener("input", renderTodos);
 filterNivelTodosEls.forEach(function(el){ el.addEventListener("change", renderTodos); });
+filterMesAcertoTodos.addEventListener("change", renderTodos);
 renderTodos();
 
 var months = Array.from(new Set(RANKING.map(function(r){ return r.mes; }))).sort().reverse();
