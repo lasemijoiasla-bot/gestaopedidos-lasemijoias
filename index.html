@@ -92,6 +92,20 @@
       <div class="col-list" id="col-ciclo1"></div>
     </div>
     <div class="col">
+      <div class="col-header"><span class="col-title">Todos os Pedidos</span><span class="col-count" id="count-todos">-</span></div>
+      <div class="valor-filter">
+        <label for="filter-valor-todos">Pré-baixa até:</label>
+        <input type="number" id="filter-valor-todos" placeholder="Sem limite" min="0" step="1">
+      </div>
+      <div class="nivel-filter">
+        <label><input type="checkbox" class="filter-nivel-todos" value="BASICA" checked> Básica</label>
+        <label><input type="checkbox" class="filter-nivel-todos" value="VIP" checked> Vip</label>
+        <label><input type="checkbox" class="filter-nivel-todos" value="PREMIUM" checked> Premium</label>
+      </div>
+      <input type="text" class="col-search" id="search-todos" placeholder="Buscar consultora...">
+      <div class="col-list" id="col-todos"></div>
+    </div>
+    <div class="col">
       <div class="col-header">
         <span class="col-title">Ranking do mês</span>
         <div style="display:flex; gap:6px;">
@@ -106,20 +120,6 @@
       </div>
       <input type="text" class="col-search" id="search-ranking" placeholder="Buscar consultora...">
       <div class="col-list" id="col-ranking"></div>
-    </div>
-    <div class="col">
-      <div class="col-header"><span class="col-title">Todos os Pedidos</span><span class="col-count" id="count-todos">-</span></div>
-      <div class="valor-filter">
-        <label for="filter-valor-todos">Pré-baixa até:</label>
-        <input type="number" id="filter-valor-todos" placeholder="Sem limite" min="0" step="1">
-      </div>
-      <div class="nivel-filter">
-        <label><input type="checkbox" class="filter-nivel-todos" value="BASICA" checked> Básica</label>
-        <label><input type="checkbox" class="filter-nivel-todos" value="VIP" checked> Vip</label>
-        <label><input type="checkbox" class="filter-nivel-todos" value="PREMIUM" checked> Premium</label>
-      </div>
-      <input type="text" class="col-search" id="search-todos" placeholder="Buscar consultora...">
-      <div class="col-list" id="col-todos"></div>
     </div>
   </div>
 
