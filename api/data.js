@@ -41,9 +41,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    const [revendedores, abertos] = await Promise.all([
+    const [revendedores, abertos, baixados] = await Promise.all([
       fetchAllRevendedores(),
       fetchAllPages("/pedido?status=1"),
+      fetchAllPages("/pedido?status=2"),
     ]);
 
     const revMap = {};
@@ -59,6 +60,7 @@ export default async function handler(req, res) {
     const now = new Date();
     const todaySaoPauloStr = now.toLocaleDateString("en-CA", { timeZone: "America/Sao_Paulo" });
     const today = new Date(todaySaoPauloStr + "T00:00:00");
+    const mesAtual = todaySaoPauloStr.slice(0, 7);
 
     function diffDias(a, b) {
       return Math.floor((a - b) / 86400000);
@@ -94,10 +96,36 @@ export default async function handler(req, res) {
       };
     });
 
+    const rankGrouped = {};
+    let resumoBaixadoMes = { mes: mesAtual, total: 0, qtd: 0 };
+    for (const p of baixados) {
+      if (!p.data_baixa) continue;
+      const mesRef = p.data_baixa.split(" ")[0].slice(0, 7);
+      if (mesRef !== mesAtual) continue;
+
+      const valor = parseFloat(p.valor_total) || 0;
+      resumoBaixadoMes.total += valor;
+      resumoBaixadoMes.qtd += 1;
+
+      const revId = p.comprador ? String(p.comprador.id) : null;
+      const revInfo = revId ? revMap[revId] : null;
+      if (!revInfo) continue;
+      const key = `${mesRef}|${revInfo.nivel}|${revId}`;
+      if (!rankGrouped[key]) {
+        rankGrouped[key] = { mes: mesRef, nivel: revInfo.nivel, revendedora: p.comprador.nome, total: 0, qtd: 0 };
+      }
+      rankGrouped[key].total += valor;
+      rankGrouped[key].qtd += 1;
+    }
+    const rankingMesAtual = Object.values(rankGrouped);
+
     res.setHeader("Cache-Control", "no-store");
     res.status(200).json({
       updatedAt: now.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
       items,
+      mesAtual,
+      resumoBaixadoMes,
+      rankingMesAtual,
     });
   } catch (err) {
     res.status(500).json({ error: String(err.message || err) });
