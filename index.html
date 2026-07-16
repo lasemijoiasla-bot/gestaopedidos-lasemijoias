@@ -27,6 +27,10 @@
   .summary-label { font-size: 12px; color: var(--text-muted); margin: 0 0 6px; }
   .summary-value { font-size: 22px; font-weight: 700; margin: 0; }
   .summary-qtd { font-size: 12px; color: var(--text-muted); margin: 4px 0 0; }
+  .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 1.25rem; }
+  .chart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .chart-title { font-size: 14px; font-weight: 600; margin: 0; }
+  .chart-header select { min-width: 130px; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
   .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)) minmax(340px, 1.6fr); gap: 12px; align-items: start; }
@@ -83,17 +87,28 @@
       <p class="summary-label">Baixado no mês</p>
       <p class="summary-value" id="summary-baixado">-</p>
       <p class="summary-qtd" id="summary-baixado-qtd">-</p>
+      <p class="summary-qtd" id="summary-baixado-ticket">-</p>
     </div>
     <div class="summary-card">
       <p class="summary-label">Pré-baixas em aberto no mês</p>
       <p class="summary-value" id="summary-prebaixa">-</p>
       <p class="summary-qtd" id="summary-prebaixa-qtd">-</p>
+      <p class="summary-qtd" id="summary-prebaixa-ticket">-</p>
     </div>
     <div class="summary-card summary-total">
       <p class="summary-label">Total do mês</p>
       <p class="summary-value" id="summary-total">-</p>
       <p class="summary-qtd" id="summary-total-qtd">-</p>
+      <p class="summary-qtd" id="summary-total-ticket">-</p>
     </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <p class="chart-title">Acertos por dia (pedidos em aberto)</p>
+      <select id="chart-month-select" class="col-search"></select>
+    </div>
+    <div id="acertos-chart"></div>
   </div>
 
   <div class="board">
@@ -366,11 +381,80 @@ function renderSummary(){
 
   document.getElementById("summary-baixado").textContent = fmt(totalBaixado);
   document.getElementById("summary-baixado-qtd").textContent = qtdBaixado + (qtdBaixado === 1 ? " pedido" : " pedidos");
+  document.getElementById("summary-baixado-ticket").textContent = "Ticket médio: " + fmt(qtdBaixado > 0 ? totalBaixado / qtdBaixado : 0);
   document.getElementById("summary-prebaixa").textContent = fmt(totalPreBaixaAberta);
   document.getElementById("summary-prebaixa-qtd").textContent = qtdPreBaixaAberta + (qtdPreBaixaAberta === 1 ? " pedido" : " pedidos");
+  document.getElementById("summary-prebaixa-ticket").textContent = "Ticket médio: " + fmt(qtdPreBaixaAberta > 0 ? totalPreBaixaAberta / qtdPreBaixaAberta : 0);
   document.getElementById("summary-total").textContent = fmt(totalBaixado + totalPreBaixaAberta);
-  document.getElementById("summary-total-qtd").textContent = (qtdBaixado + qtdPreBaixaAberta) + " pedidos";
+  var qtdTotalGeral = qtdBaixado + qtdPreBaixaAberta;
+  document.getElementById("summary-total-qtd").textContent = qtdTotalGeral + " pedidos";
+  document.getElementById("summary-total-ticket").textContent = "Ticket médio: " + fmt(qtdTotalGeral > 0 ? (totalBaixado + totalPreBaixaAberta) / qtdTotalGeral : 0);
 }
+
+var chartMonthSelect = document.getElementById("chart-month-select");
+
+function populateChartMonthSelect(){
+  var mesesDisponiveis = Array.from(new Set(DATA.map(function(d){ return mesAcertoKey(d.dataAcerto); }).filter(Boolean))).sort();
+  var valorAtual = chartMonthSelect.value;
+  chartMonthSelect.innerHTML = "";
+  mesesDisponiveis.forEach(function(m){
+    var partes = m.split("-");
+    var opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = monthNamesCurto[parseInt(partes[1],10)-1] + "/" + partes[0];
+    chartMonthSelect.appendChild(opt);
+  });
+  if (mesesDisponiveis.indexOf(valorAtual) >= 0) {
+    chartMonthSelect.value = valorAtual;
+  } else {
+    var agora = new Date();
+    var mesAtual = agora.getFullYear() + "-" + String(agora.getMonth()+1).padStart(2, "0");
+    chartMonthSelect.value = mesesDisponiveis.indexOf(mesAtual) >= 0 ? mesAtual : (mesesDisponiveis[0] || "");
+  }
+}
+
+function renderAcertosChart(){
+  var container = document.getElementById("acertos-chart");
+  var mes = chartMonthSelect.value;
+  if (!mes) {
+    container.innerHTML = "<div class=\"empty-msg\">Sem pedidos em aberto.</div>";
+    return;
+  }
+  var partesMes = mes.split("-");
+  var ano = parseInt(partesMes[0], 10);
+  var mesNum = parseInt(partesMes[1], 10);
+  var diasNoMes = new Date(ano, mesNum, 0).getDate();
+
+  var contagem = new Array(diasNoMes + 1).fill(0);
+  DATA.forEach(function(d){
+    if (mesAcertoKey(d.dataAcerto) !== mes) { return; }
+    var dia = parseInt(d.dataAcerto.split("/")[0], 10);
+    if (dia >= 1 && dia <= diasNoMes) { contagem[dia] += 1; }
+  });
+
+  var max = Math.max.apply(null, contagem.slice(1));
+  if (max <= 0) { max = 1; }
+  var width = 900, height = 220, padBottom = 22, padTop = 18;
+  var barGap = 3;
+  var barWidth = (width / diasNoMes) - barGap;
+  var svgBars = "";
+  for (var dia = 1; dia <= diasNoMes; dia++) {
+    var qtd = contagem[dia];
+    var barHeight = (qtd / max) * (height - padBottom - padTop);
+    var x = (dia - 1) * (barWidth + barGap);
+    var y = height - padBottom - barHeight;
+    var cor = qtd === 0 ? "#e2e0d9" : "#0c447c";
+    svgBars += "<rect x=\"" + x + "\" y=\"" + y + "\" width=\"" + barWidth + "\" height=\"" + Math.max(barHeight, 1) + "\" fill=\"" + cor + "\" rx=\"2\"></rect>";
+    if (qtd > 0) {
+      svgBars += "<text x=\"" + (x + barWidth / 2) + "\" y=\"" + (y - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + qtd + "</text>";
+    }
+    svgBars += "<text x=\"" + (x + barWidth / 2) + "\" y=\"" + (height - 6) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#888780\">" + dia + "</text>";
+  }
+  container.innerHTML = "<svg viewBox=\"0 0 " + width + " " + height + "\" style=\"width:100%;height:220px;\">" + svgBars + "</svg>";
+}
+chartMonthSelect.addEventListener("change", renderAcertosChart);
+populateChartMonthSelect();
+renderAcertosChart();
 
 function recomputeDerivedAndRender(){
   semMov = DATA.filter(function(d){ return d.semMovimentacao; });
@@ -381,6 +465,8 @@ function recomputeDerivedAndRender(){
   renderCiclo1();
   renderTodos();
   renderSummary();
+  populateChartMonthSelect();
+  renderAcertosChart();
 }
 renderSummary();
 
