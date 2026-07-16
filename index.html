@@ -117,7 +117,7 @@
   <div class="charts-row">
     <div class="chart-card">
       <div class="chart-header">
-        <p class="chart-title"><span class="col-count" id="chart-total-mes">-</span> Pedidos por datas</p>
+        <p class="chart-title">Pedidos por datas <span class="col-count" id="chart-total-mes">-</span></p>
         <select id="chart-month-select" class="col-search"></select>
       </div>
       <div id="acertos-chart"></div>
@@ -125,7 +125,7 @@
 
     <div class="chart-card">
       <div class="chart-header">
-        <p class="chart-title">Consultoras por data de acerto</p>
+        <p class="chart-title">Consultoras por data de acerto <span class="col-count" id="consulta-total">-</span></p>
         <input type="date" id="data-consulta" class="col-search">
       </div>
       <div class="consulta-header"><span>Consultora</span><span>Cidade</span><span>Nível</span><span>Pré-baixa</span></div>
@@ -459,7 +459,7 @@ function renderAcertosChart(){
 
   var max = Math.max.apply(null, contagem.slice(1));
   if (max <= 0) { max = 1; }
-  var width = 900, height = 220, padBottom = 22, padTop = 18;
+  var width = 900, height = 220, padBottom = 22, padTop = 22;
   var barGap = 3;
   var barWidth = (width / diasNoMes) - barGap;
   var svgBars = "";
@@ -471,7 +471,7 @@ function renderAcertosChart(){
     var cor = qtd === 0 ? "#e2e0d9" : "#0c447c";
     svgBars += "<rect x=\"" + x + "\" y=\"" + y + "\" width=\"" + barWidth + "\" height=\"" + Math.max(barHeight, 1) + "\" fill=\"" + cor + "\" rx=\"2\"></rect>";
     if (qtd > 0) {
-      svgBars += "<text x=\"" + (x + barWidth / 2) + "\" y=\"" + (y - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + qtd + "</text>";
+      svgBars += "<text x=\"" + (x + barWidth / 2) + "\" y=\"" + (y - 5) + "\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#3a3a36\">" + qtd + "</text>";
     }
     svgBars += "<text x=\"" + (x + barWidth / 2) + "\" y=\"" + (height - 6) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#888780\">" + dia + "</text>";
   }
@@ -493,11 +493,13 @@ function renderConsultaData(){
   var isoDate = dataConsultaInput.value;
   if (!isoDate) {
     container.innerHTML = "<div class=\"empty-msg\">Escolha uma data para ver quais consultoras têm acerto nela.</div>";
+    document.getElementById("consulta-total").textContent = "-";
     return;
   }
   var dataBR = formatarDataBR(isoDate);
   var lista = DATA.filter(function(d){ return d.dataAcerto === dataBR; });
   lista.sort(function(a,b){ return a.revendedora.localeCompare(b.revendedora); });
+  document.getElementById("consulta-total").textContent = lista.length;
   if (lista.length === 0) {
     container.innerHTML = "<div class=\"empty-msg\">Nenhuma consultora com acerto em " + dataBR + ".</div>";
     return;
