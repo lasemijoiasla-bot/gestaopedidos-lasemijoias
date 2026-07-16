@@ -31,6 +31,10 @@
   .chart-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
   .chart-title { font-size: 14px; font-weight: 600; margin: 0; }
   .chart-header select { min-width: 130px; }
+  #chart-month-select { width: auto; min-width: 100px; max-width: 130px; margin-bottom: 0; }
+  #data-consulta { width: auto; min-width: 150px; margin-bottom: 0; }
+  .consulta-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--surface-2); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
+  .consulta-row .rank-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 6px; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
   .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)) minmax(340px, 1.6fr); gap: 12px; align-items: start; }
@@ -109,6 +113,14 @@
       <select id="chart-month-select" class="col-search"></select>
     </div>
     <div id="acertos-chart"></div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <p class="chart-title">Consultoras com acerto em uma data</p>
+      <input type="date" id="data-consulta" class="col-search">
+    </div>
+    <div id="lista-consulta-data"></div>
   </div>
 
   <div class="board">
@@ -456,6 +468,36 @@ chartMonthSelect.addEventListener("change", renderAcertosChart);
 populateChartMonthSelect();
 renderAcertosChart();
 
+var dataConsultaInput = document.getElementById("data-consulta");
+
+function formatarDataBR(isoDate){
+  var partes = isoDate.split("-");
+  return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+function renderConsultaData(){
+  var container = document.getElementById("lista-consulta-data");
+  var isoDate = dataConsultaInput.value;
+  if (!isoDate) {
+    container.innerHTML = "<div class=\"empty-msg\">Escolha uma data para ver quais consultoras têm acerto nela.</div>";
+    return;
+  }
+  var dataBR = formatarDataBR(isoDate);
+  var lista = DATA.filter(function(d){ return d.dataAcerto === dataBR; });
+  lista.sort(function(a,b){ return a.revendedora.localeCompare(b.revendedora); });
+  if (lista.length === 0) {
+    container.innerHTML = "<div class=\"empty-msg\">Nenhuma consultora com acerto em " + dataBR + ".</div>";
+    return;
+  }
+  var html = "";
+  lista.forEach(function(d){
+    html += "<div class=\"consulta-row\"><span class=\"rank-name\">" + d.revendedora + "</span><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span><span class=\"rank-value\">" + fmt(d.valorPreBaixa) + "</span></div>";
+  });
+  container.innerHTML = html;
+}
+dataConsultaInput.addEventListener("change", renderConsultaData);
+renderConsultaData();
+
 function recomputeDerivedAndRender(){
   semMov = DATA.filter(function(d){ return d.semMovimentacao; });
   abaixoMeta = DATA.filter(function(d){ return d.abaixoMeta; });
@@ -467,6 +509,7 @@ function recomputeDerivedAndRender(){
   renderSummary();
   populateChartMonthSelect();
   renderAcertosChart();
+  renderConsultaData();
 }
 renderSummary();
 
