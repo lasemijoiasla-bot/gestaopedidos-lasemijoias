@@ -496,7 +496,7 @@ function renderConsultaData(){
   }
   var html = "";
   lista.forEach(function(d){
-    var nomeComCidade = (d.cidade ? d.cidade + " · " : "") + d.revendedora;
+    var nomeComCidade = d.revendedora + (d.cidade ? " · " + d.cidade : "");
     html += "<div class=\"consulta-row\"><span class=\"rank-name\">" + nomeComCidade + "</span><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span><span class=\"rank-value\">" + fmt(d.valorPreBaixa) + "</span></div>";
   });
   container.innerHTML = html;
