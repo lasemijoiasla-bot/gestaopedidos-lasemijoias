@@ -36,8 +36,12 @@
   .chart-header select { min-width: 130px; }
   #chart-month-select { width: auto; min-width: 100px; max-width: 130px; margin-bottom: 0; }
   #data-consulta { width: auto; min-width: 150px; margin-bottom: 0; }
-  .consulta-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--surface-2); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
-  .consulta-row .rank-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 6px; }
+  .consulta-header, .consulta-row { display: grid; grid-template-columns: 1.8fr 1.2fr 0.8fr 0.9fr; gap: 8px; align-items: center; }
+  .consulta-header { font-size: 11px; color: var(--text-muted); font-weight: 600; padding: 0 10px; margin: 0 0 6px; }
+  .consulta-row { background: var(--surface-2); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
+  .consulta-row .rank-name, .consulta-row .cidade-col { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .consulta-row .badge { justify-self: start; }
+  .consulta-row .rank-value { justify-self: end; font-weight: 600; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
   .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)) minmax(340px, 1.6fr); gap: 12px; align-items: start; }
@@ -113,7 +117,7 @@
   <div class="charts-row">
     <div class="chart-card">
       <div class="chart-header">
-        <p class="chart-title">Pedidos por datas</p>
+        <p class="chart-title"><span class="col-count" id="chart-total-mes">-</span> Pedidos por datas</p>
         <select id="chart-month-select" class="col-search"></select>
       </div>
       <div id="acertos-chart"></div>
@@ -124,6 +128,7 @@
         <p class="chart-title">Consultoras por data de acerto</p>
         <input type="date" id="data-consulta" class="col-search">
       </div>
+      <div class="consulta-header"><span>Consultora</span><span>Cidade</span><span>Nível</span><span>Pré-baixa</span></div>
       <div id="lista-consulta-data" class="lista-consulta"></div>
     </div>
   </div>
@@ -435,6 +440,7 @@ function renderAcertosChart(){
   var mes = chartMonthSelect.value;
   if (!mes) {
     container.innerHTML = "<div class=\"empty-msg\">Sem pedidos em aberto.</div>";
+    document.getElementById("chart-total-mes").textContent = "0";
     return;
   }
   var partesMes = mes.split("-");
@@ -443,11 +449,13 @@ function renderAcertosChart(){
   var diasNoMes = new Date(ano, mesNum, 0).getDate();
 
   var contagem = new Array(diasNoMes + 1).fill(0);
+  var totalPedidosMes = 0;
   DATA.forEach(function(d){
     if (mesAcertoKey(d.dataAcerto) !== mes) { return; }
     var dia = parseInt(d.dataAcerto.split("/")[0], 10);
-    if (dia >= 1 && dia <= diasNoMes) { contagem[dia] += 1; }
+    if (dia >= 1 && dia <= diasNoMes) { contagem[dia] += 1; totalPedidosMes += 1; }
   });
+  document.getElementById("chart-total-mes").textContent = totalPedidosMes;
 
   var max = Math.max.apply(null, contagem.slice(1));
   if (max <= 0) { max = 1; }
@@ -496,8 +504,12 @@ function renderConsultaData(){
   }
   var html = "";
   lista.forEach(function(d){
-    var nomeComCidade = d.revendedora + (d.cidade ? " · " + d.cidade : "");
-    html += "<div class=\"consulta-row\"><span class=\"rank-name\">" + nomeComCidade + "</span><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span><span class=\"rank-value\">" + fmt(d.valorPreBaixa) + "</span></div>";
+    html += "<div class=\"consulta-row\">"
+      + "<span class=\"rank-name\">" + d.revendedora + "</span>"
+      + "<span class=\"cidade-col\">" + (d.cidade || "-") + "</span>"
+      + "<span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span>"
+      + "<span class=\"rank-value\">" + fmt(d.valorPreBaixa) + "</span>"
+      + "</div>";
   });
   container.innerHTML = html;
 }
