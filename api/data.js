@@ -85,6 +85,7 @@ export default async function handler(req, res) {
         meta,
         cidade: revInfo ? revInfo.cidade : null,
         telefone: revInfo ? revInfo.telefone : null,
+        supervisora: p.supervisor_nome || null,
         valorTotal,
         valorPreBaixa,
         dataPedido: criacaoDate.toLocaleDateString("pt-BR"),
@@ -97,6 +98,7 @@ export default async function handler(req, res) {
     });
 
     const rankGrouped = {};
+    const resumoSupervisorGrouped = {};
     let resumoBaixadoMes = { mes: mesAtual, total: 0, qtd: 0 };
     for (const p of baixados) {
       if (!p.data_baixa) continue;
@@ -107,17 +109,27 @@ export default async function handler(req, res) {
       resumoBaixadoMes.total += valor;
       resumoBaixadoMes.qtd += 1;
 
+      if (p.supervisor_nome) {
+        const keySup = `${mesRef}|${p.supervisor_nome}`;
+        if (!resumoSupervisorGrouped[keySup]) {
+          resumoSupervisorGrouped[keySup] = { mes: mesRef, supervisora: p.supervisor_nome, total: 0, qtd: 0 };
+        }
+        resumoSupervisorGrouped[keySup].total += valor;
+        resumoSupervisorGrouped[keySup].qtd += 1;
+      }
+
       const revId = p.comprador ? String(p.comprador.id) : null;
       const revInfo = revId ? revMap[revId] : null;
       if (!revInfo) continue;
       const key = `${mesRef}|${revInfo.nivel}|${revId}`;
       if (!rankGrouped[key]) {
-        rankGrouped[key] = { mes: mesRef, nivel: revInfo.nivel, revendedora: p.comprador.nome, total: 0, qtd: 0 };
+        rankGrouped[key] = { mes: mesRef, nivel: revInfo.nivel, revendedora: p.comprador.nome, supervisora: p.supervisor_nome || null, total: 0, qtd: 0 };
       }
       rankGrouped[key].total += valor;
       rankGrouped[key].qtd += 1;
     }
     const rankingMesAtual = Object.values(rankGrouped);
+    const resumoSupervisoraMes = Object.values(resumoSupervisorGrouped);
 
     res.setHeader("Cache-Control", "no-store");
     res.status(200).json({
@@ -126,6 +138,7 @@ export default async function handler(req, res) {
       mesAtual,
       resumoBaixadoMes,
       rankingMesAtual,
+      resumoSupervisoraMes,
     });
   } catch (err) {
     res.status(500).json({ error: String(err.message || err) });
