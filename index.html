@@ -723,38 +723,63 @@ function formatarMetricaHistorico(v, metrica){
   return metrica === "qtd" ? String(v) : fmt(v);
 }
 
+function mediaMetricaHistorico(dados, metrica){
+  var comDados = dados.filter(function(d){ return d.qtd > 0; });
+  if (comDados.length === 0) { return 0; }
+  var soma = comDados.reduce(function(s, d){ return s + valorMetricaHistorico(d, metrica); }, 0);
+  return soma / comDados.length;
+}
+
 function construirGraficoMetricaHistorico(dadosEsquerda, dadosDireita, metrica){
-  var valoresE = dadosEsquerda.map(function(d){ return valorMetricaHistorico(d, metrica); });
-  var valoresD = dadosDireita ? dadosDireita.map(function(d){ return valorMetricaHistorico(d, metrica); }) : [];
-  var max = Math.max.apply(null, valoresE.concat(valoresD));
+  var pontosEsquerda = dadosEsquerda.map(function(d, i){ return { label: monthNamesCurto[i], valor: valorMetricaHistorico(d, metrica) }; });
+  pontosEsquerda.push({ label: "Média", valor: mediaMetricaHistorico(dadosEsquerda, metrica) });
+
+  var pontosDireita = null;
+  if (dadosDireita) {
+    pontosDireita = dadosDireita.map(function(d, i){ return { label: monthNamesCurto[i], valor: valorMetricaHistorico(d, metrica) }; });
+    pontosDireita.push({ label: "Média", valor: mediaMetricaHistorico(dadosDireita, metrica) });
+  }
+
+  var todosValores = pontosEsquerda.map(function(p){ return p.valor; });
+  if (pontosDireita) { todosValores = todosValores.concat(pontosDireita.map(function(p){ return p.valor; })); }
+  var max = Math.max.apply(null, todosValores);
   if (max <= 0) { max = 1; }
 
+  var totalGrupos = 13;
   var width = 900, height = 220, padBottom = 26, padTop = 22;
-  var grupoWidth = width / 12;
-  var barWidth = dadosDireita ? (grupoWidth - 8) / 2 : grupoWidth - 8;
+  var grupoWidth = width / totalGrupos;
+  var barWidth = pontosDireita ? (grupoWidth - 8) / 2 : grupoWidth - 8;
 
   var svgBars = "";
-  for (var i = 0; i < 12; i++){
-    var v1 = valoresE[i];
-    var h1 = (v1 / max) * (height - padBottom - padTop);
+  for (var i = 0; i < totalGrupos; i++){
+    var ehMedia = i === totalGrupos - 1;
+    var opacidade = ehMedia ? "0.55" : "1";
+    var p1 = pontosEsquerda[i];
+    var h1 = (p1.valor / max) * (height - padBottom - padTop);
     var x1 = i * grupoWidth + 4;
     var y1 = height - padBottom - h1;
-    var corUnica = dadosDireita ? HISTORICO_COR_ANTIGO : HISTORICO_COR_NOVO;
-    svgBars += "<rect x=\"" + x1 + "\" y=\"" + y1 + "\" width=\"" + barWidth + "\" height=\"" + Math.max(h1, 1) + "\" fill=\"" + corUnica + "\" rx=\"2\"></rect>";
-    if (v1 > 0) {
-      svgBars += "<text x=\"" + (x1 + barWidth / 2) + "\" y=\"" + (y1 - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + formatarMetricaHistorico(v1, metrica) + "</text>";
+    var corUnica = pontosDireita ? HISTORICO_COR_ANTIGO : HISTORICO_COR_NOVO;
+    svgBars += "<rect x=\"" + x1 + "\" y=\"" + y1 + "\" width=\"" + barWidth + "\" height=\"" + Math.max(h1, 1) + "\" fill=\"" + corUnica + "\" fill-opacity=\"" + opacidade + "\" rx=\"2\"></rect>";
+    if (p1.valor > 0) {
+      svgBars += "<text x=\"" + (x1 + barWidth / 2) + "\" y=\"" + (y1 - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + formatarMetricaHistorico(p1.valor, metrica) + "</text>";
     }
-    if (dadosDireita) {
-      var v2 = valoresD[i];
-      var h2 = (v2 / max) * (height - padBottom - padTop);
+    if (pontosDireita) {
+      var p2 = pontosDireita[i];
+      var h2 = (p2.valor / max) * (height - padBottom - padTop);
       var x2 = x1 + barWidth + 2;
       var y2 = height - padBottom - h2;
-      svgBars += "<rect x=\"" + x2 + "\" y=\"" + y2 + "\" width=\"" + barWidth + "\" height=\"" + Math.max(h2, 1) + "\" fill=\"" + HISTORICO_COR_NOVO + "\" rx=\"2\"></rect>";
-      if (v2 > 0) {
-        svgBars += "<text x=\"" + (x2 + barWidth / 2) + "\" y=\"" + (y2 - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + formatarMetricaHistorico(v2, metrica) + "</text>";
+      svgBars += "<rect x=\"" + x2 + "\" y=\"" + y2 + "\" width=\"" + barWidth + "\" height=\"" + Math.max(h2, 1) + "\" fill=\"" + HISTORICO_COR_NOVO + "\" fill-opacity=\"" + opacidade + "\" rx=\"2\"></rect>";
+      if (p2.valor > 0) {
+        svgBars += "<text x=\"" + (x2 + barWidth / 2) + "\" y=\"" + (y2 - 4) + "\" font-size=\"9\" text-anchor=\"middle\" fill=\"#5f5e5a\">" + formatarMetricaHistorico(p2.valor, metrica) + "</text>";
       }
     }
-    svgBars += "<text x=\"" + (i * grupoWidth + grupoWidth / 2) + "\" y=\"" + (height - 8) + "\" font-size=\"10\" text-anchor=\"middle\" fill=\"#888780\">" + monthNamesCurto[i] + "</text>";
+    var pesoLabel = ehMedia ? " font-weight=\"700\"" : "";
+    svgBars += "<text x=\"" + (i * grupoWidth + grupoWidth / 2) + "\" y=\"" + (height - 8) + "\" font-size=\"10\" text-anchor=\"middle\" fill=\"#888780\"" + pesoLabel + ">" + p1.label + "</text>";
+
+    if (i === totalGrupos - 2) {
+      var xSep = (i + 1) * grupoWidth;
+      svgBars += "<line x1=\"" + xSep + "\" y1=\"" + (padTop - 4) + "\" x2=\"" + xSep + "\" y2=\"" + (height - padBottom + 4) + "\" stroke=\"#c8c6bd\" stroke-width=\"1\" stroke-dasharray=\"3,3\"></line>";
+    }
   }
   return "<div class=\"historico-chart-block\"><p class=\"historico-chart-title\">" + HISTORICO_METRIC_LABELS[metrica] + "</p><svg viewBox=\"0 0 " + width + " " + height + "\" style=\"width:100%;height:220px;\">" + svgBars + "</svg></div>";
 }
