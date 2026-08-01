@@ -21,7 +21,8 @@
   .subtitle { font-size: 13px; color: var(--text-secondary); margin: 0 0 1.25rem; }
   .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
   .header-row button { margin-top: 8px; }
-  .header-filter { display: flex; flex-direction: column; gap: 4px; width: 220px; }
+  .header-filters-group { display: flex; gap: 12px; }
+  .header-filter { display: flex; flex-direction: column; gap: 4px; width: 200px; }
   .header-filter label { font-size: 12px; color: var(--text-secondary); }
   .header-filter select { margin-bottom: 0; }
   .supervisora-filter { border-color: var(--text-secondary); }
@@ -95,9 +96,15 @@
       <p class="subtitle" id="updated-label">La Semijoias</p>
       <button onclick="atualizarAoVivo(this)">Atualizar agora</button>
     </div>
-    <div class="header-filter">
-      <label for="filter-supervisora-global">Filtrar por supervisora</label>
-      <select id="filter-supervisora-global" class="supervisora-filter col-search"></select>
+    <div class="header-filters-group">
+      <div class="header-filter">
+        <label for="summary-month-select">Mês do resumo</label>
+        <select id="summary-month-select" class="col-search"></select>
+      </div>
+      <div class="header-filter">
+        <label for="filter-supervisora-global">Filtrar por supervisora</label>
+        <select id="filter-supervisora-global" class="supervisora-filter col-search"></select>
+      </div>
     </div>
   </div>
 
@@ -410,9 +417,39 @@ if (months.length > 0) {
   refreshRanking();
 }
 
-function renderSummary(){
+var summaryMonthSelect = document.getElementById("summary-month-select");
+
+function mesAtualPadrao(){
   var agora = new Date();
-  var mesAtual = agora.getFullYear() + "-" + String(agora.getMonth()+1).padStart(2, "0");
+  return agora.getFullYear() + "-" + String(agora.getMonth()+1).padStart(2, "0");
+}
+
+function mesesResumoDisponiveis(){
+  var set = {};
+  RESUMO_BAIXADOS.forEach(function(r){ set[r.mes] = true; });
+  DATA.forEach(function(d){ var m = mesAcertoKey(d.dataAcerto); if (m) { set[m] = true; } });
+  set[mesAtualPadrao()] = true;
+  return Object.keys(set).sort();
+}
+
+function populateSummaryMonthSelect(){
+  var meses = mesesResumoDisponiveis();
+  var valorAtual = summaryMonthSelect.value || mesAtualPadrao();
+  summaryMonthSelect.innerHTML = "";
+  meses.forEach(function(m){
+    var partes = m.split("-");
+    var opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = monthNamesCurto[parseInt(partes[1],10)-1] + "/" + partes[0];
+    summaryMonthSelect.appendChild(opt);
+  });
+  summaryMonthSelect.value = meses.indexOf(valorAtual) >= 0 ? valorAtual : mesAtualPadrao();
+}
+populateSummaryMonthSelect();
+summaryMonthSelect.addEventListener("change", renderSummary);
+
+function renderSummary(){
+  var mesAtual = summaryMonthSelect.value || mesAtualPadrao();
 
   var resumoMes = supervisoraAtual
     ? RESUMO_SUPERVISORA.filter(function(r){ return r.mes === mesAtual && r.supervisora === supervisoraAtual; })
@@ -552,6 +589,7 @@ function recomputeDerivedAndRender(){
   renderAbaixoMeta();
   renderCiclo1();
   renderTodos();
+  populateSummaryMonthSelect();
   renderSummary();
   populateChartMonthSelect();
   renderAcertosChart();
