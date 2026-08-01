@@ -720,7 +720,7 @@ function valorMetricaHistorico(d, metrica){
 }
 
 function formatarMetricaHistorico(v, metrica){
-  return metrica === "qtd" ? String(v) : fmt(v);
+  return metrica === "qtd" ? String(Math.round(v)) : fmt(v);
 }
 
 function mediaMetricaHistorico(dados, metrica){
