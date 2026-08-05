@@ -120,10 +120,10 @@ export default async function handler(req, res) {
 
       const revId = p.comprador ? String(p.comprador.id) : null;
       const revInfo = revId ? revMap[revId] : null;
-      if (!revInfo) continue;
-      const key = `${mesRef}|${revInfo.nivel}|${revId}`;
+      const nivelRanking = revInfo ? revInfo.nivel : "BASICA";
+      const key = `${mesRef}|${nivelRanking}|${revId}`;
       if (!rankGrouped[key]) {
-        rankGrouped[key] = { mes: mesRef, nivel: revInfo.nivel, revendedora: p.comprador.nome, supervisora: p.supervisor_nome || null, total: 0, qtd: 0 };
+        rankGrouped[key] = { mes: mesRef, nivel: nivelRanking, revendedora: p.comprador ? p.comprador.nome : "-", supervisora: p.supervisor_nome || null, total: 0, qtd: 0 };
       }
       rankGrouped[key].total += valor;
       rankGrouped[key].qtd += 1;
