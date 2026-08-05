@@ -746,7 +746,8 @@ function formatarMetricaHistorico(v, metrica){
 }
 
 function mediaMetricaHistorico(dados, metrica){
-  var comDados = dados.filter(function(d){ return d.qtd > 0; });
+  var mesAtual = mesAtualPadrao();
+  var comDados = dados.filter(function(d){ return d.qtd > 0 && d.mes < mesAtual; });
   if (comDados.length === 0) { return 0; }
   var soma = comDados.reduce(function(s, d){ return s + valorMetricaHistorico(d, metrica); }, 0);
   return soma / comDados.length;
