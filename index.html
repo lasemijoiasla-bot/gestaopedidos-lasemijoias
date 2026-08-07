@@ -107,6 +107,8 @@
   .rank-pos { color: var(--text-muted); width: 18px; flex-shrink: 0; }
   .rank-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 6px; }
   .rank-value { font-weight: 600; flex-shrink: 0; }
+  .ranking-resumo { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; margin-bottom: 8px; }
+  .ranking-resumo strong { color: var(--text-primary); }
   .empty-msg { font-size: 12px; color: var(--text-muted); padding: 8px 4px; }
 </style>
 </head>
@@ -231,6 +233,10 @@
       </select>
       <select id="month-select" class="col-search"></select>
       <input type="text" class="col-search" id="search-ranking" placeholder="Buscar consultora...">
+      <div class="ranking-resumo">
+        <span>Total: <strong id="ranking-total">-</strong></span>
+        <span>Ticket médio: <strong id="ranking-ticket">-</strong></span>
+      </div>
       <div class="col-list" id="col-ranking"></div>
     </div>
   </div>
@@ -467,6 +473,12 @@ function renderRanking(mes, nivelFiltro, termo){
     rows = rows.filter(function(r){ return norm(r.revendedora).indexOf(termo) >= 0; });
   }
   rows.sort(function(a,b){ return b.total - a.total; });
+
+  var totalRanking = rows.reduce(function(s, r){ return s + r.total; }, 0);
+  var qtdRanking = rows.reduce(function(s, r){ return s + r.qtd; }, 0);
+  document.getElementById("ranking-total").textContent = fmt(totalRanking);
+  document.getElementById("ranking-ticket").textContent = fmt(qtdRanking > 0 ? totalRanking / qtdRanking : 0);
+
   if (rows.length === 0) {
     col.innerHTML = "<div class=\"empty-msg\">Sem pedidos baixados neste mês/nível.</div>";
     return;
