@@ -61,20 +61,25 @@
   .chart-title { font-size: 14px; font-weight: 600; margin: 0; }
   .chart-header select { min-width: 130px; }
   #chart-month-select { width: auto; min-width: 100px; max-width: 130px; margin-bottom: 0; }
-  #data-consulta { width: auto; min-width: 150px; margin-bottom: 0; }
-  .consulta-header, .consulta-row { display: grid; grid-template-columns: 1.8fr 1.2fr 0.8fr 0.9fr; gap: 8px; align-items: center; }
+  .periodo-filter { display: flex; gap: 8px; }
+  .periodo-filter .header-filter { width: 140px; }
+  .header-filter input[type="date"] { margin-bottom: 0; }
+  .consulta-header, .consulta-row { display: grid; grid-template-columns: 1.5fr 1fr 0.7fr 0.8fr 0.8fr; gap: 8px; align-items: center; }
   .consulta-header { font-size: 11px; color: var(--text-muted); font-weight: 600; padding: 0 10px; margin: 0 0 6px; }
   .consulta-row { background: var(--surface-2); border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 6px; }
   .consulta-row .rank-name, .consulta-row .cidade-col { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .consulta-row .badge { justify-self: start; }
+  .consulta-row .data-col { color: var(--text-secondary); }
   .consulta-row .rank-value { justify-self: end; font-weight: 600; }
   button, select { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 13px; cursor: pointer; color: var(--text-primary); }
   button:hover { background: var(--surface-2); }
   .board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)) minmax(340px, 1.6fr); gap: 12px; align-items: start; }
   .nivel-filter { display: flex; gap: 10px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
   .nivel-filter label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
-  .valor-filter { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; flex-wrap: wrap; }
-  .valor-filter input[type="number"] { width: 70px; font-size: 12px; padding: 4px 6px; }
+  .valor-filter { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+  .valor-filter-row { display: flex; align-items: center; gap: 6px; }
+  .valor-filter-row label { width: 72px; flex-shrink: 0; }
+  .valor-filter input[type="number"] { flex: 1; min-width: 0; font-size: 12px; padding: 4px 6px; }
   .mes-multiselect { width: 100%; margin-bottom: 8px; font-size: 13px; padding: 4px; }
   .mes-multiselect option { padding: 6px 8px; }
   .col { background: var(--surface-2); border-radius: 12px; padding: 10px; display: flex; flex-direction: column; max-height: 82vh; }
@@ -170,9 +175,18 @@
     <div class="chart-card">
       <div class="chart-header">
         <p class="chart-title">Consultoras por data de acerto <span class="col-count" id="consulta-total">-</span></p>
-        <input type="date" id="data-consulta" class="col-search">
+        <div class="periodo-filter">
+          <div class="header-filter">
+            <label for="data-consulta-de">De</label>
+            <input type="date" id="data-consulta-de" class="col-search">
+          </div>
+          <div class="header-filter">
+            <label for="data-consulta-ate">Até</label>
+            <input type="date" id="data-consulta-ate" class="col-search">
+          </div>
+        </div>
       </div>
-      <div class="consulta-header"><span>Consultora</span><span>Cidade</span><span>Nível</span><span>Pré-baixa</span></div>
+      <div class="consulta-header"><span>Consultora</span><span>Cidade</span><span>Nível</span><span>Data de acerto</span><span>Pré-baixa</span></div>
       <div id="lista-consulta-data" class="lista-consulta"></div>
     </div>
   </div>
@@ -238,10 +252,14 @@
         <option value="mais20">Mais de 20 dias</option>
       </select>
       <div class="valor-filter">
-        <label for="filter-valor-todos-de">Pré-baixa de:</label>
-        <input type="number" id="filter-valor-todos-de" placeholder="Sem mínimo" min="0" step="1">
-        <label for="filter-valor-todos-ate">até:</label>
-        <input type="number" id="filter-valor-todos-ate" placeholder="Sem limite" min="0" step="1">
+        <div class="valor-filter-row">
+          <label for="filter-valor-todos-de">Pré-baixa de:</label>
+          <input type="number" id="filter-valor-todos-de" placeholder="Sem mínimo" min="0" step="1">
+        </div>
+        <div class="valor-filter-row">
+          <label for="filter-valor-todos-ate">até:</label>
+          <input type="number" id="filter-valor-todos-ate" placeholder="Sem limite" min="0" step="1">
+        </div>
       </div>
       <div class="nivel-filter">
         <label><input type="checkbox" class="filter-nivel-todos" value="BASICA" checked> Básica</label>
@@ -688,27 +706,41 @@ chartMonthSelect.addEventListener("change", renderAcertosChart);
 populateChartMonthSelect();
 renderAcertosChart();
 
-var dataConsultaInput = document.getElementById("data-consulta");
+var dataConsultaDeInput = document.getElementById("data-consulta-de");
+var dataConsultaAteInput = document.getElementById("data-consulta-ate");
 
-function formatarDataBR(isoDate){
-  var partes = isoDate.split("-");
-  return partes[2] + "/" + partes[1] + "/" + partes[0];
+function parseDataBR(dataStr){
+  var partes = (dataStr || "").split("/");
+  if (partes.length !== 3) { return null; }
+  return new Date(parseInt(partes[2],10), parseInt(partes[1],10) - 1, parseInt(partes[0],10));
 }
 
 function renderConsultaData(){
   var container = document.getElementById("lista-consulta-data");
-  var isoDate = dataConsultaInput.value;
-  if (!isoDate) {
-    container.innerHTML = "<div class=\"empty-msg\">Escolha uma data para ver quais consultoras têm acerto nela.</div>";
+  var isoDe = dataConsultaDeInput.value;
+  var isoAte = dataConsultaAteInput.value;
+  if (!isoDe && !isoAte) {
+    container.innerHTML = "<div class=\"empty-msg\">Escolha um período para ver quais consultoras têm acerto nele.</div>";
     document.getElementById("consulta-total").textContent = "-";
     return;
   }
-  var dataBR = formatarDataBR(isoDate);
-  var lista = porSupervisora(DATA).filter(function(d){ return d.dataAcerto === dataBR; });
-  lista.sort(function(a,b){ return a.revendedora.localeCompare(b.revendedora); });
+  var dataDe = isoDe ? new Date(isoDe + "T00:00:00") : null;
+  var dataAte = isoAte ? new Date(isoAte + "T23:59:59") : null;
+
+  var lista = porSupervisora(DATA).filter(function(d){
+    var dataAcerto = parseDataBR(d.dataAcerto);
+    if (!dataAcerto) { return false; }
+    if (dataDe && dataAcerto < dataDe) { return false; }
+    if (dataAte && dataAcerto > dataAte) { return false; }
+    return true;
+  });
+  lista.sort(function(a,b){
+    var diff = parseDataBR(a.dataAcerto) - parseDataBR(b.dataAcerto);
+    return diff !== 0 ? diff : a.revendedora.localeCompare(b.revendedora);
+  });
   document.getElementById("consulta-total").textContent = lista.length;
   if (lista.length === 0) {
-    container.innerHTML = "<div class=\"empty-msg\">Nenhuma consultora com acerto em " + dataBR + ".</div>";
+    container.innerHTML = "<div class=\"empty-msg\">Nenhuma consultora com acerto neste período.</div>";
     return;
   }
   var html = "";
@@ -717,12 +749,14 @@ function renderConsultaData(){
       + "<span class=\"rank-name\">" + d.revendedora + "</span>"
       + "<span class=\"cidade-col\">" + (d.cidade || "-") + "</span>"
       + "<span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span>"
+      + "<span class=\"data-col\">" + d.dataAcerto + "</span>"
       + "<span class=\"rank-value\">" + fmt(d.valorPreBaixa) + "</span>"
       + "</div>";
   });
   container.innerHTML = html;
 }
-dataConsultaInput.addEventListener("change", renderConsultaData);
+dataConsultaDeInput.addEventListener("change", renderConsultaData);
+dataConsultaAteInput.addEventListener("change", renderConsultaData);
 renderConsultaData();
 
 function recomputeDerivedAndRender(){
