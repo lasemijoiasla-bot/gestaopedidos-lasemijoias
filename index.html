@@ -181,6 +181,14 @@
     <div class="col">
       <div class="col-header"><span class="col-title"><span class="badge" style="background:#c0392b; color:#ffffff; font-size:11px; padding:2px 8px;">Crítico</span> (+7 dias sem lançamento)</span><span class="col-count" id="count-semmov">-</span></div>
       <select class="col-search supervisora-filter"></select>
+      <select class="col-search dias-acerto-filter" id="filter-dias-semmov">
+        <option value="">Dias para o acerto: todos</option>
+        <option value="5">Até 5 dias</option>
+        <option value="10">Até 10 dias</option>
+        <option value="15">Até 15 dias</option>
+        <option value="20">Até 20 dias</option>
+        <option value="mais20">Mais de 20 dias</option>
+      </select>
       <input type="text" class="col-search" id="search-semmov" placeholder="Buscar consultora...">
       <div class="col-list" id="col-semmov"></div>
     </div>
@@ -190,6 +198,14 @@
         <span class="col-count" id="count-ciclo1">-</span>
       </div>
       <select class="col-search supervisora-filter"></select>
+      <select class="col-search dias-acerto-filter" id="filter-dias-ciclo1">
+        <option value="">Dias para o acerto: todos</option>
+        <option value="5">Até 5 dias</option>
+        <option value="10">Até 10 dias</option>
+        <option value="15">Até 15 dias</option>
+        <option value="20">Até 20 dias</option>
+        <option value="mais20">Mais de 20 dias</option>
+      </select>
       <input type="text" class="col-search" id="search-ciclo1" placeholder="Buscar consultora...">
       <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-secondary); margin-bottom:8px; cursor:pointer;">
         <input type="checkbox" id="filter-zerados-ciclo1"> Só pedidos zerados (pré-baixa R$0)
@@ -199,12 +215,28 @@
     <div class="col">
       <div class="col-header"><span class="col-title">Abaixo da meta (vencendo em ate 10 dias)</span><span class="col-count" id="count-abaixometa">-</span></div>
       <select class="col-search supervisora-filter"></select>
+      <select class="col-search dias-acerto-filter" id="filter-dias-abaixometa">
+        <option value="">Dias para o acerto: todos</option>
+        <option value="5">Até 5 dias</option>
+        <option value="10">Até 10 dias</option>
+        <option value="15">Até 15 dias</option>
+        <option value="20">Até 20 dias</option>
+        <option value="mais20">Mais de 20 dias</option>
+      </select>
       <input type="text" class="col-search" id="search-abaixometa" placeholder="Buscar consultora...">
       <div class="col-list" id="col-abaixometa"></div>
     </div>
     <div class="col">
       <div class="col-header"><span class="col-title">Todos os Pedidos em Aberto</span><span class="col-count" id="count-todos">-</span></div>
       <select class="col-search supervisora-filter"></select>
+      <select class="col-search dias-acerto-filter" id="filter-dias-todos">
+        <option value="">Dias para o acerto: todos</option>
+        <option value="5">Até 5 dias</option>
+        <option value="10">Até 10 dias</option>
+        <option value="15">Até 15 dias</option>
+        <option value="20">Até 20 dias</option>
+        <option value="mais20">Mais de 20 dias</option>
+      </select>
       <div class="valor-filter">
         <label for="filter-valor-todos">Pré-baixa até:</label>
         <input type="number" id="filter-valor-todos" placeholder="Sem limite" min="0" step="1">
@@ -336,39 +368,53 @@ function ordenarPorDiasAcerto(lista){
   return lista.slice().sort(function(a, b){ return a.diasAteAcerto - b.diasAteAcerto; });
 }
 
+function passaFiltroDias(d, valorFiltro){
+  if (!valorFiltro) { return true; }
+  if (valorFiltro === "mais20") { return d.diasAteAcerto > 20; }
+  return d.diasAteAcerto <= parseInt(valorFiltro, 10);
+}
+
+var filterDiasSemMov = document.getElementById("filter-dias-semmov");
 function renderSemMov(){
   var termo = norm(searchSemMov.value);
   var lista = termo ? semMov.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }) : semMov;
+  lista = lista.filter(function(d){ return passaFiltroDias(d, filterDiasSemMov.value); });
   lista = ordenarPorDiasAcerto(lista);
   colSemMov.innerHTML = "";
   document.getElementById("count-semmov").textContent = lista.length;
   lista.forEach(function(d){ colSemMov.appendChild(pedidoCard(d)); });
 }
 searchSemMov.addEventListener("input", renderSemMov);
+filterDiasSemMov.addEventListener("change", renderSemMov);
 renderSemMov();
 
 var colAbaixoMeta = document.getElementById("col-abaixometa");
 var searchAbaixoMeta = document.getElementById("search-abaixometa");
+var filterDiasAbaixoMeta = document.getElementById("filter-dias-abaixometa");
 function renderAbaixoMeta(){
   var termo = norm(searchAbaixoMeta.value);
   var lista = termo ? abaixoMeta.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }) : abaixoMeta;
+  lista = lista.filter(function(d){ return passaFiltroDias(d, filterDiasAbaixoMeta.value); });
   lista = ordenarPorDiasAcerto(lista);
   colAbaixoMeta.innerHTML = "";
   document.getElementById("count-abaixometa").textContent = lista.length;
   lista.forEach(function(d){ colAbaixoMeta.appendChild(pedidoCard(d)); });
 }
 searchAbaixoMeta.addEventListener("input", renderAbaixoMeta);
+filterDiasAbaixoMeta.addEventListener("change", renderAbaixoMeta);
 renderAbaixoMeta();
 
 var colCiclo1 = document.getElementById("col-ciclo1");
 var filterZeradosCiclo1 = document.getElementById("filter-zerados-ciclo1");
 var searchCiclo1 = document.getElementById("search-ciclo1");
+var filterDiasCiclo1 = document.getElementById("filter-dias-ciclo1");
 function renderCiclo1(){
   var termo = norm(searchCiclo1.value);
   var soZerados = filterZeradosCiclo1.checked;
   var lista = ciclo1;
   if (soZerados) { lista = lista.filter(function(d){ return d.valorPreBaixa === 0; }); }
   if (termo) { lista = lista.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }); }
+  lista = lista.filter(function(d){ return passaFiltroDias(d, filterDiasCiclo1.value); });
   lista = ordenarPorDiasAcerto(lista);
   colCiclo1.innerHTML = "";
   document.getElementById("count-ciclo1").textContent = lista.length;
@@ -376,6 +422,7 @@ function renderCiclo1(){
 }
 filterZeradosCiclo1.addEventListener("change", renderCiclo1);
 searchCiclo1.addEventListener("input", renderCiclo1);
+filterDiasCiclo1.addEventListener("change", renderCiclo1);
 renderCiclo1();
 
 var colTodos = document.getElementById("col-todos");
@@ -400,17 +447,20 @@ mesesAcertoDisponiveis.forEach(function(m){
   filterMesAcertoTodos.appendChild(opt);
 });
 
+var filterDiasTodos = document.getElementById("filter-dias-todos");
 function renderTodos(){
   var termo = norm(searchTodos.value);
   var limite = filterValorTodos.value !== "" ? parseFloat(filterValorTodos.value) : null;
   var niveisAtivos = filterNivelTodosEls.filter(function(el){ return el.checked; }).map(function(el){ return el.value; });
   var mesAtivo = filterMesAcertoTodos.value;
+  var diasFiltro = filterDiasTodos.value;
 
   var lista = DATA.filter(function(d){
     if (supervisoraAtual && d.supervisora !== supervisoraAtual) { return false; }
     if (niveisAtivos.indexOf(normNivel(d.nivel)) === -1) { return false; }
     if (limite !== null && !(d.valorPreBaixa < limite)) { return false; }
     if (mesAtivo && mesAcertoKey(d.dataAcerto) !== mesAtivo) { return false; }
+    if (!passaFiltroDias(d, diasFiltro)) { return false; }
     if (termo && norm(d.revendedora).indexOf(termo) < 0) { return false; }
     return true;
   });
@@ -424,6 +474,7 @@ searchTodos.addEventListener("input", renderTodos);
 filterValorTodos.addEventListener("input", renderTodos);
 filterNivelTodosEls.forEach(function(el){ el.addEventListener("change", renderTodos); });
 filterMesAcertoTodos.addEventListener("change", renderTodos);
+filterDiasTodos.addEventListener("change", renderTodos);
 renderTodos();
 
 var monthSelect = document.getElementById("month-select");
