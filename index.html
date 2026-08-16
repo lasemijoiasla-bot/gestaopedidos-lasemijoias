@@ -37,6 +37,8 @@
   .legend-item { display: flex; align-items: center; gap: 6px; }
   .legend-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
   .historico-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 14px; }
+  .tabela-scroll { overflow-x: auto; }
+  .tabela-scroll .historico-table { min-width: 760px; }
   .historico-table th, .historico-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
   .historico-table th:first-child, .historico-table td:first-child { text-align: left; }
   .historico-table th { color: var(--text-muted); font-weight: 600; }
@@ -127,6 +129,7 @@
     <button type="button" class="tab-btn" data-tab="historico">Histórico</button>
     <button type="button" class="tab-btn" data-tab="vendas">Vendas</button>
     <button type="button" class="tab-btn" data-tab="faturamento">Resumo do Faturamento</button>
+    <button type="button" class="tab-btn" data-tab="premiacao">Premiação</button>
   </div>
 
   <div id="tab-painel" class="tab-content active">
@@ -406,6 +409,28 @@
       <div id="faturamento-legenda"></div>
       <div id="faturamento-chart"></div>
       <div id="faturamento-tabela"></div>
+    </div>
+  </div>
+
+  <div id="tab-premiacao" class="tab-content">
+    <div class="header-filter" style="width: 200px; margin-bottom: 1.25rem;">
+      <label for="premiacao-mes-select">Mês do resumo</label>
+      <select id="premiacao-mes-select" class="col-search"></select>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <p class="chart-title">Premiação por cargo</p>
+      </div>
+      <p class="vendas-subtitulo" id="premiacao-status">-</p>
+      <div id="premiacao-cargos-tabela"></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <p class="chart-title">Tabela de referência (todas as faixas)</p>
+      </div>
+      <div class="tabela-scroll" id="premiacao-referencia-tabela"></div>
     </div>
   </div>
 
@@ -868,6 +893,7 @@ function recomputeDerivedAndRender(){
   painelVendas.render();
   renderGraficoFaturamento();
   renderResumoFaturamento();
+  renderPremiacao();
 }
 renderSummary();
 
@@ -1278,10 +1304,109 @@ function renderGraficoFaturamento(){
 faturamentoAnoSelect.addEventListener("change", renderGraficoFaturamento);
 faturamentoMetricaEls.forEach(function(el){ el.addEventListener("change", renderGraficoFaturamento); });
 
+var PREMIACAO_TABELA = [
+  { limite: 90000, valor: 300 },
+  { limite: 100000, valor: 400 },
+  { limite: 110000, valor: 450 },
+  { limite: 130000, valor: 650 },
+  { limite: 150000, valor: 850 },
+  { limite: 170000, valor: 950 },
+  { limite: 200000, valor: 1200 },
+  { limite: 220000, valor: 1300 },
+  { limite: 250000, valor: 1400 }
+];
+var PREMIACAO_CARGOS = [
+  { nome: "Gerência", percentuais: [100, 100, 100, 105, 110, 110, 110, 110, 110] },
+  { nome: "Financeiro", percentuais: [100, 100, 100, 100, 100, 100, 100, 100, 100] },
+  { nome: "Supervisora", percentuais: [100, 100, 100, 100, 100, 100, 100, 100, 100] },
+  { nome: "Comercial", percentuais: [80, 80, 80, 80, 80, 80, 80, 80, 80] },
+  { nome: "Administrativo/Vendedora", percentuais: [40, 40, 40, 40, 40, 40, 40, 40, 40] }
+];
+
+var premiacaoMesSelect = document.getElementById("premiacao-mes-select");
+
+function populatePremiacaoMesSelect(){
+  var meses = mesesFaturamentoDisponiveis();
+  var valorAtual = premiacaoMesSelect.value || mesAtualPadrao();
+  premiacaoMesSelect.innerHTML = "";
+  meses.forEach(function(m){
+    var partes = m.split("-");
+    var opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = monthNamesCurto[parseInt(partes[1],10) - 1] + "/" + partes[0];
+    premiacaoMesSelect.appendChild(opt);
+  });
+  premiacaoMesSelect.value = meses.indexOf(valorAtual) >= 0 ? valorAtual : mesAtualPadrao();
+}
+
+function faturamentoFaturadoDoMes(mes){
+  var resumoPedidos = RESUMO_BAIXADOS.filter(function(r){ return r.mes === mes; })[0] || { total: 0 };
+  var resumoVendas = RESUMO_VENDAS.filter(function(r){ return r.mes === mes; })[0] || { total: 0 };
+  return resumoPedidos.total + resumoVendas.total;
+}
+
+function faixaPremiacaoIndex(faturamento){
+  var idx = -1;
+  for (var i = 0; i < PREMIACAO_TABELA.length; i++){
+    if (faturamento >= PREMIACAO_TABELA[i].limite) { idx = i; }
+  }
+  return idx;
+}
+
+function renderPremiacao(){
+  populatePremiacaoMesSelect();
+  var mes = premiacaoMesSelect.value || mesAtualPadrao();
+  var faturamento = faturamentoFaturadoDoMes(mes);
+  var idx = faixaPremiacaoIndex(faturamento);
+
+  var statusEl = document.getElementById("premiacao-status");
+  if (idx === -1) {
+    statusEl.textContent = "Faturamento do mês: " + fmt(faturamento) + " — abaixo da primeira faixa (" + (PREMIACAO_TABELA[0].limite / 1000) + "K). Sem premiação neste mês.";
+  } else {
+    var faixa = PREMIACAO_TABELA[idx];
+    var texto = "Faturamento do mês: " + fmt(faturamento) + " — faixa atingida: " + (faixa.limite / 1000) + "K (base " + fmt(faixa.valor) + ")";
+    if (idx < PREMIACAO_TABELA.length - 1) {
+      var proxima = PREMIACAO_TABELA[idx + 1];
+      var falta = proxima.limite - faturamento;
+      texto += ". Faltam " + fmt(falta) + " para a próxima faixa (" + (proxima.limite / 1000) + "K).";
+    } else {
+      texto += ". Faixa máxima atingida.";
+    }
+    statusEl.textContent = texto;
+  }
+
+  var tabelaCargos = "<table class=\"historico-table\"><thead><tr><th>Cargo</th><th>Percentual</th><th>Valor da premiação</th></tr></thead><tbody>";
+  PREMIACAO_CARGOS.forEach(function(cargo){
+    var pct = idx >= 0 ? cargo.percentuais[idx] : 0;
+    var valorPago = idx >= 0 ? PREMIACAO_TABELA[idx].valor * pct / 100 : 0;
+    tabelaCargos += "<tr><td>" + cargo.nome + "</td><td>" + pct + "%</td><td>" + fmt(valorPago) + "</td></tr>";
+  });
+  tabelaCargos += "</tbody></table>";
+  document.getElementById("premiacao-cargos-tabela").innerHTML = tabelaCargos;
+
+  var tabelaRef = "<table class=\"historico-table\"><thead><tr><th>Cargo</th>";
+  PREMIACAO_TABELA.forEach(function(f){ tabelaRef += "<th>" + (f.limite / 1000) + "K</th>"; });
+  tabelaRef += "</tr></thead><tbody><tr><td><em>Valor base</em></td>";
+  PREMIACAO_TABELA.forEach(function(f){ tabelaRef += "<td>" + fmt(f.valor) + "</td>"; });
+  tabelaRef += "</tr>";
+  PREMIACAO_CARGOS.forEach(function(cargo){
+    tabelaRef += "<tr><td>" + cargo.nome + "</td>";
+    cargo.percentuais.forEach(function(pct, i){
+      var valorPago = PREMIACAO_TABELA[i].valor * pct / 100;
+      tabelaRef += "<td>" + fmt(valorPago) + "</td>";
+    });
+    tabelaRef += "</tr>";
+  });
+  tabelaRef += "</tbody></table>";
+  document.getElementById("premiacao-referencia-tabela").innerHTML = tabelaRef;
+}
+premiacaoMesSelect.addEventListener("change", renderPremiacao);
+
 painelHistorico.render();
 painelVendas.render();
 renderGraficoFaturamento();
 renderResumoFaturamento();
+renderPremiacao();
 
 function listaSupervisoras(){
   var set = {};
