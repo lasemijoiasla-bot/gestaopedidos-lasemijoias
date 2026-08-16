@@ -328,7 +328,7 @@
       <div class="chart-header">
         <p class="chart-title">Desempenho mensal de vendas diretas</p>
       </div>
-      <p class="vendas-subtitulo">Vendas diretas ao cliente (fora do consignado). Atualiza junto com a sincronização automática/manual, não com o botão "Atualizar agora".</p>
+      <p class="vendas-subtitulo">Vendas diretas ao cliente (fora do consignado).</p>
       <div class="historico-filters">
         <div class="header-filter">
           <label for="vendas-ano-select">Ano</label>
@@ -1086,6 +1086,9 @@ async function atualizarAoVivo(btn){
 
     RANKING = RANKING.filter(function(r){ return r.mes !== payload.mesAtual; });
     RANKING = RANKING.concat(payload.rankingMesAtual);
+
+    RESUMO_VENDAS = RESUMO_VENDAS.filter(function(r){ return r.mes !== payload.mesAtual; });
+    RESUMO_VENDAS.push(payload.resumoVendaMes);
 
     document.getElementById("updated-label").textContent = "La Semijoias - dados ao vivo em " + payload.updatedAt;
     recomputeDerivedAndRender();

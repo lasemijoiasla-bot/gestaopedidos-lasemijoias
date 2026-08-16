@@ -41,10 +41,11 @@ export default async function handler(req, res) {
   }
 
   try {
-    const [revendedores, abertos, baixados] = await Promise.all([
+    const [revendedores, abertos, baixados, vendas] = await Promise.all([
       fetchAllRevendedores(),
       fetchAllPages("/pedido?status=1"),
       fetchAllPages("/pedido?status=2"),
+      fetchAllPages("/venda?status=1"),
     ]);
 
     const revMap = {};
@@ -131,6 +132,15 @@ export default async function handler(req, res) {
     const rankingMesAtual = Object.values(rankGrouped);
     const resumoSupervisoraMes = Object.values(resumoSupervisorGrouped);
 
+    let resumoVendaMes = { mes: mesAtual, total: 0, qtd: 0 };
+    for (const v of vendas) {
+      if (!v.data_criacao) continue;
+      const mesRef = v.data_criacao.split(" ")[0].slice(0, 7);
+      if (mesRef !== mesAtual) continue;
+      resumoVendaMes.total += parseFloat(v.valor_final) || 0;
+      resumoVendaMes.qtd += 1;
+    }
+
     res.setHeader("Cache-Control", "no-store");
     res.status(200).json({
       updatedAt: now.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
@@ -139,6 +149,7 @@ export default async function handler(req, res) {
       resumoBaixadoMes,
       rankingMesAtual,
       resumoSupervisoraMes,
+      resumoVendaMes,
     });
   } catch (err) {
     res.status(500).json({ error: String(err.message || err) });
