@@ -123,6 +123,7 @@
     <button type="button" class="tab-btn active" data-tab="painel">Pedidos</button>
     <button type="button" class="tab-btn" data-tab="historico">Histórico</button>
     <button type="button" class="tab-btn" data-tab="vendas">Vendas</button>
+    <button type="button" class="tab-btn" data-tab="faturamento">Resumo do Faturamento</button>
   </div>
 
   <div id="tab-painel" class="tab-content active">
@@ -348,6 +349,59 @@
       <div id="vendas-legenda"></div>
       <div id="vendas-chart"></div>
       <div id="vendas-tabela"></div>
+    </div>
+  </div>
+
+  <div id="tab-faturamento" class="tab-content">
+    <div class="header-filter" style="width: 200px; margin-bottom: 1.25rem;">
+      <label for="fat-mes-select">Mês do resumo</label>
+      <select id="fat-mes-select" class="col-search"></select>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-card summary-total">
+        <p class="summary-label">Faturamento total no mês</p>
+        <p class="summary-value" id="fat-total">-</p>
+        <p class="summary-qtd" id="fat-total-qtd">-</p>
+        <p class="summary-qtd" id="fat-total-ticket">-</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-label">Pedidos baixados (consignado)</p>
+        <p class="summary-value" id="fat-pedidos">-</p>
+        <p class="summary-qtd" id="fat-pedidos-qtd">-</p>
+        <p class="summary-qtd" id="fat-pedidos-ticket">-</p>
+      </div>
+      <div class="summary-card">
+        <p class="summary-label">Vendas diretas</p>
+        <p class="summary-value" id="fat-vendas">-</p>
+        <p class="summary-qtd" id="fat-vendas-qtd">-</p>
+        <p class="summary-qtd" id="fat-vendas-ticket">-</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-header">
+        <p class="chart-title">Faturamento total mensal (pedidos + vendas)</p>
+      </div>
+      <div class="historico-filters">
+        <div class="header-filter">
+          <label for="faturamento-ano-select">Ano</label>
+          <select id="faturamento-ano-select" class="col-search"></select>
+        </div>
+        <div class="header-filter">
+          <label for="faturamento-ano-comparar-select">Comparar com o ano</label>
+          <select id="faturamento-ano-comparar-select" class="col-search"><option value="">Nenhum</option></select>
+        </div>
+      </div>
+      <div class="historico-metric-filter">
+        <span class="metric-filter-label">Mostrar no gráfico:</span>
+        <label><input type="checkbox" class="faturamento-metric" value="total" checked> Faturamento total</label>
+        <label><input type="checkbox" class="faturamento-metric" value="qtd"> Quantidade total</label>
+        <label><input type="checkbox" class="faturamento-metric" value="ticket"> Ticket médio</label>
+      </div>
+      <div id="faturamento-legenda"></div>
+      <div id="faturamento-chart"></div>
+      <div id="faturamento-tabela"></div>
     </div>
   </div>
 
@@ -808,6 +862,8 @@ function recomputeDerivedAndRender(){
   refreshRanking();
   painelHistorico.render();
   painelVendas.render();
+  painelFaturamento.render();
+  renderResumoFaturamento();
 }
 renderSummary();
 
@@ -1021,8 +1077,84 @@ var painelVendas = criarPainelAnual({
   mensagemVazio: "Sem histórico de vendas diretas ainda."
 });
 
+function calcularResumoFaturamento(){
+  var mapa = {};
+  RESUMO_BAIXADOS.forEach(function(r){
+    if (!mapa[r.mes]) { mapa[r.mes] = { mes: r.mes, total: 0, qtd: 0 }; }
+    mapa[r.mes].total += r.total;
+    mapa[r.mes].qtd += r.qtd;
+  });
+  RESUMO_VENDAS.forEach(function(r){
+    if (!mapa[r.mes]) { mapa[r.mes] = { mes: r.mes, total: 0, qtd: 0 }; }
+    mapa[r.mes].total += r.total;
+    mapa[r.mes].qtd += r.qtd;
+  });
+  return Object.values(mapa);
+}
+
+var painelFaturamento = criarPainelAnual({
+  fonte: calcularResumoFaturamento,
+  anoSelectId: "faturamento-ano-select",
+  anoCompararSelectId: "faturamento-ano-comparar-select",
+  metricClass: ".faturamento-metric",
+  chartId: "faturamento-chart",
+  tabelaId: "faturamento-tabela",
+  legendaId: "faturamento-legenda",
+  metricLabels: { total: "Faturamento total", qtd: "Quantidade total (pedidos + vendas)", ticket: "Ticket médio" },
+  mensagemVazio: "Sem faturamento registrado ainda."
+});
+
+var fatMesSelect = document.getElementById("fat-mes-select");
+
+function mesesFaturamentoDisponiveis(){
+  var set = {};
+  RESUMO_BAIXADOS.forEach(function(r){ set[r.mes] = true; });
+  RESUMO_VENDAS.forEach(function(r){ set[r.mes] = true; });
+  set[mesAtualPadrao()] = true;
+  return Object.keys(set).sort();
+}
+
+function populateFatMesSelect(){
+  var meses = mesesFaturamentoDisponiveis();
+  var valorAtual = fatMesSelect.value || mesAtualPadrao();
+  fatMesSelect.innerHTML = "";
+  meses.forEach(function(m){
+    var partes = m.split("-");
+    var opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = monthNamesCurto[parseInt(partes[1],10)-1] + "/" + partes[0];
+    fatMesSelect.appendChild(opt);
+  });
+  fatMesSelect.value = meses.indexOf(valorAtual) >= 0 ? valorAtual : mesAtualPadrao();
+}
+
+function renderResumoFaturamento(){
+  populateFatMesSelect();
+  var mes = fatMesSelect.value || mesAtualPadrao();
+
+  var resumoPedidos = RESUMO_BAIXADOS.filter(function(r){ return r.mes === mes; })[0] || { total: 0, qtd: 0 };
+  var resumoVendas = RESUMO_VENDAS.filter(function(r){ return r.mes === mes; })[0] || { total: 0, qtd: 0 };
+  var totalGeral = resumoPedidos.total + resumoVendas.total;
+  var qtdGeral = resumoPedidos.qtd + resumoVendas.qtd;
+
+  document.getElementById("fat-total").textContent = fmt(totalGeral);
+  document.getElementById("fat-total-qtd").textContent = qtdGeral + (qtdGeral === 1 ? " registro" : " registros");
+  document.getElementById("fat-total-ticket").textContent = "Ticket médio: " + fmt(qtdGeral > 0 ? totalGeral / qtdGeral : 0);
+
+  document.getElementById("fat-pedidos").textContent = fmt(resumoPedidos.total);
+  document.getElementById("fat-pedidos-qtd").textContent = resumoPedidos.qtd + (resumoPedidos.qtd === 1 ? " pedido" : " pedidos");
+  document.getElementById("fat-pedidos-ticket").textContent = "Ticket médio: " + fmt(resumoPedidos.qtd > 0 ? resumoPedidos.total / resumoPedidos.qtd : 0);
+
+  document.getElementById("fat-vendas").textContent = fmt(resumoVendas.total);
+  document.getElementById("fat-vendas-qtd").textContent = resumoVendas.qtd + (resumoVendas.qtd === 1 ? " venda" : " vendas");
+  document.getElementById("fat-vendas-ticket").textContent = "Ticket médio: " + fmt(resumoVendas.qtd > 0 ? resumoVendas.total / resumoVendas.qtd : 0);
+}
+fatMesSelect.addEventListener("change", renderResumoFaturamento);
+
 painelHistorico.render();
 painelVendas.render();
+painelFaturamento.render();
+renderResumoFaturamento();
 
 function listaSupervisoras(){
   var set = {};
