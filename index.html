@@ -54,7 +54,9 @@
   .summary-card.summary-total { background: var(--surface-2); border-color: var(--text-secondary); }
   .summary-label { font-size: 12px; color: var(--text-muted); margin: 0 0 6px; }
   .summary-value { font-size: 22px; font-weight: 700; margin: 0; }
+  .summary-value-hero { font-size: 30px; font-weight: 800; }
   .summary-qtd { font-size: 12px; color: var(--text-muted); margin: 4px 0 0; }
+  .summary-total-geral { font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--border); }
   .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; align-items: start; }
   .charts-row .chart-card { margin-bottom: 0; }
   .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem 1rem; margin-bottom: 1.25rem; }
@@ -361,9 +363,10 @@
 
     <div class="summary-row-fat">
       <div class="summary-card summary-total">
-        <p class="summary-label">Faturamento total no mês</p>
-        <p class="summary-value" id="fat-total">-</p>
+        <p class="summary-label">Faturamento total no mês (já faturado)</p>
+        <p class="summary-value summary-value-hero" id="fat-total">-</p>
         <p class="summary-qtd" id="fat-total-qtd">-</p>
+        <p class="summary-total-geral" id="fat-total-geral">-</p>
       </div>
       <div class="summary-card">
         <p class="summary-label">Pedidos baixados (consignado)</p>
@@ -1115,11 +1118,14 @@ function renderResumoFaturamento(){
   var totalPreBaixa = pedidosPreBaixaMes.reduce(function(s, d){ return s + d.valorPreBaixa; }, 0);
   var qtdPreBaixa = pedidosPreBaixaMes.length;
 
-  var totalGeral = resumoPedidos.total + resumoVendas.total + totalPreBaixa;
-  var qtdGeral = resumoPedidos.qtd + resumoVendas.qtd + qtdPreBaixa;
+  var totalFaturado = resumoPedidos.total + resumoVendas.total;
+  var qtdFaturado = resumoPedidos.qtd + resumoVendas.qtd;
+  var totalGeral = totalFaturado + totalPreBaixa;
+  var qtdGeral = qtdFaturado + qtdPreBaixa;
 
-  document.getElementById("fat-total").textContent = fmt(totalGeral);
-  document.getElementById("fat-total-qtd").textContent = qtdGeral + (qtdGeral === 1 ? " registro" : " registros");
+  document.getElementById("fat-total").textContent = fmt(totalFaturado);
+  document.getElementById("fat-total-qtd").textContent = qtdFaturado + (qtdFaturado === 1 ? " registro" : " registros");
+  document.getElementById("fat-total-geral").textContent = "Total com pré-baixas: " + fmt(totalGeral) + " (" + qtdGeral + (qtdGeral === 1 ? " registro" : " registros") + ")";
 
   document.getElementById("fat-pedidos").textContent = fmt(resumoPedidos.total);
   document.getElementById("fat-pedidos-qtd").textContent = resumoPedidos.qtd + (resumoPedidos.qtd === 1 ? " pedido" : " pedidos");
