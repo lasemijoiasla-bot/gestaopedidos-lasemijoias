@@ -39,6 +39,12 @@
   .historico-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 14px; }
   .tabela-scroll { overflow-x: auto; }
   .tabela-scroll .historico-table { min-width: 760px; }
+  .acomp-table th, .acomp-table td { text-align: center; }
+  .acomp-table th:first-child, .acomp-table td:first-child { text-align: left; }
+  .acomp-table th { vertical-align: top; padding-top: 8px; }
+  .acomp-assunto { width: 100%; margin-top: 6px; font-size: 11px; padding: 4px 6px; box-sizing: border-box; }
+  .acomp-table .acomp-grupo td { background: var(--surface-2); font-weight: 600; text-align: left; }
+  .acomp-table input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
   .historico-table th, .historico-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
   .historico-table th:first-child, .historico-table td:first-child { text-align: left; }
   .historico-table th { color: var(--text-muted); font-weight: 600; }
@@ -130,6 +136,7 @@
     <button type="button" class="tab-btn" data-tab="historico">Histórico Pedidos</button>
     <button type="button" class="tab-btn" data-tab="faturamento">Resumo do Faturamento</button>
     <button type="button" class="tab-btn" data-tab="premiacao">Premiação</button>
+    <button type="button" class="tab-btn" data-tab="acompanhamento">Acompanhamento</button>
   </div>
 
   <div id="tab-painel" class="tab-content active">
@@ -431,6 +438,18 @@
         <p class="chart-title">Tabela de referência (todas as faixas)</p>
       </div>
       <div class="tabela-scroll" id="premiacao-referencia-tabela"></div>
+    </div>
+  </div>
+
+  <div id="tab-acompanhamento" class="tab-content">
+    <div class="chart-card">
+      <div class="chart-header">
+        <p class="chart-title">Acompanhamento de Contatos - Supervisoras</p>
+      </div>
+      <p class="vendas-subtitulo">Semanas do mês atual. Escreva o assunto de cada semana e marque quando a supervisora confirmar o contato com a consultora.</p>
+      <input type="text" class="col-search" id="acomp-busca" placeholder="Buscar consultora...">
+      <p class="vendas-subtitulo" id="acomp-status"></p>
+      <div class="tabela-scroll" id="acomp-tabela"></div>
     </div>
   </div>
 
@@ -905,6 +924,7 @@ tabBtns.forEach(function(btn){
     tabContents.forEach(function(c){ c.classList.remove("active"); });
     btn.classList.add("active");
     document.getElementById("tab-" + btn.getAttribute("data-tab")).classList.add("active");
+    if (btn.getAttribute("data-tab") === "acompanhamento") { carregarAcompanhamento(); }
   });
 });
 
@@ -1407,6 +1427,124 @@ painelVendas.render();
 renderGraficoFaturamento();
 renderResumoFaturamento();
 renderPremiacao();
+
+function listaConsultorasPorSupervisora(){
+  var mapa = {};
+  var vistos = {};
+  DATA.forEach(function(d){
+    var sup = d.supervisora || "Sem supervisora";
+    var key = sup + "|" + norm(d.revendedora);
+    if (vistos[key]) { return; }
+    vistos[key] = true;
+    if (!mapa[sup]) { mapa[sup] = []; }
+    mapa[sup].push({ nome: d.revendedora, cidade: d.cidade });
+  });
+  Object.keys(mapa).forEach(function(sup){
+    mapa[sup].sort(function(a, b){ return a.nome.localeCompare(b.nome); });
+  });
+  return mapa;
+}
+
+function definicaoSemanasDoMes(){
+  var agora = new Date();
+  var ano = agora.getFullYear();
+  var mesIdx = agora.getMonth();
+  var ultimoDia = new Date(ano, mesIdx + 1, 0).getDate();
+  var faixas = [[1, 7], [8, 14], [15, 21], [22, ultimoDia]];
+  return faixas.map(function(f, i){
+    return { label: "Semana " + (i + 1) + " (" + f[0] + " a " + f[1] + ")" };
+  });
+}
+
+var ACOMP_SEMANAS = definicaoSemanasDoMes();
+var acompDados = { assuntos: ["", "", "", ""], marcas: {} };
+var acompBusca = document.getElementById("acomp-busca");
+var acompCarregado = false;
+
+async function carregarAcompanhamento(){
+  document.getElementById("acomp-status").textContent = "Carregando...";
+  try {
+    var resp = await fetch("/api/acompanhamento", { cache: "no-store" });
+    if (!resp.ok) { throw new Error("Falha ao buscar (" + resp.status + ")"); }
+    var payload = await resp.json();
+    acompDados = { assuntos: payload.assuntos || ["", "", "", ""], marcas: payload.marcas || {} };
+    document.getElementById("acomp-status").textContent = "";
+    acompCarregado = true;
+    renderAcompanhamentoTabela();
+  } catch (e) {
+    document.getElementById("acomp-status").textContent = "Não foi possível carregar o acompanhamento agora. Tente novamente.";
+  }
+}
+
+async function salvarAssuntoSemana(idx, valor){
+  try {
+    await fetch("/api/acompanhamento", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tipo: "assunto", semanaIndex: idx, valor: valor })
+    });
+  } catch (e) {
+    document.getElementById("acomp-status").textContent = "Erro ao salvar o assunto. Tente de novo.";
+  }
+}
+
+async function salvarMarca(consultora, idx, valor){
+  if (!acompDados.marcas[consultora]) { acompDados.marcas[consultora] = [false, false, false, false]; }
+  acompDados.marcas[consultora][idx] = valor;
+  try {
+    await fetch("/api/acompanhamento", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ tipo: "marca", semanaIndex: idx, consultora: consultora, valor: valor })
+    });
+  } catch (e) {
+    document.getElementById("acomp-status").textContent = "Erro ao salvar a marcação. Tente de novo.";
+  }
+}
+
+function renderAcompanhamentoTabela(){
+  var termo = norm(acompBusca.value);
+  var grupos = listaConsultorasPorSupervisora();
+  var html = "<table class=\"historico-table acomp-table\"><thead><tr><th>Consultora</th>";
+  ACOMP_SEMANAS.forEach(function(s, i){
+    html += "<th>" + s.label + "<br><input type=\"text\" class=\"col-search acomp-assunto\" data-idx=\"" + i + "\" placeholder=\"Assunto da semana\" value=\"" + escapeAttr(acompDados.assuntos[i] || "") + "\"></th>";
+  });
+  html += "</tr></thead><tbody>";
+
+  var supervisoras = Object.keys(grupos).sort();
+  supervisoras.forEach(function(sup){
+    var consultoras = grupos[sup].filter(function(c){ return !termo || norm(c.nome).indexOf(termo) >= 0; });
+    if (consultoras.length === 0) { return; }
+    html += "<tr class=\"acomp-grupo\"><td colspan=\"5\">" + sup + "</td></tr>";
+    consultoras.forEach(function(c){
+      var marcas = acompDados.marcas[c.nome] || [false, false, false, false];
+      html += "<tr><td>" + c.nome + (c.cidade ? " <span class=\"cidade-col\">· " + c.cidade + "</span>" : "") + "</td>";
+      for (var i = 0; i < 4; i++){
+        var checked = marcas[i] ? " checked" : "";
+        html += "<td><input type=\"checkbox\" class=\"acomp-check\" data-consultora=\"" + escapeAttr(c.nome) + "\" data-idx=\"" + i + "\"" + checked + "></td>";
+      }
+      html += "</tr>";
+    });
+  });
+  html += "</tbody></table>";
+  document.getElementById("acomp-tabela").innerHTML = html;
+
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-assunto")).forEach(function(el){
+    el.addEventListener("change", function(){
+      var idx = parseInt(el.getAttribute("data-idx"), 10);
+      acompDados.assuntos[idx] = el.value;
+      salvarAssuntoSemana(idx, el.value);
+    });
+  });
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-check")).forEach(function(el){
+    el.addEventListener("change", function(){
+      var idx = parseInt(el.getAttribute("data-idx"), 10);
+      var consultora = el.getAttribute("data-consultora");
+      salvarMarca(consultora, idx, el.checked);
+    });
+  });
+}
+acompBusca.addEventListener("input", renderAcompanhamentoTabela);
 
 function listaSupervisoras(){
   var set = {};
