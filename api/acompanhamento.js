@@ -48,6 +48,7 @@ export default async function handler(req, res) {
       const body = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
       const raw = await redis.get(key);
       const dados = raw ? JSON.parse(raw) : { linhas: {} };
+      if (!dados.linhas || typeof dados.linhas !== "object") { dados.linhas = {}; }
       const codigo = String(body.codigo || "").trim();
       if (!codigo) {
         res.status(400).json({ error: "codigo obrigatorio" });
