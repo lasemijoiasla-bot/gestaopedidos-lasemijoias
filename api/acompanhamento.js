@@ -16,9 +16,19 @@ function mesAtualSaoPaulo() {
   return str.slice(0, 7);
 }
 
-function estadoVazio() {
-  return { assuntos: ["", "", "", ""], marcas: {} };
+function linhaVazia() {
+  return {
+    situacaoPg: "",
+    pedidoProximoMes: "",
+    responsavelMontagem: "",
+    checklist: "",
+    semanas: ["", "", "", ""],
+    obs: "",
+  };
 }
+
+const CAMPOS_TEXTO = ["pedidoProximoMes", "obs"];
+const CAMPOS_SELECT = ["situacaoPg", "responsavelMontagem", "checklist"];
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
@@ -29,35 +39,38 @@ export default async function handler(req, res) {
 
     if (req.method === "GET") {
       const raw = await redis.get(key);
-      const dados = raw ? JSON.parse(raw) : estadoVazio();
-      res.status(200).json({ mes, assuntos: dados.assuntos, marcas: dados.marcas });
+      const dados = raw ? JSON.parse(raw) : { linhas: {} };
+      res.status(200).json({ mes, linhas: dados.linhas || {} });
       return;
     }
 
     if (req.method === "POST") {
       const body = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
       const raw = await redis.get(key);
-      const dados = raw ? JSON.parse(raw) : estadoVazio();
+      const dados = raw ? JSON.parse(raw) : { linhas: {} };
+      const codigo = String(body.codigo || "").trim();
+      if (!codigo) {
+        res.status(400).json({ error: "codigo obrigatorio" });
+        return;
+      }
+      if (!dados.linhas[codigo]) { dados.linhas[codigo] = linhaVazia(); }
 
-      if (body.tipo === "assunto") {
+      if (body.campo === "semana") {
         const idx = parseInt(body.semanaIndex, 10);
         if (idx >= 0 && idx <= 3) {
-          dados.assuntos[idx] = String(body.valor || "").slice(0, 200);
+          dados.linhas[codigo].semanas[idx] = String(body.valor || "").slice(0, 60);
         }
-      } else if (body.tipo === "marca") {
-        const idx = parseInt(body.semanaIndex, 10);
-        const consultora = String(body.consultora || "").trim();
-        if (consultora && idx >= 0 && idx <= 3) {
-          if (!dados.marcas[consultora]) { dados.marcas[consultora] = [false, false, false, false]; }
-          dados.marcas[consultora][idx] = !!body.valor;
-        }
+      } else if (CAMPOS_TEXTO.indexOf(body.campo) >= 0) {
+        dados.linhas[codigo][body.campo] = String(body.valor || "").slice(0, 300);
+      } else if (CAMPOS_SELECT.indexOf(body.campo) >= 0) {
+        dados.linhas[codigo][body.campo] = String(body.valor || "").slice(0, 60);
       } else {
-        res.status(400).json({ error: "tipo invalido" });
+        res.status(400).json({ error: "campo invalido" });
         return;
       }
 
       await redis.set(key, JSON.stringify(dados));
-      res.status(200).json({ mes, assuntos: dados.assuntos, marcas: dados.marcas });
+      res.status(200).json({ mes, linhas: dados.linhas });
       return;
     }
 

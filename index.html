@@ -39,12 +39,11 @@
   .historico-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 14px; }
   .tabela-scroll { overflow-x: auto; }
   .tabela-scroll .historico-table { min-width: 760px; }
-  .acomp-table th, .acomp-table td { text-align: center; }
+  .acomp-table { min-width: 1500px; }
+  .acomp-table th, .acomp-table td { text-align: center; white-space: nowrap; font-size: 11px; padding: 4px 6px; }
   .acomp-table th:first-child, .acomp-table td:first-child { text-align: left; }
-  .acomp-table th { vertical-align: top; padding-top: 8px; }
-  .acomp-assunto { width: 100%; margin-top: 6px; font-size: 11px; padding: 4px 6px; box-sizing: border-box; }
-  .acomp-table .acomp-grupo td { background: var(--surface-2); font-weight: 600; text-align: left; }
-  .acomp-table input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+  .acomp-table thead tr:first-child th { background: var(--surface-2); font-weight: 700; text-align: center; }
+  .acomp-table select, .acomp-table input[type="text"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
   .historico-table th, .historico-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
   .historico-table th:first-child, .historico-table td:first-child { text-align: left; }
   .historico-table th { color: var(--text-muted); font-weight: 600; }
@@ -444,19 +443,17 @@
   <div id="tab-acompanhamento" class="tab-content">
     <div class="chart-card">
       <div class="chart-header">
-        <p class="chart-title">Acompanhamento de Contatos - Supervisoras</p>
+        <p class="chart-title">Acompanhamento - Consultoras</p>
       </div>
-      <p class="vendas-subtitulo">Semanas do mês atual. Escreva o assunto de cada semana e marque quando a supervisora confirmar o contato com a consultora.</p>
       <div class="historico-filters">
+        <div class="header-filter">
+          <label for="acomp-mes-select">Mês</label>
+          <select id="acomp-mes-select" class="col-search"></select>
+        </div>
         <div class="header-filter">
           <label for="acomp-supervisora-select">Supervisora</label>
           <select id="acomp-supervisora-select" class="col-search"><option value="">Todas as supervisoras</option></select>
         </div>
-      </div>
-      <div class="historico-metric-filter">
-        <span class="metric-filter-label">Pedidos:</span>
-        <label><input type="radio" name="acomp-filtro-mes" value="mes" checked> Só com acerto neste mês</label>
-        <label><input type="radio" name="acomp-filtro-mes" value="todos"> Todas as consultoras</label>
       </div>
       <p class="vendas-subtitulo" id="acomp-resumo"></p>
       <input type="text" class="col-search" id="acomp-busca" placeholder="Buscar consultora...">
@@ -1440,39 +1437,14 @@ renderGraficoFaturamento();
 renderResumoFaturamento();
 renderPremiacao();
 
-function listaConsultorasPorSupervisora(){
-  var mapa = {};
-  var vistos = {};
-  DATA.forEach(function(d){
-    var sup = d.supervisora || "Sem supervisora";
-    var key = sup + "|" + norm(d.revendedora);
-    if (vistos[key]) { return; }
-    vistos[key] = true;
-    if (!mapa[sup]) { mapa[sup] = []; }
-    mapa[sup].push({ nome: d.revendedora, cidade: d.cidade });
-  });
-  Object.keys(mapa).forEach(function(sup){
-    mapa[sup].sort(function(a, b){ return a.nome.localeCompare(b.nome); });
-  });
-  return mapa;
-}
+var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada"];
+var ACOMP_PG_OPCOES = ["", "Pago", "Pendente de pagamento"];
+var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas", "Gestão de metas", "Outros"];
 
-function definicaoSemanasDoMes(){
-  var agora = new Date();
-  var ano = agora.getFullYear();
-  var mesIdx = agora.getMonth();
-  var ultimoDia = new Date(ano, mesIdx + 1, 0).getDate();
-  var faixas = [[1, 7], [8, 14], [15, 21], [22, ultimoDia]];
-  return faixas.map(function(f, i){
-    return { label: "Semana " + (i + 1) + " (" + f[0] + " a " + f[1] + ")" };
-  });
-}
-
-var ACOMP_SEMANAS = definicaoSemanasDoMes();
-var acompDados = { assuntos: ["", "", "", ""], marcas: {} };
-var acompBusca = document.getElementById("acomp-busca");
+var acompMesSelect = document.getElementById("acomp-mes-select");
 var acompSupervisoraSelect = document.getElementById("acomp-supervisora-select");
-var acompFiltroMesEls = Array.prototype.slice.call(document.querySelectorAll('input[name="acomp-filtro-mes"]'));
+var acompBusca = document.getElementById("acomp-busca");
+var acompDados = { linhas: {} };
 var acompCarregado = false;
 
 function primeiroNomeCapitalizado(nomeCompleto){
@@ -1480,138 +1452,175 @@ function primeiroNomeCapitalizado(nomeCompleto){
   return primeiro.charAt(0).toUpperCase() + primeiro.slice(1).toLowerCase();
 }
 
+function definicaoSemanasDoMes(mesChave){
+  var partes = mesChave.split("-");
+  var ano = parseInt(partes[0], 10);
+  var mesIdx = parseInt(partes[1], 10) - 1;
+  var ultimoDia = new Date(ano, mesIdx + 1, 0).getDate();
+  var faixas = [[1, 7], [8, 14], [15, 21], [22, ultimoDia]];
+  return faixas.map(function(f, i){
+    return { label: (i + 1) + "ª Semana (" + f[0] + " a " + f[1] + ")" };
+  });
+}
+
+function mesesAcompDisponiveis(){
+  var set = {};
+  DATA.forEach(function(d){ var m = mesAcertoKey(d.dataAcerto); if (m) { set[m] = true; } });
+  set[mesAtualPadrao()] = true;
+  return Object.keys(set).sort();
+}
+
+function populateAcompMesSelect(){
+  var meses = mesesAcompDisponiveis();
+  var valorAtual = acompMesSelect.value || mesAtualPadrao();
+  acompMesSelect.innerHTML = "";
+  meses.forEach(function(m){
+    var partes = m.split("-");
+    var opt = document.createElement("option");
+    opt.value = m;
+    opt.textContent = monthNamesCurto[parseInt(partes[1], 10) - 1] + "/" + partes[0];
+    acompMesSelect.appendChild(opt);
+  });
+  acompMesSelect.value = meses.indexOf(valorAtual) >= 0 ? valorAtual : mesAtualPadrao();
+}
+
 function populateAcompSupervisoraSelect(){
-  var grupos = listaConsultorasPorSupervisora();
-  var supervisoras = Object.keys(grupos).sort();
+  var lista = listaSupervisoras();
   var valorAtual = acompSupervisoraSelect.value;
   acompSupervisoraSelect.innerHTML = "<option value=\"\">Todas as supervisoras</option>";
-  supervisoras.forEach(function(sup){
+  lista.forEach(function(nome){
     var opt = document.createElement("option");
-    opt.value = sup;
-    opt.textContent = sup;
+    opt.value = nome;
+    opt.textContent = nome;
     acompSupervisoraSelect.appendChild(opt);
   });
-  acompSupervisoraSelect.value = supervisoras.indexOf(valorAtual) >= 0 ? valorAtual : "";
+  acompSupervisoraSelect.value = lista.indexOf(valorAtual) >= 0 ? valorAtual : "";
+}
+
+function linhaAcompVazia(){
+  return { situacaoPg: "", pedidoProximoMes: "", responsavelMontagem: "", checklist: "", semanas: ["", "", "", ""], obs: "" };
 }
 
 async function carregarAcompanhamento(){
   document.getElementById("acomp-status").textContent = "Carregando...";
+  populateAcompMesSelect();
+  populateAcompSupervisoraSelect();
+  var mes = acompMesSelect.value || mesAtualPadrao();
   try {
-    var resp = await fetch("/api/acompanhamento", { cache: "no-store" });
+    var resp = await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), { cache: "no-store" });
     if (!resp.ok) { throw new Error("Falha ao buscar (" + resp.status + ")"); }
     var payload = await resp.json();
-    acompDados = { assuntos: payload.assuntos || ["", "", "", ""], marcas: payload.marcas || {} };
+    acompDados = { linhas: payload.linhas || {} };
     document.getElementById("acomp-status").textContent = "";
     acompCarregado = true;
-    populateAcompSupervisoraSelect();
     renderAcompanhamentoTabela();
   } catch (e) {
     document.getElementById("acomp-status").textContent = "Não foi possível carregar o acompanhamento agora. Tente novamente.";
   }
 }
 
-async function salvarAssuntoSemana(idx, valor){
+async function salvarCampoAcomp(codigo, campo, valor, semanaIndex){
+  var body = { codigo: codigo, campo: campo, valor: valor };
+  if (semanaIndex !== undefined) { body.semanaIndex = semanaIndex; }
+  var mes = acompMesSelect.value || mesAtualPadrao();
   try {
-    await fetch("/api/acompanhamento", {
+    await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tipo: "assunto", semanaIndex: idx, valor: valor })
+      body: JSON.stringify(body)
     });
   } catch (e) {
-    document.getElementById("acomp-status").textContent = "Erro ao salvar o assunto. Tente de novo.";
+    document.getElementById("acomp-status").textContent = "Erro ao salvar. Tente de novo.";
   }
 }
 
-async function salvarMarca(consultora, idx, valor){
-  if (!acompDados.marcas[consultora]) { acompDados.marcas[consultora] = [false, false, false, false]; }
-  acompDados.marcas[consultora][idx] = valor;
-  try {
-    await fetch("/api/acompanhamento", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ tipo: "marca", semanaIndex: idx, consultora: consultora, valor: valor })
-    });
-  } catch (e) {
-    document.getElementById("acomp-status").textContent = "Erro ao salvar a marcação. Tente de novo.";
-  }
+function construirOpcoesAcomp(opcoes, valorAtual){
+  return opcoes.map(function(op){
+    var sel = op === valorAtual ? " selected" : "";
+    var label = op === "" ? "-" : op;
+    return "<option value=\"" + escapeAttr(op) + "\"" + sel + ">" + escapeAttr(label) + "</option>";
+  }).join("");
 }
 
 function renderAcompanhamentoTabela(){
   var termo = norm(acompBusca.value);
   var supervisoraFiltro = acompSupervisoraSelect.value;
-  var filtroMesEl = acompFiltroMesEls.filter(function(el){ return el.checked; })[0];
-  var soMesAtual = !filtroMesEl || filtroMesEl.value === "mes";
-  var mesAtual = mesAtualPadrao();
+  var mes = acompMesSelect.value || mesAtualPadrao();
+  var semanas = definicaoSemanasDoMes(mes);
 
-  var comAcertoEsteMes = {};
-  DATA.forEach(function(d){
-    if (mesAcertoKey(d.dataAcerto) === mesAtual) { comAcertoEsteMes[d.revendedora] = true; }
-  });
+  var linhasPedidos = DATA.filter(function(d){ return mesAcertoKey(d.dataAcerto) === mes; });
+  if (supervisoraFiltro) { linhasPedidos = linhasPedidos.filter(function(d){ return d.supervisora === supervisoraFiltro; }); }
+  if (termo) { linhasPedidos = linhasPedidos.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }); }
+  linhasPedidos.sort(function(a, b){ return a.revendedora.localeCompare(b.revendedora); });
 
-  var grupos = listaConsultorasPorSupervisora();
-  var html = "<table class=\"historico-table acomp-table\"><thead><tr><th>Consultora</th>";
-  ACOMP_SEMANAS.forEach(function(s, i){
-    html += "<th>" + s.label + "<br><input type=\"text\" class=\"col-search acomp-assunto\" data-idx=\"" + i + "\" placeholder=\"Assunto da semana\" value=\"" + escapeAttr(acompDados.assuntos[i] || "") + "\"></th>";
-  });
+  var responsaveis = listaSupervisoras().concat(["Kathlyn"]);
+
+  var html = "<table class=\"historico-table acomp-table\"><thead><tr>"
+    + "<th colspan=\"5\">Dados</th><th colspan=\"4\">Montagem</th><th colspan=\"4\">Acompanhamento</th><th rowspan=\"2\">Obs</th>"
+    + "</tr><tr>"
+    + "<th>Consultora</th><th>Nível</th><th>Supervisora</th><th>Pedido mês atual</th><th>Data acerto</th>"
+    + "<th>Situação PG</th><th>Pedido próximo mês</th><th>Responsável montagem</th><th>Chek list</th>";
+  semanas.forEach(function(s){ html += "<th>" + s.label + "</th>"; });
   html += "</tr></thead><tbody>";
 
-  var supervisoras = Object.keys(grupos).sort();
-  if (supervisoraFiltro) { supervisoras = supervisoras.filter(function(s){ return s === supervisoraFiltro; }); }
-
-  var totalConsultoras = 0;
-  var feitoPorSemana = [0, 0, 0, 0];
-
-  supervisoras.forEach(function(sup){
-    var primeiroNome = primeiroNomeCapitalizado(sup);
-    var consultoras = grupos[sup].filter(function(c){
-      if (termo && norm(c.nome).indexOf(termo) < 0) { return false; }
-      if (soMesAtual && !comAcertoEsteMes[c.nome]) { return false; }
-      return true;
-    });
-    if (consultoras.length === 0) { return; }
-    html += "<tr class=\"acomp-grupo\"><td colspan=\"5\">" + sup + "</td></tr>";
-    consultoras.forEach(function(c){
-      totalConsultoras++;
-      var marcas = acompDados.marcas[c.nome] || [false, false, false, false];
-      for (var i = 0; i < 4; i++){ if (marcas[i]) { feitoPorSemana[i]++; } }
-      html += "<tr><td>" + primeiroNome + " - " + c.nome + (c.cidade ? " <span class=\"cidade-col\">· " + c.cidade + "</span>" : "") + "</td>";
-      for (var j = 0; j < 4; j++){
-        var checked = marcas[j] ? " checked" : "";
-        html += "<td><input type=\"checkbox\" class=\"acomp-check\" data-consultora=\"" + escapeAttr(c.nome) + "\" data-idx=\"" + j + "\"" + checked + "></td>";
-      }
-      html += "</tr>";
-    });
+  linhasPedidos.forEach(function(d){
+    var codigo = String(d.codigo);
+    var linha = acompDados.linhas[codigo] || linhaAcompVazia();
+    var primeiroNomeSup = d.supervisora ? primeiroNomeCapitalizado(d.supervisora) : "-";
+    html += "<tr>";
+    html += "<td>" + escapeAttr(d.revendedora) + "</td>";
+    html += "<td><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span></td>";
+    html += "<td>" + primeiroNomeSup + "</td>";
+    html += "<td>#" + d.codigo + " · " + fmt(d.valorTotal) + "</td>";
+    html += "<td>" + d.dataAcerto + "</td>";
+    html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"situacaoPg\">" + construirOpcoesAcomp(ACOMP_PG_OPCOES, linha.situacaoPg) + "</select></td>";
+    html += "<td><input type=\"text\" class=\"acomp-campo-texto\" data-codigo=\"" + codigo + "\" data-campo=\"pedidoProximoMes\" value=\"" + escapeAttr(linha.pedidoProximoMes) + "\"></td>";
+    html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"responsavelMontagem\">" + construirOpcoesAcomp([""].concat(responsaveis), linha.responsavelMontagem) + "</select></td>";
+    html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"checklist\">" + construirOpcoesAcomp(ACOMP_CHECKLIST_OPCOES, linha.checklist) + "</select></td>";
+    for (var i = 0; i < 4; i++){
+      html += "<td><select class=\"acomp-campo-semana\" data-codigo=\"" + codigo + "\" data-idx=\"" + i + "\">" + construirOpcoesAcomp(ACOMP_SEMANA_OPCOES, linha.semanas[i]) + "</select></td>";
+    }
+    html += "<td><input type=\"text\" class=\"acomp-campo-texto\" data-codigo=\"" + codigo + "\" data-campo=\"obs\" value=\"" + escapeAttr(linha.obs) + "\"></td>";
+    html += "</tr>";
   });
   html += "</tbody></table>";
   document.getElementById("acomp-tabela").innerHTML = html;
 
   var resumoEl = document.getElementById("acomp-resumo");
-  if (totalConsultoras === 0) {
-    resumoEl.textContent = "Nenhuma consultora encontrada com esses filtros.";
-  } else {
-    resumoEl.textContent = totalConsultoras + (totalConsultoras === 1 ? " consultora" : " consultoras") + " — "
-      + ACOMP_SEMANAS.map(function(s, i){ return "Sem." + (i + 1) + ": " + feitoPorSemana[i] + "/" + totalConsultoras; }).join(" · ");
-  }
+  var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent : mes;
+  resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + " para " + mesLabel + ".";
 
-  Array.prototype.slice.call(document.querySelectorAll(".acomp-assunto")).forEach(function(el){
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-campo")).forEach(function(el){
     el.addEventListener("change", function(){
-      var idx = parseInt(el.getAttribute("data-idx"), 10);
-      acompDados.assuntos[idx] = el.value;
-      salvarAssuntoSemana(idx, el.value);
+      var codigo = el.getAttribute("data-codigo");
+      var campo = el.getAttribute("data-campo");
+      if (!acompDados.linhas[codigo]) { acompDados.linhas[codigo] = linhaAcompVazia(); }
+      acompDados.linhas[codigo][campo] = el.value;
+      salvarCampoAcomp(codigo, campo, el.value);
     });
   });
-  Array.prototype.slice.call(document.querySelectorAll(".acomp-check")).forEach(function(el){
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-campo-texto")).forEach(function(el){
     el.addEventListener("change", function(){
+      var codigo = el.getAttribute("data-codigo");
+      var campo = el.getAttribute("data-campo");
+      if (!acompDados.linhas[codigo]) { acompDados.linhas[codigo] = linhaAcompVazia(); }
+      acompDados.linhas[codigo][campo] = el.value;
+      salvarCampoAcomp(codigo, campo, el.value);
+    });
+  });
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-campo-semana")).forEach(function(el){
+    el.addEventListener("change", function(){
+      var codigo = el.getAttribute("data-codigo");
       var idx = parseInt(el.getAttribute("data-idx"), 10);
-      var consultora = el.getAttribute("data-consultora");
-      salvarMarca(consultora, idx, el.checked);
-      renderAcompanhamentoTabela();
+      if (!acompDados.linhas[codigo]) { acompDados.linhas[codigo] = linhaAcompVazia(); }
+      acompDados.linhas[codigo].semanas[idx] = el.value;
+      salvarCampoAcomp(codigo, "semana", el.value, idx);
     });
   });
 }
 acompBusca.addEventListener("input", renderAcompanhamentoTabela);
 acompSupervisoraSelect.addEventListener("change", renderAcompanhamentoTabela);
-acompFiltroMesEls.forEach(function(el){ el.addEventListener("change", renderAcompanhamentoTabela); });
+acompMesSelect.addEventListener("change", carregarAcompanhamento);
 
 function listaSupervisoras(){
   var set = {};
