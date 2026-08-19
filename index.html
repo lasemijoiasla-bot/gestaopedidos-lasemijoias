@@ -46,6 +46,15 @@
   .acomp-table select, .acomp-table input[type="text"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
   .acomp-table .acomp-divider { border-right: 2px solid var(--text-secondary); }
   .badge-baixado { background: rgba(26, 156, 134, 0.14); color: #1a9c86; }
+  .acomp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .acomp-actions #acomp-busca { flex: 1; min-width: 180px; margin: 0; }
+  @media print {
+    .tabs-nav, .historico-filters, #acomp-busca, #acomp-btn-imprimir, #acomp-btn-excel, #acomp-status { display: none !important; }
+    .acomp-table { min-width: 0 !important; width: 100%; font-size: 9px; }
+    .acomp-table th, .acomp-table td { padding: 2px 3px; white-space: normal; }
+    .tabela-scroll { overflow: visible !important; }
+    @page { size: landscape; margin: 10mm; }
+  }
   .historico-table th, .historico-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
   .historico-table th:first-child, .historico-table td:first-child { text-align: left; }
   .historico-table th { color: var(--text-muted); font-weight: 600; }
@@ -463,9 +472,21 @@
             <option value="nome">Nome da consultora (A-Z)</option>
           </select>
         </div>
+        <div class="header-filter">
+          <label for="acomp-data-de">Data de acerto - de</label>
+          <input type="date" class="col-search" id="acomp-data-de">
+        </div>
+        <div class="header-filter">
+          <label for="acomp-data-ate">Data de acerto - até</label>
+          <input type="date" class="col-search" id="acomp-data-ate">
+        </div>
       </div>
       <p class="vendas-subtitulo" id="acomp-resumo"></p>
-      <input type="text" class="col-search" id="acomp-busca" placeholder="Buscar consultora...">
+      <div class="acomp-actions">
+        <input type="text" class="col-search" id="acomp-busca" placeholder="Buscar consultora...">
+        <button type="button" id="acomp-btn-imprimir" onclick="imprimirAcompanhamento()">🖨️ Imprimir / PDF</button>
+        <button type="button" id="acomp-btn-excel" onclick="exportarAcompExcel()">📊 Exportar Excel</button>
+      </div>
       <p class="vendas-subtitulo" id="acomp-status"></p>
       <div class="tabela-scroll" id="acomp-tabela"></div>
     </div>
@@ -1454,9 +1475,12 @@ var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas"
 var acompMesSelect = document.getElementById("acomp-mes-select");
 var acompSupervisoraSelect = document.getElementById("acomp-supervisora-select");
 var acompOrdemSelect = document.getElementById("acomp-ordem-select");
+var acompDataDe = document.getElementById("acomp-data-de");
+var acompDataAte = document.getElementById("acomp-data-ate");
 var acompBusca = document.getElementById("acomp-busca");
 var acompDados = { linhas: {} };
 var acompCarregado = false;
+var acompLinhasVisiveis = [];
 
 function todosPedidosAcompanhamento(){
   var vistos = {};
@@ -1464,6 +1488,12 @@ function todosPedidosAcompanhamento(){
   DATA.forEach(function(d){ vistos[d.codigo] = true; lista.push(d); });
   DATA_BAIXADOS.forEach(function(d){ if (!vistos[d.codigo]) { vistos[d.codigo] = true; lista.push(d); } });
   return lista;
+}
+
+function dataBRParaISO(dataStr){
+  var partes = (dataStr || "").split("/");
+  if (partes.length !== 3) { return null; }
+  return partes[2] + "-" + partes[1] + "-" + partes[0];
 }
 
 function primeiroNomeCapitalizado(nomeCompleto){
@@ -1567,9 +1597,14 @@ function renderAcompanhamentoTabela(){
   var mes = acompMesSelect.value || mesAtualPadrao();
   var semanas = definicaoSemanasDoMes(mes);
 
+  var deVal = acompDataDe.value;
+  var ateVal = acompDataAte.value;
+
   var linhasPedidos = todosPedidosAcompanhamento().filter(function(d){ return mesAcertoKey(d.dataAcerto) === mes; });
   if (supervisoraFiltro) { linhasPedidos = linhasPedidos.filter(function(d){ return d.supervisora === supervisoraFiltro; }); }
   if (termo) { linhasPedidos = linhasPedidos.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0; }); }
+  if (deVal) { linhasPedidos = linhasPedidos.filter(function(d){ var iso = dataBRParaISO(d.dataAcerto); return iso && iso >= deVal; }); }
+  if (ateVal) { linhasPedidos = linhasPedidos.filter(function(d){ var iso = dataBRParaISO(d.dataAcerto); return iso && iso <= ateVal; }); }
   var ordem = acompOrdemSelect ? acompOrdemSelect.value : "data";
   if (ordem === "nome") {
     linhasPedidos.sort(function(a, b){ return a.revendedora.localeCompare(b.revendedora); });
@@ -1581,6 +1616,7 @@ function renderAcompanhamentoTabela(){
     });
   }
 
+  acompLinhasVisiveis = linhasPedidos;
   var responsaveis = listaSupervisoras().concat(["Kathlyn"]);
 
   var html = "<table class=\"historico-table acomp-table\"><thead><tr>"
@@ -1617,7 +1653,11 @@ function renderAcompanhamentoTabela(){
 
   var resumoEl = document.getElementById("acomp-resumo");
   var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent : mes;
-  resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + " para " + mesLabel + ".";
+  var periodoTexto = "";
+  if (deVal || ateVal) {
+    periodoTexto = " (acerto de " + (deVal ? deVal.split("-").reverse().join("/") : "início") + " até " + (ateVal ? ateVal.split("-").reverse().join("/") : "fim") + ")";
+  }
+  resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + " para " + mesLabel + periodoTexto + ".";
 
   Array.prototype.slice.call(document.querySelectorAll(".acomp-campo")).forEach(function(el){
     el.addEventListener("change", function(){
@@ -1650,7 +1690,59 @@ function renderAcompanhamentoTabela(){
 acompBusca.addEventListener("input", renderAcompanhamentoTabela);
 acompSupervisoraSelect.addEventListener("change", renderAcompanhamentoTabela);
 acompOrdemSelect.addEventListener("change", renderAcompanhamentoTabela);
+acompDataDe.addEventListener("change", renderAcompanhamentoTabela);
+acompDataAte.addEventListener("change", renderAcompanhamentoTabela);
 acompMesSelect.addEventListener("change", carregarAcompanhamento);
+
+function imprimirAcompanhamento(){
+  window.print();
+}
+
+function csvEscapeAcomp(v){
+  var s = (v === null || v === undefined) ? "" : String(v);
+  s = s.replace(/"/g, "\"\"");
+  if (/[;"\n]/.test(s)) { s = "\"" + s + "\""; }
+  return s;
+}
+
+function exportarAcompExcel(){
+  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Pedido próximo mês", "Responsável montagem", "Chek list", "1ª Semana", "2ª Semana", "3ª Semana", "4ª Semana", "Obs"];
+  var linhasCsv = [cols.join(";")];
+  acompLinhasVisiveis.forEach(function(d){
+    var codigo = String(d.codigo);
+    var linha = acompDados.linhas[codigo] || linhaAcompVazia();
+    var row = [
+      d.revendedora,
+      nivelLabel(d.nivel),
+      d.supervisora || "-",
+      "#" + d.codigo + " - " + fmt(d.valorTotal),
+      d.status === "baixado" ? "Baixado" : "Aberto",
+      d.dataAcerto,
+      linha.situacaoPg || "-",
+      linha.pedidoProximoMes || "",
+      linha.responsavelMontagem || "-",
+      linha.checklist || "-",
+      linha.semanas[0] || "-",
+      linha.semanas[1] || "-",
+      linha.semanas[2] || "-",
+      linha.semanas[3] || "-",
+      linha.obs || ""
+    ];
+    linhasCsv.push(row.map(csvEscapeAcomp).join(";"));
+  });
+  var bomChar = String.fromCharCode(65279);
+  var csvContent = bomChar + linhasCsv.join("\r\n");
+  var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent.replace("/", "-") : "acompanhamento";
+  a.href = url;
+  a.download = "acompanhamento_" + mesLabel + ".csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
 
 function listaSupervisoras(){
   var set = {};
