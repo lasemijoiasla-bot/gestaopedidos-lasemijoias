@@ -447,6 +447,18 @@
         <p class="chart-title">Acompanhamento de Contatos - Supervisoras</p>
       </div>
       <p class="vendas-subtitulo">Semanas do mês atual. Escreva o assunto de cada semana e marque quando a supervisora confirmar o contato com a consultora.</p>
+      <div class="historico-filters">
+        <div class="header-filter">
+          <label for="acomp-supervisora-select">Supervisora</label>
+          <select id="acomp-supervisora-select" class="col-search"><option value="">Todas as supervisoras</option></select>
+        </div>
+      </div>
+      <div class="historico-metric-filter">
+        <span class="metric-filter-label">Pedidos:</span>
+        <label><input type="radio" name="acomp-filtro-mes" value="mes" checked> Só com acerto neste mês</label>
+        <label><input type="radio" name="acomp-filtro-mes" value="todos"> Todas as consultoras</label>
+      </div>
+      <p class="vendas-subtitulo" id="acomp-resumo"></p>
       <input type="text" class="col-search" id="acomp-busca" placeholder="Buscar consultora...">
       <p class="vendas-subtitulo" id="acomp-status"></p>
       <div class="tabela-scroll" id="acomp-tabela"></div>
@@ -1459,7 +1471,28 @@ function definicaoSemanasDoMes(){
 var ACOMP_SEMANAS = definicaoSemanasDoMes();
 var acompDados = { assuntos: ["", "", "", ""], marcas: {} };
 var acompBusca = document.getElementById("acomp-busca");
+var acompSupervisoraSelect = document.getElementById("acomp-supervisora-select");
+var acompFiltroMesEls = Array.prototype.slice.call(document.querySelectorAll('input[name="acomp-filtro-mes"]'));
 var acompCarregado = false;
+
+function primeiroNomeCapitalizado(nomeCompleto){
+  var primeiro = (nomeCompleto || "").trim().split(/\s+/)[0] || "";
+  return primeiro.charAt(0).toUpperCase() + primeiro.slice(1).toLowerCase();
+}
+
+function populateAcompSupervisoraSelect(){
+  var grupos = listaConsultorasPorSupervisora();
+  var supervisoras = Object.keys(grupos).sort();
+  var valorAtual = acompSupervisoraSelect.value;
+  acompSupervisoraSelect.innerHTML = "<option value=\"\">Todas as supervisoras</option>";
+  supervisoras.forEach(function(sup){
+    var opt = document.createElement("option");
+    opt.value = sup;
+    opt.textContent = sup;
+    acompSupervisoraSelect.appendChild(opt);
+  });
+  acompSupervisoraSelect.value = supervisoras.indexOf(valorAtual) >= 0 ? valorAtual : "";
+}
 
 async function carregarAcompanhamento(){
   document.getElementById("acomp-status").textContent = "Carregando...";
@@ -1470,6 +1503,7 @@ async function carregarAcompanhamento(){
     acompDados = { assuntos: payload.assuntos || ["", "", "", ""], marcas: payload.marcas || {} };
     document.getElementById("acomp-status").textContent = "";
     acompCarregado = true;
+    populateAcompSupervisoraSelect();
     renderAcompanhamentoTabela();
   } catch (e) {
     document.getElementById("acomp-status").textContent = "Não foi possível carregar o acompanhamento agora. Tente novamente.";
@@ -1504,6 +1538,16 @@ async function salvarMarca(consultora, idx, valor){
 
 function renderAcompanhamentoTabela(){
   var termo = norm(acompBusca.value);
+  var supervisoraFiltro = acompSupervisoraSelect.value;
+  var filtroMesEl = acompFiltroMesEls.filter(function(el){ return el.checked; })[0];
+  var soMesAtual = !filtroMesEl || filtroMesEl.value === "mes";
+  var mesAtual = mesAtualPadrao();
+
+  var comAcertoEsteMes = {};
+  DATA.forEach(function(d){
+    if (mesAcertoKey(d.dataAcerto) === mesAtual) { comAcertoEsteMes[d.revendedora] = true; }
+  });
+
   var grupos = listaConsultorasPorSupervisora();
   var html = "<table class=\"historico-table acomp-table\"><thead><tr><th>Consultora</th>";
   ACOMP_SEMANAS.forEach(function(s, i){
@@ -1512,22 +1556,42 @@ function renderAcompanhamentoTabela(){
   html += "</tr></thead><tbody>";
 
   var supervisoras = Object.keys(grupos).sort();
+  if (supervisoraFiltro) { supervisoras = supervisoras.filter(function(s){ return s === supervisoraFiltro; }); }
+
+  var totalConsultoras = 0;
+  var feitoPorSemana = [0, 0, 0, 0];
+
   supervisoras.forEach(function(sup){
-    var consultoras = grupos[sup].filter(function(c){ return !termo || norm(c.nome).indexOf(termo) >= 0; });
+    var primeiroNome = primeiroNomeCapitalizado(sup);
+    var consultoras = grupos[sup].filter(function(c){
+      if (termo && norm(c.nome).indexOf(termo) < 0) { return false; }
+      if (soMesAtual && !comAcertoEsteMes[c.nome]) { return false; }
+      return true;
+    });
     if (consultoras.length === 0) { return; }
     html += "<tr class=\"acomp-grupo\"><td colspan=\"5\">" + sup + "</td></tr>";
     consultoras.forEach(function(c){
+      totalConsultoras++;
       var marcas = acompDados.marcas[c.nome] || [false, false, false, false];
-      html += "<tr><td>" + c.nome + (c.cidade ? " <span class=\"cidade-col\">· " + c.cidade + "</span>" : "") + "</td>";
-      for (var i = 0; i < 4; i++){
-        var checked = marcas[i] ? " checked" : "";
-        html += "<td><input type=\"checkbox\" class=\"acomp-check\" data-consultora=\"" + escapeAttr(c.nome) + "\" data-idx=\"" + i + "\"" + checked + "></td>";
+      for (var i = 0; i < 4; i++){ if (marcas[i]) { feitoPorSemana[i]++; } }
+      html += "<tr><td>" + primeiroNome + " - " + c.nome + (c.cidade ? " <span class=\"cidade-col\">· " + c.cidade + "</span>" : "") + "</td>";
+      for (var j = 0; j < 4; j++){
+        var checked = marcas[j] ? " checked" : "";
+        html += "<td><input type=\"checkbox\" class=\"acomp-check\" data-consultora=\"" + escapeAttr(c.nome) + "\" data-idx=\"" + j + "\"" + checked + "></td>";
       }
       html += "</tr>";
     });
   });
   html += "</tbody></table>";
   document.getElementById("acomp-tabela").innerHTML = html;
+
+  var resumoEl = document.getElementById("acomp-resumo");
+  if (totalConsultoras === 0) {
+    resumoEl.textContent = "Nenhuma consultora encontrada com esses filtros.";
+  } else {
+    resumoEl.textContent = totalConsultoras + (totalConsultoras === 1 ? " consultora" : " consultoras") + " — "
+      + ACOMP_SEMANAS.map(function(s, i){ return "Sem." + (i + 1) + ": " + feitoPorSemana[i] + "/" + totalConsultoras; }).join(" · ");
+  }
 
   Array.prototype.slice.call(document.querySelectorAll(".acomp-assunto")).forEach(function(el){
     el.addEventListener("change", function(){
@@ -1541,10 +1605,13 @@ function renderAcompanhamentoTabela(){
       var idx = parseInt(el.getAttribute("data-idx"), 10);
       var consultora = el.getAttribute("data-consultora");
       salvarMarca(consultora, idx, el.checked);
+      renderAcompanhamentoTabela();
     });
   });
 }
 acompBusca.addEventListener("input", renderAcompanhamentoTabela);
+acompSupervisoraSelect.addEventListener("change", renderAcompanhamentoTabela);
+acompFiltroMesEls.forEach(function(el){ el.addEventListener("change", renderAcompanhamentoTabela); });
 
 function listaSupervisoras(){
   var set = {};
