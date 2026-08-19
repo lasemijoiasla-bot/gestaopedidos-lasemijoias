@@ -1,29 +1,31 @@
 ﻿{
     "mes":  "2026-08",
-    "assuntos":  [
-                     "Falar sobre a promoção de agosto",
-                     "",
-                     "",
-                     ""
-                 ],
-    "marcas":  {
-                   "Alechandra Kely de Melo":  [
-                                                   true,
-                                                   false,
-                                                   false,
-                                                   false
-                                               ],
-                   "ALINY RIBEIRO FELISBINO":  [
-                                                   true,
-                                                   false,
-                                                   false,
-                                                   false
-                                               ],
-                   "AMANDA MEIRELLES CRUZ BATISTA":  [
-                                                         true,
-                                                         false,
-                                                         false,
-                                                         false
-                                                     ]
+    "linhas":  {
+                   "2860":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "9999":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            }
                }
 }
