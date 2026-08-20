@@ -39,6 +39,7 @@
   .historico-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 14px; }
   .tabela-scroll { overflow-x: auto; }
   .acomp-scroll-top { overflow-x: auto; overflow-y: hidden; height: 14px; margin-bottom: 2px; }
+  #acomp-tabela { max-height: 65vh; overflow-y: auto; }
   #acomp-scroll-top-inner { height: 1px; }
   .acomp-table thead th { position: sticky; background: var(--surface-2); z-index: 2; }
   .acomp-table thead tr:first-child th { top: 0; }
@@ -64,6 +65,7 @@
     .acomp-table th, .acomp-table td { padding: 2px 3px; white-space: normal; }
     .acomp-table thead th { position: static !important; }
     .tabela-scroll { overflow: visible !important; }
+    #acomp-tabela { max-height: none !important; }
     @page { size: landscape; margin: 10mm; }
   }
   .historico-table th, .historico-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--border); }
