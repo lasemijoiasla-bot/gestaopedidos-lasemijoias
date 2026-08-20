@@ -1558,7 +1558,7 @@ function dataBRParaISO(dataStr){
 }
 
 function dataReferenciaAcomp(d){
-  return (d.status === "baixado" && d.dataBaixa) ? d.dataBaixa : d.dataAcerto;
+  return d.dataAcerto;
 }
 
 function mesReferenciaAcomp(d){
@@ -1775,7 +1775,7 @@ function renderAcompanhamentoTabela(){
     var codigo = String(d.codigo);
     var linha = acompDados.linhas[codigo] || linhaAcompVazia();
     var primeiroNomeSup = d.supervisora ? primeiroNomeCapitalizado(d.supervisora) : "-";
-    var badgeBaixado = d.status === "baixado" ? " <span class=\"badge badge-baixado\" title=\"Data da baixa\">Baixado" + (d.dataBaixa ? " " + escapeAttr(d.dataBaixa) : "") + "</span>" : "";
+    var badgeBaixado = d.status === "baixado" ? " <span class=\"badge badge-baixado\">Baixado</span>" : "";
     var respAtual = acompResponsaveis[norm(d.revendedora)] || linha.responsavelMontagem || "";
     html += "<tr>";
     html += "<td>" + escapeAttr(d.revendedora) + "</td>";
@@ -1799,7 +1799,7 @@ function renderAcompanhamentoTabela(){
   var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent : mes;
   var periodoTexto = "";
   if (deVal || ateVal) {
-    periodoTexto = " (de " + (deVal ? deVal.split("-").reverse().join("/") : "início") + " até " + (ateVal ? ateVal.split("-").reverse().join("/") : "fim") + ")";
+    periodoTexto = " (acerto de " + (deVal ? deVal.split("-").reverse().join("/") : "início") + " até " + (ateVal ? ateVal.split("-").reverse().join("/") : "fim") + ")";
   }
   resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + " para " + mesLabel + periodoTexto + ".";
 
