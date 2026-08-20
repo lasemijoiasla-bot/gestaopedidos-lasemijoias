@@ -27,8 +27,13 @@ function linhaVazia() {
   };
 }
 
+function normConsultora(nome) {
+  return String(nome || "").toLowerCase();
+}
+
 const CAMPOS_TEXTO = ["pedidoProximoMes", "obs"];
-const CAMPOS_SELECT = ["situacaoPg", "responsavelMontagem", "checklist"];
+const CAMPOS_SELECT = ["situacaoPg", "checklist"];
+const RESPONSAVEIS_KEY = "acompanhamento:responsaveis";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
@@ -40,12 +45,40 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
       const raw = await redis.get(key);
       const dados = raw ? JSON.parse(raw) : { linhas: {} };
-      res.status(200).json({ mes, linhas: dados.linhas || {} });
+      const rawResp = await redis.get(RESPONSAVEIS_KEY);
+      const responsaveis = rawResp ? JSON.parse(rawResp) : {};
+      res.status(200).json({ mes, linhas: dados.linhas || {}, responsaveis: responsaveis || {} });
       return;
     }
 
     if (req.method === "POST") {
       const body = req.body && typeof req.body === "object" ? req.body : JSON.parse(req.body || "{}");
+
+      if (body.campo === "responsavelMontagem") {
+        const consultora = String(body.consultora || "").trim();
+        if (!consultora) {
+          res.status(400).json({ error: "consultora obrigatoria" });
+          return;
+        }
+        const rawResp = await redis.get(RESPONSAVEIS_KEY);
+        const responsaveis = rawResp ? JSON.parse(rawResp) : {};
+        responsaveis[normConsultora(consultora)] = String(body.valor || "").slice(0, 60);
+        await redis.set(RESPONSAVEIS_KEY, JSON.stringify(responsaveis));
+
+        const raw = await redis.get(key);
+        const dados = raw ? JSON.parse(raw) : { linhas: {} };
+        if (!dados.linhas || typeof dados.linhas !== "object") { dados.linhas = {}; }
+        const codigo = String(body.codigo || "").trim();
+        if (codigo) {
+          if (!dados.linhas[codigo]) { dados.linhas[codigo] = linhaVazia(); }
+          dados.linhas[codigo].responsavelMontagem = String(body.valor || "").slice(0, 60);
+          await redis.set(key, JSON.stringify(dados));
+        }
+
+        res.status(200).json({ mes, linhas: dados.linhas, responsaveis });
+        return;
+      }
+
       const raw = await redis.get(key);
       const dados = raw ? JSON.parse(raw) : { linhas: {} };
       if (!dados.linhas || typeof dados.linhas !== "object") { dados.linhas = {}; }

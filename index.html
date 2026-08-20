@@ -1538,6 +1538,7 @@ var acompChecklistSelect = document.getElementById("acomp-checklist-select");
 var acompResponsavelSelect = document.getElementById("acomp-responsavel-select");
 var acompBusca = document.getElementById("acomp-busca");
 var acompDados = { linhas: {} };
+var acompResponsaveis = {};
 var acompCarregado = false;
 var acompLinhasVisiveis = [];
 var acompOcultarDuplicados = false;
@@ -1614,8 +1615,18 @@ function populateAcompSupervisoraSelect(){
   acompSupervisoraSelect.value = lista.indexOf(valorAtual) >= 0 ? valorAtual : "";
 }
 
+function responsaveisMontagemLista(){
+  var vistos = {};
+  var lista = [];
+  listaSupervisoras().concat(["Kathlyn", "Nicolly"]).forEach(function(nome){
+    var primeiro = primeiroNomeCapitalizado(nome);
+    if (!vistos[primeiro]) { vistos[primeiro] = true; lista.push(primeiro); }
+  });
+  return lista.sort();
+}
+
 function populateAcompResponsavelSelect(){
-  var lista = listaSupervisoras().concat(["Kathlyn"]);
+  var lista = responsaveisMontagemLista();
   var valorAtual = acompResponsavelSelect.value;
   acompResponsavelSelect.innerHTML = "<option value=\"\">Todos</option><option value=\"__vazio__\">Não informado</option>";
   lista.forEach(function(nome){
@@ -1642,6 +1653,7 @@ async function carregarAcompanhamento(){
     if (!resp.ok) { throw new Error("Falha ao buscar (" + resp.status + ")"); }
     var payload = await resp.json();
     acompDados = { linhas: payload.linhas || {} };
+    acompResponsaveis = payload.responsaveis || {};
     document.getElementById("acomp-status").textContent = "";
     acompCarregado = true;
     renderAcompanhamentoTabela();
@@ -1653,6 +1665,21 @@ async function carregarAcompanhamento(){
 async function salvarCampoAcomp(codigo, campo, valor, semanaIndex){
   var body = { codigo: codigo, campo: campo, valor: valor };
   if (semanaIndex !== undefined) { body.semanaIndex = semanaIndex; }
+  var mes = acompMesSelect.value || mesAtualPadrao();
+  try {
+    await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+  } catch (e) {
+    document.getElementById("acomp-status").textContent = "Erro ao salvar. Tente de novo.";
+  }
+}
+
+async function salvarResponsavelConsultora(consultora, codigo, valor){
+  acompResponsaveis[norm(consultora)] = valor;
+  var body = { campo: "responsavelMontagem", consultora: consultora, codigo: codigo, valor: valor };
   var mes = acompMesSelect.value || mesAtualPadrao();
   try {
     await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), {
@@ -1707,8 +1734,8 @@ function renderAcompanhamentoTabela(){
   }
   if (responsavelFiltro) {
     linhasPedidos = linhasPedidos.filter(function(d){
-      var linha = acompDados.linhas[String(d.codigo)] || linhaAcompVazia();
-      return responsavelFiltro === "__vazio__" ? !linha.responsavelMontagem : linha.responsavelMontagem === responsavelFiltro;
+      var resp = acompResponsaveis[norm(d.revendedora)] || "";
+      return responsavelFiltro === "__vazio__" ? !resp : resp === responsavelFiltro;
     });
   }
   if (acompOcultarDuplicados) {
@@ -1734,13 +1761,13 @@ function renderAcompanhamentoTabela(){
 
   acompLinhasVisiveis = linhasPedidos;
   renderAcompDashboard(linhasPedidos, semanas);
-  var responsaveis = listaSupervisoras().concat(["Kathlyn"]);
+  var responsaveis = responsaveisMontagemLista();
 
   var html = "<table class=\"historico-table acomp-table\"><thead><tr>"
-    + "<th colspan=\"5\" class=\"acomp-divider\">Dados</th><th colspan=\"4\" class=\"acomp-divider\">Montagem</th><th colspan=\"4\" class=\"acomp-divider\">Acompanhamento</th><th rowspan=\"2\">Obs</th>"
+    + "<th colspan=\"5\" class=\"acomp-divider\">Dados</th><th colspan=\"3\" class=\"acomp-divider\">Montagem</th><th colspan=\"4\" class=\"acomp-divider\">Acompanhamento</th><th rowspan=\"2\">Obs</th>"
     + "</tr><tr>"
     + "<th>Consultora</th><th>Nível</th><th>Supervisora</th><th>Pedido mês atual</th><th class=\"acomp-divider\">Data acerto</th>"
-    + "<th>Situação PG</th><th>Pedido próximo mês</th><th>Responsável montagem</th><th class=\"acomp-divider\">Chek list</th>";
+    + "<th>Situação PG</th><th>Responsável montagem</th><th class=\"acomp-divider\">Chek list</th>";
   semanas.forEach(function(s, i){ html += "<th" + (i === semanas.length - 1 ? " class=\"acomp-divider\"" : "") + ">" + s.label + "</th>"; });
   html += "</tr></thead><tbody>";
 
@@ -1749,6 +1776,7 @@ function renderAcompanhamentoTabela(){
     var linha = acompDados.linhas[codigo] || linhaAcompVazia();
     var primeiroNomeSup = d.supervisora ? primeiroNomeCapitalizado(d.supervisora) : "-";
     var badgeBaixado = d.status === "baixado" ? " <span class=\"badge badge-baixado\" title=\"Data da baixa\">Baixado" + (d.dataBaixa ? " " + escapeAttr(d.dataBaixa) : "") + "</span>" : "";
+    var respAtual = acompResponsaveis[norm(d.revendedora)] || linha.responsavelMontagem || "";
     html += "<tr>";
     html += "<td>" + escapeAttr(d.revendedora) + "</td>";
     html += "<td><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span></td>";
@@ -1756,8 +1784,7 @@ function renderAcompanhamentoTabela(){
     html += "<td>#" + d.codigo + " · " + fmt(d.valorTotal) + badgeBaixado + "</td>";
     html += "<td class=\"acomp-divider\">" + d.dataAcerto + "</td>";
     html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"situacaoPg\">" + construirOpcoesAcomp(ACOMP_PG_OPCOES, linha.situacaoPg) + "</select></td>";
-    html += "<td><input type=\"text\" class=\"acomp-campo-texto\" data-codigo=\"" + codigo + "\" data-campo=\"pedidoProximoMes\" value=\"" + escapeAttr(linha.pedidoProximoMes) + "\"></td>";
-    html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"responsavelMontagem\">" + construirOpcoesAcomp([""].concat(responsaveis), linha.responsavelMontagem) + "</select></td>";
+    html += "<td><select class=\"acomp-campo-responsavel\" data-codigo=\"" + codigo + "\" data-consultora=\"" + escapeAttr(d.revendedora) + "\">" + construirOpcoesAcomp([""].concat(responsaveis), respAtual) + "</select></td>";
     html += "<td class=\"acomp-divider\"><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"checklist\">" + construirOpcoesAcomp(ACOMP_CHECKLIST_OPCOES, linha.checklist) + "</select></td>";
     for (var i = 0; i < 4; i++){
       html += "<td" + (i === 3 ? " class=\"acomp-divider\"" : "") + "><select class=\"acomp-campo-semana\" data-codigo=\"" + codigo + "\" data-idx=\"" + i + "\">" + construirOpcoesAcomp(ACOMP_SEMANA_OPCOES, linha.semanas[i]) + "</select></td>";
@@ -1783,6 +1810,14 @@ function renderAcompanhamentoTabela(){
       if (!acompDados.linhas[codigo]) { acompDados.linhas[codigo] = linhaAcompVazia(); }
       acompDados.linhas[codigo][campo] = el.value;
       salvarCampoAcomp(codigo, campo, el.value);
+    });
+  });
+  Array.prototype.slice.call(document.querySelectorAll(".acomp-campo-responsavel")).forEach(function(el){
+    el.addEventListener("change", function(){
+      var codigo = el.getAttribute("data-codigo");
+      var consultora = el.getAttribute("data-consultora");
+      salvarResponsavelConsultora(consultora, codigo, el.value);
+      renderAcompanhamentoTabela();
     });
   });
   Array.prototype.slice.call(document.querySelectorAll(".acomp-campo-texto")).forEach(function(el){
@@ -1878,7 +1913,7 @@ function csvEscapeAcomp(v){
 }
 
 function exportarAcompExcel(){
-  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Pedido próximo mês", "Responsável montagem", "Chek list", "1ª Semana", "2ª Semana", "3ª Semana", "4ª Semana", "Obs"];
+  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Responsável montagem", "Chek list", "1ª Semana", "2ª Semana", "3ª Semana", "4ª Semana", "Obs"];
   var linhasCsv = [cols.join(";")];
   acompLinhasVisiveis.forEach(function(d){
     var codigo = String(d.codigo);
@@ -1891,8 +1926,7 @@ function exportarAcompExcel(){
       d.status === "baixado" ? "Baixado" : "Aberto",
       d.dataAcerto,
       linha.situacaoPg || "-",
-      linha.pedidoProximoMes || "",
-      linha.responsavelMontagem || "-",
+      acompResponsaveis[norm(d.revendedora)] || linha.responsavelMontagem || "-",
       linha.checklist || "-",
       linha.semanas[0] || "-",
       linha.semanas[1] || "-",
