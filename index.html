@@ -38,6 +38,10 @@
   .legend-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
   .historico-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 14px; }
   .tabela-scroll { overflow-x: auto; }
+  .acomp-scroll-top { overflow-x: auto; overflow-y: hidden; height: 14px; margin-bottom: 2px; }
+  #acomp-scroll-top-inner { height: 1px; }
+  .acomp-table thead th { position: sticky; background: var(--surface-2); z-index: 2; }
+  .acomp-table thead tr:first-child th { top: 0; }
   .tabela-scroll .historico-table { min-width: 760px; }
   .acomp-table { min-width: 1500px; }
   .acomp-table th, .acomp-table td { text-align: center; white-space: nowrap; font-size: 11px; padding: 4px 6px; }
@@ -55,9 +59,10 @@
   .acomp-stat-valor { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.2; }
   .acomp-stat-label { font-size: 10px; color: var(--text-muted); }
   @media print {
-    .tabs-nav, .historico-filters, #acomp-busca, #acomp-btn-imprimir, #acomp-btn-excel, #acomp-btn-duplicados, #acomp-status { display: none !important; }
+    .tabs-nav, .historico-filters, #acomp-busca, #acomp-btn-imprimir, #acomp-btn-excel, #acomp-btn-duplicados, #acomp-status, #acomp-scroll-top { display: none !important; }
     .acomp-table { min-width: 0 !important; width: 100%; font-size: 9px; }
     .acomp-table th, .acomp-table td { padding: 2px 3px; white-space: normal; }
+    .acomp-table thead th { position: static !important; }
     .tabela-scroll { overflow: visible !important; }
     @page { size: landscape; margin: 10mm; }
   }
@@ -527,6 +532,7 @@
         <button type="button" id="acomp-btn-excel" onclick="exportarAcompExcel()">📊 Exportar Excel</button>
       </div>
       <p class="vendas-subtitulo" id="acomp-status"></p>
+      <div class="acomp-scroll-top" id="acomp-scroll-top"><div id="acomp-scroll-top-inner"></div></div>
       <div class="tabela-scroll" id="acomp-tabela"></div>
     </div>
   </div>
@@ -1700,6 +1706,39 @@ function construirOpcoesAcomp(opcoes, valorAtual){
   }).join("");
 }
 
+function configurarScrollTopoESticky(){
+  var tabelaScroll = document.getElementById("acomp-tabela");
+  var scrollTopo = document.getElementById("acomp-scroll-top");
+  var scrollTopoInner = document.getElementById("acomp-scroll-top-inner");
+  var tabela = tabelaScroll.querySelector("table");
+  if (!tabela) { scrollTopoInner.style.width = "0px"; return; }
+
+  scrollTopoInner.style.width = tabela.scrollWidth + "px";
+
+  var sincronizando = false;
+  scrollTopo.onscroll = function(){
+    if (sincronizando) { return; }
+    sincronizando = true;
+    tabelaScroll.scrollLeft = scrollTopo.scrollLeft;
+    sincronizando = false;
+  };
+  tabelaScroll.onscroll = function(){
+    if (sincronizando) { return; }
+    sincronizando = true;
+    scrollTopo.scrollLeft = tabelaScroll.scrollLeft;
+    sincronizando = false;
+  };
+
+  var primeiraLinha = tabela.querySelector("thead tr:first-child");
+  var segundaLinha = tabela.querySelector("thead tr:nth-child(2)");
+  if (primeiraLinha && segundaLinha) {
+    var altura = primeiraLinha.getBoundingClientRect().height;
+    Array.prototype.slice.call(segundaLinha.querySelectorAll("th")).forEach(function(th){
+      th.style.top = altura + "px";
+    });
+  }
+}
+
 function renderAcompanhamentoTabela(){
   var termo = norm(acompBusca.value);
   var termoBruto = acompBusca.value.trim();
@@ -1794,6 +1833,7 @@ function renderAcompanhamentoTabela(){
   });
   html += "</tbody></table>";
   document.getElementById("acomp-tabela").innerHTML = html;
+  configurarScrollTopoESticky();
 
   var resumoEl = document.getElementById("acomp-resumo");
   var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent : mes;
