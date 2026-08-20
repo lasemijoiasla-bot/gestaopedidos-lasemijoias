@@ -1733,7 +1733,7 @@ function renderAcompanhamentoTabela(){
   }
 
   acompLinhasVisiveis = linhasPedidos;
-  renderAcompDashboard(linhasPedidos);
+  renderAcompDashboard(linhasPedidos, semanas);
   var responsaveis = listaSupervisoras().concat(["Kathlyn"]);
 
   var html = "<table class=\"historico-table acomp-table\"><thead><tr>"
@@ -1826,13 +1826,14 @@ function acompStatChip(valor, label){
   return "<div class=\"acomp-stat\"><span class=\"acomp-stat-valor\">" + valor + "</span><span class=\"acomp-stat-label\">" + escapeAttr(label) + "</span></div>";
 }
 
-function renderAcompDashboard(linhas){
+function renderAcompDashboard(linhas, semanas){
   var el = document.getElementById("acomp-dashboard");
   if (!el) { return; }
   var abertos = 0, baixados = 0;
   var pg = {};
   var chk = {};
-  var semanasVazias = 0, semanasTotal = 0, pedidosSemContato = 0;
+  var semanaVazias = [0, 0, 0, 0];
+  var consultorasSemContato = 0;
   linhas.forEach(function(d){
     if (d.status === "baixado") { baixados++; } else { abertos++; }
     var linha = acompDados.linhas[String(d.codigo)] || linhaAcompVazia();
@@ -1841,11 +1842,10 @@ function renderAcompDashboard(linhas){
     pg[pgVal] = (pg[pgVal] || 0) + 1;
     chk[chkVal] = (chk[chkVal] || 0) + 1;
     var contatosNaLinha = 0;
-    linha.semanas.forEach(function(s){
-      semanasTotal++;
-      if (!s) { semanasVazias++; } else { contatosNaLinha++; }
+    linha.semanas.forEach(function(s, idx){
+      if (!s) { semanaVazias[idx] = (semanaVazias[idx] || 0) + 1; } else { contatosNaLinha++; }
     });
-    if (contatosNaLinha === 0) { pedidosSemContato++; }
+    if (contatosNaLinha === 0) { consultorasSemContato++; }
   });
   var html = "";
   html += acompStatChip(linhas.length, "Pedidos no filtro");
@@ -1858,8 +1858,11 @@ function renderAcompDashboard(linhas){
   html += acompStatChip(chk["Montada"] || 0, "Chek list: Montada");
   html += acompStatChip(chk["Despachada"] || 0, "Chek list: Despachada");
   html += acompStatChip(chk["(não informado)"] || 0, "Chek list: não informado");
-  html += acompStatChip(semanasVazias + " de " + semanasTotal, "Semanas sem contato registrado");
-  html += acompStatChip(pedidosSemContato, "Pedidos sem nenhum contato na semana");
+  html += acompStatChip(consultorasSemContato, "Consultoras sem contato");
+  for (var si = 0; si < 4; si++){
+    var labelSemana = (semanas && semanas[si]) ? semanas[si].label : ((si + 1) + "ª Semana");
+    html += acompStatChip(semanaVazias[si], "Sem contato - " + labelSemana);
+  }
   el.innerHTML = html;
 }
 
