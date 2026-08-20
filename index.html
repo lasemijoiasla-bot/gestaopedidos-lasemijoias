@@ -1832,6 +1832,7 @@ function renderAcompDashboard(linhas){
   var abertos = 0, baixados = 0;
   var pg = {};
   var chk = {};
+  var semanasVazias = 0, semanasTotal = 0, pedidosSemContato = 0;
   linhas.forEach(function(d){
     if (d.status === "baixado") { baixados++; } else { abertos++; }
     var linha = acompDados.linhas[String(d.codigo)] || linhaAcompVazia();
@@ -1839,6 +1840,12 @@ function renderAcompDashboard(linhas){
     var chkVal = linha.checklist || "(não informado)";
     pg[pgVal] = (pg[pgVal] || 0) + 1;
     chk[chkVal] = (chk[chkVal] || 0) + 1;
+    var contatosNaLinha = 0;
+    linha.semanas.forEach(function(s){
+      semanasTotal++;
+      if (!s) { semanasVazias++; } else { contatosNaLinha++; }
+    });
+    if (contatosNaLinha === 0) { pedidosSemContato++; }
   });
   var html = "";
   html += acompStatChip(linhas.length, "Pedidos no filtro");
@@ -1851,6 +1858,8 @@ function renderAcompDashboard(linhas){
   html += acompStatChip(chk["Montada"] || 0, "Chek list: Montada");
   html += acompStatChip(chk["Despachada"] || 0, "Chek list: Despachada");
   html += acompStatChip(chk["(não informado)"] || 0, "Chek list: não informado");
+  html += acompStatChip(semanasVazias + " de " + semanasTotal, "Semanas sem contato registrado");
+  html += acompStatChip(pedidosSemContato, "Pedidos sem nenhum contato na semana");
   el.innerHTML = html;
 }
 
