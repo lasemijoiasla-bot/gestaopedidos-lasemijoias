@@ -45,6 +45,7 @@
   .acomp-table thead tr:first-child th { background: var(--surface-2); font-weight: 700; text-align: center; }
   .acomp-table select, .acomp-table input[type="text"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
   .acomp-table .acomp-divider { border-right: 2px solid var(--text-secondary); }
+  .tabela-total-row td { font-weight: 700; border-top: 2px solid var(--text-secondary); }
   .badge-baixado { background: rgba(26, 156, 134, 0.14); color: #1a9c86; }
   .acomp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
   .acomp-actions #acomp-busca { flex: 1; min-width: 180px; margin: 0; }
@@ -149,8 +150,8 @@
     <button type="button" class="tab-btn active" data-tab="painel">Pedidos</button>
     <button type="button" class="tab-btn" data-tab="vendas">Vendas</button>
     <button type="button" class="tab-btn" data-tab="acompanhamento">Acompanhamento</button>
-    <button type="button" class="tab-btn" data-tab="historico">Histórico Pedidos</button>
     <button type="button" class="tab-btn" data-tab="faturamento">Resumo do Faturamento</button>
+    <button type="button" class="tab-btn" data-tab="historico">Histórico Pedidos</button>
     <button type="button" class="tab-btn" data-tab="premiacao">Premiação</button>
   </div>
 
@@ -1390,12 +1391,16 @@ function renderGraficoFaturamento(){
   document.getElementById("faturamento-chart").innerHTML = "<svg viewBox=\"0 0 " + width + " " + height + "\" style=\"width:100%;height:260px;\">" + svgBars + "</svg>";
 
   var tabela = "<table class=\"historico-table\"><thead><tr><th>Mês</th><th>Pedidos</th><th>Vendas</th><th>Total</th></tr></thead><tbody>";
+  var somaPedidos = 0, somaVendas = 0;
   for (var j = 0; j < 12; j++){
     var d = dados[j];
     var pedVal = metrica === "qtd" ? d.pedidosQtd : d.pedidos;
     var venVal = metrica === "qtd" ? d.vendasQtd : d.vendas;
+    somaPedidos += pedVal;
+    somaVendas += venVal;
     tabela += "<tr><td>" + monthNamesCurto[j] + "</td><td>" + formatarValor(pedVal) + "</td><td>" + formatarValor(venVal) + "</td><td>" + formatarValor(pedVal + venVal) + "</td></tr>";
   }
+  tabela += "<tr class=\"tabela-total-row\"><td>Total do ano</td><td>" + formatarValor(somaPedidos) + "</td><td>" + formatarValor(somaVendas) + "</td><td>" + formatarValor(somaPedidos + somaVendas) + "</td></tr>";
   tabela += "</tbody></table>";
   document.getElementById("faturamento-tabela").innerHTML = tabela;
 }
