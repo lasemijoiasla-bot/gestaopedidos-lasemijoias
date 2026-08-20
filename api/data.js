@@ -95,8 +95,56 @@ export default async function handler(req, res) {
         diasAteAcerto,
         semMovimentacao: diasEmAberto > 7 && valorPreBaixa === 0,
         abaixoMeta: diasAteAcerto <= 10 && valorPreBaixa < meta,
+        status: "aberto",
       };
     });
+
+    // Baixados recentes (mesma janela usada no sync completo) para o
+    // Acompanhamento nao perder consultoras que baixaram entre um sync e outro.
+    const janelaDe = new Date(today);
+    janelaDe.setMonth(janelaDe.getMonth() - 3);
+    const janelaAte = new Date(today);
+    janelaAte.setMonth(janelaAte.getMonth() + 2);
+
+    const itemsBaixados = [];
+    for (const p of baixados) {
+      if (!p.data_acerto) continue;
+      const acertoDate = new Date((p.data_acerto || "").split(" ")[0]);
+      if (isNaN(acertoDate.getTime())) continue;
+      let baixaDate = null;
+      if (p.data_baixa) {
+        const bd = new Date((p.data_baixa || "").split(" ")[0]);
+        if (!isNaN(bd.getTime())) baixaDate = bd;
+      }
+      const dentroPelaAcerto = acertoDate >= janelaDe && acertoDate <= janelaAte;
+      const dentroPelaBaixa = baixaDate && baixaDate >= janelaDe && baixaDate <= janelaAte;
+      if (!dentroPelaAcerto && !dentroPelaBaixa) continue;
+
+      const criacaoDateB = new Date((p.data_criacao || "").split(" ")[0]);
+      const revIdB = p.comprador ? String(p.comprador.id) : null;
+      const revInfoB = revIdB ? revMap[revIdB] : null;
+      const valorTotalB = parseFloat(p.valor_total) || 0;
+
+      itemsBaixados.push({
+        codigo: p.codigo_pedido,
+        revendedora: p.comprador ? p.comprador.nome : "-",
+        nivel: revInfoB ? revInfoB.nivel : "BASICA",
+        meta: revInfoB ? revInfoB.meta : 500,
+        cidade: revInfoB ? revInfoB.cidade : null,
+        telefone: revInfoB ? revInfoB.telefone : null,
+        supervisora: p.supervisor_nome || null,
+        valorTotal: valorTotalB,
+        valorPreBaixa: valorTotalB,
+        dataPedido: isNaN(criacaoDateB.getTime()) ? acertoDate.toLocaleDateString("pt-BR") : criacaoDateB.toLocaleDateString("pt-BR"),
+        dataAcerto: acertoDate.toLocaleDateString("pt-BR"),
+        dataBaixa: baixaDate ? baixaDate.toLocaleDateString("pt-BR") : null,
+        diasEmAberto: 0,
+        diasAteAcerto: 0,
+        semMovimentacao: false,
+        abaixoMeta: false,
+        status: "baixado",
+      });
+    }
 
     const rankGrouped = {};
     const resumoSupervisorGrouped = {};
@@ -145,6 +193,7 @@ export default async function handler(req, res) {
     res.status(200).json({
       updatedAt: now.toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
       items,
+      itemsBaixados,
       mesAtual,
       resumoBaixadoMes,
       rankingMesAtual,

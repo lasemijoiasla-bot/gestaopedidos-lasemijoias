@@ -2004,6 +2004,7 @@ async function atualizarAoVivo(btn){
         primeiroCiclo: antigo.primeiroCiclo || false
       });
     });
+    if (payload.itemsBaixados) { DATA_BAIXADOS = payload.itemsBaixados; }
     RESUMO_BAIXADOS = RESUMO_BAIXADOS.filter(function(r){ return r.mes !== payload.mesAtual; });
     RESUMO_BAIXADOS.push(payload.resumoBaixadoMes);
 
