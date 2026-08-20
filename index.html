@@ -1160,17 +1160,29 @@ function criarPainelAnual(cfg){
     var tabela = "<table class=\"historico-table\"><thead><tr><th>Mês</th><th>Total " + anoEsquerda + "</th><th>Qtd " + anoEsquerda + "</th><th>Ticket médio " + anoEsquerda + "</th>"
       + (dadosDireita ? ("<th>Total " + anoDireita + "</th><th>Qtd " + anoDireita + "</th><th>Ticket médio " + anoDireita + "</th>") : "")
       + "</tr></thead><tbody>";
+    var somaTotal1 = 0, somaQtd1 = 0, somaTotal2 = 0, somaQtd2 = 0;
     for (var i = 0; i < 12; i++){
       var d1 = dadosEsquerda[i];
       var ticket1 = d1.qtd > 0 ? d1.total / d1.qtd : 0;
+      somaTotal1 += d1.total;
+      somaQtd1 += d1.qtd;
       tabela += "<tr><td>" + monthNamesCurto[i] + "</td><td>" + fmt(d1.total) + "</td><td>" + d1.qtd + "</td><td>" + fmt(ticket1) + "</td>";
       if (dadosDireita) {
         var d2 = dadosDireita[i];
         var ticket2 = d2.qtd > 0 ? d2.total / d2.qtd : 0;
+        somaTotal2 += d2.total;
+        somaQtd2 += d2.qtd;
         tabela += "<td>" + fmt(d2.total) + "</td><td>" + d2.qtd + "</td><td>" + fmt(ticket2) + "</td>";
       }
       tabela += "</tr>";
     }
+    var ticketTotal1 = somaQtd1 > 0 ? somaTotal1 / somaQtd1 : 0;
+    tabela += "<tr class=\"tabela-total-row\"><td>Total do ano</td><td>" + fmt(somaTotal1) + "</td><td>" + somaQtd1 + "</td><td>" + fmt(ticketTotal1) + "</td>";
+    if (dadosDireita) {
+      var ticketTotal2 = somaQtd2 > 0 ? somaTotal2 / somaQtd2 : 0;
+      tabela += "<td>" + fmt(somaTotal2) + "</td><td>" + somaQtd2 + "</td><td>" + fmt(ticketTotal2) + "</td>";
+    }
+    tabela += "</tr>";
     tabela += "</tbody></table>";
     document.getElementById(cfg.tabelaId).innerHTML = tabela;
   }
