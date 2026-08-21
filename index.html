@@ -49,6 +49,10 @@
   .acomp-table th:first-child, .acomp-table td:first-child { text-align: left; }
   .acomp-table thead tr:first-child th { background: var(--surface-2); font-weight: 700; text-align: center; }
   .acomp-table select, .acomp-table input[type="text"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
+  .acomp-table select[data-campo="situacaoPg"] { min-width: 66px; }
+  .acomp-table select[data-campo="checklist"] { min-width: 88px; }
+  .acomp-table select.acomp-campo-responsavel { min-width: 76px; }
+  .acomp-table textarea.acomp-campo-texto { width: 100%; min-width: 280px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; resize: vertical; white-space: normal; font-family: inherit; }
   .acomp-table .acomp-divider { border-right: 2px solid var(--text-secondary); }
   .tabela-total-row td { font-weight: 700; border-top: 2px solid var(--text-secondary); }
   .badge-baixado { background: rgba(26, 156, 134, 0.14); color: #1a9c86; }
@@ -505,8 +509,8 @@
           <label for="acomp-pg-select">Situação PG</label>
           <select id="acomp-pg-select" class="col-search">
             <option value="">Todas</option>
-            <option value="Pago">Pago</option>
-            <option value="Pendente de pagamento">Pendente de pagamento</option>
+            <option value="PAGO">PAGO</option>
+            <option value="PENDENTE">PENDENTE</option>
             <option value="__vazio__">Não informado</option>
           </select>
         </div>
@@ -1532,7 +1536,7 @@ renderResumoFaturamento();
 renderPremiacao();
 
 var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada"];
-var ACOMP_PG_OPCOES = ["", "Pago", "Pendente de pagamento"];
+var ACOMP_PG_OPCOES = ["", "PAGO", "PENDENTE"];
 var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas", "Gestão de metas", "Inadimplência", "Pré-baixa", "Outros"];
 
 var acompMesSelect = document.getElementById("acomp-mes-select");
@@ -1830,7 +1834,7 @@ function renderAcompanhamentoTabela(){
     for (var i = 0; i < 4; i++){
       html += "<td" + (i === 3 ? " class=\"acomp-divider\"" : "") + "><select class=\"acomp-campo-semana\" data-codigo=\"" + codigo + "\" data-idx=\"" + i + "\">" + construirOpcoesAcomp(ACOMP_SEMANA_OPCOES, linha.semanas[i]) + "</select></td>";
     }
-    html += "<td><input type=\"text\" class=\"acomp-campo-texto\" data-codigo=\"" + codigo + "\" data-campo=\"obs\" value=\"" + escapeAttr(linha.obs) + "\"></td>";
+    html += "<td><textarea class=\"acomp-campo-texto\" data-codigo=\"" + codigo + "\" data-campo=\"obs\" rows=\"2\" title=\"" + escapeAttr(linha.obs) + "\">" + escapeAttr(linha.obs) + "</textarea></td>";
     html += "</tr>";
   });
   html += "</tbody></table>";
@@ -1928,8 +1932,8 @@ function renderAcompDashboard(linhas, semanas){
   html += acompStatChip(linhas.length, "Pedidos no filtro");
   html += acompStatChip(abertos, "Abertos");
   html += acompStatChip(baixados, "Baixados");
-  html += acompStatChip(pg["Pago"] || 0, "PG: Pago");
-  html += acompStatChip(pg["Pendente de pagamento"] || 0, "PG: Pendente");
+  html += acompStatChip(pg["PAGO"] || 0, "PG: Pago");
+  html += acompStatChip(pg["PENDENTE"] || 0, "PG: Pendente");
   html += acompStatChip(pg["(não informado)"] || 0, "PG: não informado");
   html += acompStatChip(chk["Em montagem"] || 0, "Chek list: Em montagem");
   html += acompStatChip(chk["Montada"] || 0, "Chek list: Montada");
