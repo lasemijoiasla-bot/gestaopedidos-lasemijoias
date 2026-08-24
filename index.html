@@ -1826,7 +1826,8 @@ function renderAcompanhamentoTabela(){
     html += "<td>" + escapeAttr(d.revendedora) + "</td>";
     html += "<td><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span></td>";
     html += "<td>" + primeiroNomeSup + "</td>";
-    html += "<td>#" + d.codigo + " · " + fmt(d.valorTotal) + badgeBaixado + "</td>";
+    var valorExibido = d.status === "baixado" ? d.valorTotal : d.valorPreBaixa;
+    html += "<td>#" + d.codigo + " · " + fmt(valorExibido) + badgeBaixado + "</td>";
     html += "<td class=\"acomp-divider\">" + d.dataAcerto + "</td>";
     html += "<td><select class=\"acomp-campo\" data-codigo=\"" + codigo + "\" data-campo=\"situacaoPg\">" + construirOpcoesAcomp(ACOMP_PG_OPCOES, linha.situacaoPg) + "</select></td>";
     html += "<td><select class=\"acomp-campo-responsavel\" data-codigo=\"" + codigo + "\" data-consultora=\"" + escapeAttr(d.revendedora) + "\">" + construirOpcoesAcomp([""].concat(responsaveis), respAtual) + "</select></td>";
@@ -1964,11 +1965,12 @@ function exportarAcompExcel(){
   acompLinhasVisiveis.forEach(function(d){
     var codigo = String(d.codigo);
     var linha = acompDados.linhas[codigo] || linhaAcompVazia();
+    var valorExibidoCsv = d.status === "baixado" ? d.valorTotal : d.valorPreBaixa;
     var row = [
       d.revendedora,
       nivelLabel(d.nivel),
       d.supervisora || "-",
-      "#" + d.codigo + " - " + fmt(d.valorTotal),
+      "#" + d.codigo + " - " + fmt(valorExibidoCsv),
       d.status === "baixado" ? "Baixado" : "Aberto",
       d.dataAcerto,
       linha.situacaoPg || "-",
