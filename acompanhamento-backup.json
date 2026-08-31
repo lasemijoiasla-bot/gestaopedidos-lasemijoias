@@ -2,10 +2,10 @@
     "mes":  "2026-08",
     "linhas":  {
                    "2685":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -18,7 +18,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -31,7 +31,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -44,7 +44,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -57,7 +57,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -77,7 +77,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2718":  {
                                 "situacaoPg":  "",
@@ -96,7 +96,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -122,7 +122,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -148,7 +148,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -200,7 +200,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -220,13 +220,13 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2759":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Em montagem",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -252,14 +252,14 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "26/08 entrei em contato para saber se tem vendas para lançar, aguardando retorno "
                             },
                    "2762":  {
                                 "situacaoPg":  "",
@@ -298,7 +298,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2765":  {
                                 "situacaoPg":  "",
@@ -343,7 +343,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -369,7 +369,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -382,7 +382,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -395,7 +395,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -415,13 +415,13 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2775":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -434,7 +434,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -467,7 +467,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2780":  {
                                 "situacaoPg":  "",
@@ -486,7 +486,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -499,7 +499,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -545,7 +545,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2790":  {
                                 "situacaoPg":  "PAGO",
@@ -740,13 +740,13 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2809":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -779,7 +779,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU"
                             },
                    "2812":  {
                                 "situacaoPg":  "",
@@ -798,7 +798,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -876,7 +876,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -964,10 +964,10 @@
                                 "obs":  ""
                             },
                    "2828":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -993,7 +993,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1003,7 +1003,7 @@
                                 "obs":  ""
                             },
                    "2832":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
                                 "checklist":  "",
@@ -1107,17 +1107,17 @@
                                 "obs":  ""
                             },
                    "2841":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "Pré-baixa",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  " VAMOS DAR MAIS UMA CHANCE PARA ELA "
                             },
                    "2843":  {
                                 "situacaoPg":  "PAGO",
@@ -1159,7 +1159,7 @@
                                 "obs":  ""
                             },
                    "2846":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "",
@@ -1250,7 +1250,7 @@
                                 "obs":  ""
                             },
                    "2854":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "",
@@ -1263,10 +1263,10 @@
                                 "obs":  ""
                             },
                    "2857":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1289,10 +1289,10 @@
                                 "obs":  ""
                             },
                    "2860":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1312,7 +1312,7 @@
                                                 "",
                                                 "Inadimplência"
                                             ],
-                                "obs":  ""
+                                "obs":  "vai sair"
                             },
                    "2862":  {
                                 "situacaoPg":  "PAGO",
@@ -1328,7 +1328,7 @@
                                 "obs":  ""
                             },
                    "2863":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
                                 "checklist":  "Montada",
@@ -1338,23 +1338,23 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "VAI BUSCAR A MALETA NO COMEÇO DO MES DE SETEMBRO "
                             },
                    "2865":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
-                                                ""
+                                                "Pré-baixa"
                                             ],
-                                "obs":  ""
+                                "obs":  "25/08 VAI FAZER OS 200 , VAMOS DAR MAIS UMA CHANCE PARA ELA "
                             },
                    "2866":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
                                 "checklist":  "Montada",
@@ -1367,10 +1367,10 @@
                                 "obs":  ""
                             },
                    "2867":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1380,10 +1380,10 @@
                                 "obs":  ""
                             },
                    "2869":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1393,10 +1393,10 @@
                                 "obs":  ""
                             },
                    "2870":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1406,7 +1406,7 @@
                                 "obs":  ""
                             },
                    "2871":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "",
@@ -1414,9 +1414,9 @@
                                                 "",
                                                 "",
                                                 "Inadimplência",
-                                                ""
+                                                "Outros"
                                             ],
-                                "obs":  ""
+                                "obs":  "vai sair, por isso não foi montada, "
                             },
                    "2873":  {
                                 "situacaoPg":  "PAGO",
@@ -1432,10 +1432,10 @@
                                 "obs":  ""
                             },
                    "2874":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1458,30 +1458,30 @@
                                 "obs":  ""
                             },
                    "2878":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "NAO FOI ENVIADA AINDA POIS ESTA AGUARDANDO A OUTRA MALETA ANTIGA CHEGAR PARA SABER A NUMERAÇÃO DE ANEL "
                             },
                    "2881":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "OK"
                             },
                    "2882":  {
                                 "situacaoPg":  "",
@@ -1497,10 +1497,10 @@
                                 "obs":  "SAIU"
                             },
                    "2884":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1510,17 +1510,17 @@
                                 "obs":  ""
                             },
                    "2888":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "\n\n"
                             },
                    "2889":  {
                                 "situacaoPg":  "",
@@ -1536,10 +1536,10 @@
                                 "obs":  ""
                             },
                    "2890":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1562,10 +1562,10 @@
                                 "obs":  ""
                             },
                    "2892":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1575,10 +1575,10 @@
                                 "obs":  ""
                             },
                    "2893":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1588,10 +1588,10 @@
                                 "obs":  "vai continuar com a mesma maleta "
                             },
                    "2899":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1601,10 +1601,10 @@
                                 "obs":  ""
                             },
                    "2907":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1617,17 +1617,17 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
-                                                "Desempenho de vendas",
+                                                "",
                                                 ""
                                             ],
                                 "obs":  ""
                             },
                    "2916":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
                                 "checklist":  "",
@@ -1637,7 +1637,7 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "vai sair"
                             },
                    "2924":  {
                                 "situacaoPg":  "",
@@ -1650,12 +1650,25 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "ESTOU AGUARDANDO A POSTAGEM DAS PÇAS NO CORREIO E VAI VIM FAZER A MALETA AQUI \n\nTEM CONCERTO "
                             },
                    "2926":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "3014":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "semanas":  [
                                                 "",
@@ -1714,9 +1727,9 @@
                          "imaculada aparecida da silva de souza":  "Amanda",
                          "tamyres aparecida furtado":  "Amanda",
                          "ketelly daniele guimaraes rocha":  "Kathlyn",
-                         "ana paula ferreira fernandes":  "Kathlyn",
+                         "ana paula ferreira fernandes":  "",
                          "erica aparecida silva ovidio":  "Kathlyn",
-                         "priscila do carmo bonomo":  "Kathlyn",
+                         "priscila do carmo bonomo":  "",
                          "sara neves cardoso":  "Kathlyn",
                          "maria eduarda silva":  "Kathlyn",
                          "jaqueline aparecida martins":  "Silvia",
@@ -1728,12 +1741,12 @@
                          "fabiana llian de lima":  "Kathlyn",
                          "karolina estefane de souza rufino":  "Kathlyn",
                          "livia maria braga resende":  "Silvia",
-                         "josiane dias almeida":  "Amanda",
+                         "josiane dias almeida":  "Kathlyn",
                          "josigleice da silva rodrigues da conceiçao":  "Silvia",
                          "layla luiza de souza barra rezende":  "Amanda",
-                         "leticia pereira costa":  "Kathlyn",
+                         "leticia pereira costa":  "Amanda",
                          "raíssa aparecida da silva":  "Amanda",
-                         "josélia de oliveira dos santos":  "Amanda",
+                         "josélia de oliveira dos santos":  "Kathlyn",
                          "aliny ribeiro felisbino":  "Kathlyn",
                          "elaine aparecida lúcio da silva":  "Amanda",
                          "gabrieli quintiliano braga":  "Amanda",
@@ -1786,7 +1799,7 @@
                          "isabelle guilherme faraco":  "Kathlyn",
                          "jussara de jesus souza pinto":  "Kathlyn",
                          "maria eduarda leonardi jorge":  "Silvia",
-                         "rita cabral":  "Kathlyn",
+                         "rita cabral":  "",
                          "alechandra kely de melo":  "Kathlyn",
                          "gesilene alves carvalho":  "Silvia",
                          "kenia fernandes":  "Kathlyn",
@@ -1800,7 +1813,7 @@
                          "vanessa alves ferreira e ferreira":  "Amanda",
                          "marcela azevedo  prado castilho raimundo":  "Kathlyn",
                          "chayanne aparecida moreira xavier":  "Amanda",
-                         "loraine de oliveira pereira":  "Kathlyn",
+                         "loraine de oliveira pereira":  "Amanda",
                          "livia stephany soares":  "Amanda",
                          "monique hipolito mudesto":  "Amanda",
                          "francinara lino casaroto caetano":  "Kathlyn",
@@ -1818,21 +1831,21 @@
                          "joice francisca custodio":  "Kathlyn",
                          "claudia alves de souza":  "Silvia",
                          "vanessa aparecida pinto martins":  "Kathlyn",
-                         "elida cristina da silva":  "Kathlyn",
-                         "pamela kelem januario":  "Kathlyn",
+                         "elida cristina da silva":  "Amanda",
+                         "pamela kelem januario":  "",
                          "rosimara rodrigues ferreira":  "Kathlyn",
                          "tatiane cristina dos santos machado":  "Kathlyn",
-                         "raiane de souza basto":  "Silvia",
+                         "raiane de souza basto":  "",
                          "larissa  saúda  souza  alves  da  silva":  "Silvia",
                          "silvia cristina musso teodoro":  "Silvia",
                          "yasmin de sousa teixeira":  "Silvia",
-                         "adriana maria da silva":  "Silvia",
-                         "natália palácio gonçalves":  "Kathlyn",
-                         "danubia clemente da cunha":  "Kathlyn",
+                         "adriana maria da silva":  "Kathlyn",
+                         "natália palácio gonçalves":  "",
+                         "danubia clemente da cunha":  "",
                          "laiene aparecida da silva pereira":  "Amanda",
                          "valdilene maria de oliveira barao":  "Amanda",
                          "laisa serafim machado de souza":  "Amanda",
-                         "karina barbosa amélio de miranda":  "Kathlyn",
+                         "karina barbosa amélio de miranda":  "Amanda",
                          "debora ribeiro guimarães":  "Amanda",
                          "priscila gino laurindo":  "Amanda",
                          "kamilly barbosa amélio silva":  "Amanda",
@@ -1843,6 +1856,9 @@
                          "geovana freitas martins rocha":  "Amanda",
                          "silmara da silva almeida":  "Kathlyn",
                          "raniela da silva pereira":  "Kathlyn",
-                         "aline aniceto marcolino":  "Kathlyn"
+                         "aline aniceto marcolino":  "Kathlyn",
+                         "poliana barbosa silva pereira":  "Silvia",
+                         "cassiana paula francisco":  "Amanda",
+                         "jessica aparecida da silveira souza":  "Silvia"
                      }
 }
