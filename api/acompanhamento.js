@@ -22,7 +22,8 @@ function linhaVazia() {
     pedidoProximoMes: "",
     responsavelMontagem: "",
     checklist: "",
-    semanas: ["", "", "", ""],
+    assunto: "",
+    dataUltimoContato: "",
     obs: "",
   };
 }
@@ -31,8 +32,8 @@ function normConsultora(nome) {
   return String(nome || "").toLowerCase();
 }
 
-const CAMPOS_TEXTO = ["pedidoProximoMes", "obs"];
-const CAMPOS_SELECT = ["situacaoPg", "checklist"];
+const CAMPOS_TEXTO = ["pedidoProximoMes", "obs", "dataUltimoContato"];
+const CAMPOS_SELECT = ["situacaoPg", "checklist", "assunto"];
 const RESPONSAVEIS_KEY = "acompanhamento:responsaveis";
 const RETENCAO_DIAS = 90;
 
@@ -105,12 +106,7 @@ export default async function handler(req, res) {
       }
       if (!dados.linhas[codigo]) { dados.linhas[codigo] = linhaVazia(); }
 
-      if (body.campo === "semana") {
-        const idx = parseInt(body.semanaIndex, 10);
-        if (idx >= 0 && idx <= 3) {
-          dados.linhas[codigo].semanas[idx] = String(body.valor || "").slice(0, 60);
-        }
-      } else if (CAMPOS_TEXTO.indexOf(body.campo) >= 0) {
+      if (CAMPOS_TEXTO.indexOf(body.campo) >= 0) {
         dados.linhas[codigo][body.campo] = String(body.valor || "").slice(0, 300);
       } else if (CAMPOS_SELECT.indexOf(body.campo) >= 0) {
         dados.linhas[codigo][body.campo] = String(body.valor || "").slice(0, 60);

@@ -48,7 +48,9 @@
   .acomp-table th, .acomp-table td { text-align: center; white-space: nowrap; font-size: 11px; padding: 4px 6px; }
   .acomp-table th:first-child, .acomp-table td:first-child { text-align: left; }
   .acomp-table thead tr:first-child th { background: var(--surface-2); font-weight: 700; text-align: center; }
-  .acomp-table select, .acomp-table input[type="text"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
+  .acomp-table select, .acomp-table input[type="text"], .acomp-table input[type="date"] { width: 100%; min-width: 110px; font-size: 11px; padding: 3px 4px; margin: 0; box-sizing: border-box; }
+  .acomp-table select[data-campo="assunto"] { min-width: 150px; }
+  .acomp-table input[data-campo="dataUltimoContato"] { min-width: 130px; }
   .acomp-table select[data-campo="situacaoPg"] { min-width: 66px; }
   .acomp-table select[data-campo="checklist"] { min-width: 88px; }
   .acomp-table select.acomp-campo-responsavel { min-width: 76px; }
@@ -1907,13 +1909,12 @@ function acompStatChip(valor, label){
   return "<div class=\"acomp-stat\"><span class=\"acomp-stat-valor\">" + valor + "</span><span class=\"acomp-stat-label\">" + escapeAttr(label) + "</span></div>";
 }
 
-function renderAcompDashboard(linhas, semanas){
+function renderAcompDashboard(linhas){
   var el = document.getElementById("acomp-dashboard");
   if (!el) { return; }
   var abertos = 0, baixados = 0;
   var pg = {};
   var chk = {};
-  var semanaVazias = [0, 0, 0, 0];
   var consultorasSemContato = 0;
   linhas.forEach(function(d){
     if (d.status === "baixado") { baixados++; } else { abertos++; }
@@ -1922,11 +1923,7 @@ function renderAcompDashboard(linhas, semanas){
     var chkVal = linha.checklist || "(não informado)";
     pg[pgVal] = (pg[pgVal] || 0) + 1;
     chk[chkVal] = (chk[chkVal] || 0) + 1;
-    var contatosNaLinha = 0;
-    linha.semanas.forEach(function(s, idx){
-      if (!s) { semanaVazias[idx] = (semanaVazias[idx] || 0) + 1; } else { contatosNaLinha++; }
-    });
-    if (contatosNaLinha === 0) { consultorasSemContato++; }
+    if (!linha.dataUltimoContato) { consultorasSemContato++; }
   });
   var html = "";
   html += acompStatChip(linhas.length, "Pedidos no filtro");
@@ -1942,11 +1939,7 @@ function renderAcompDashboard(linhas, semanas){
   html += acompStatChip(chk["Entregue"] || 0, "Chek list: Entregue");
   html += acompStatChip(chk["Trânsito volta"] || 0, "Chek list: Trânsito volta");
   html += acompStatChip(chk["(não informado)"] || 0, "Chek list: não informado");
-  html += acompStatChip(consultorasSemContato, "Consultoras sem contato");
-  for (var si = 0; si < 4; si++){
-    var labelSemana = (semanas && semanas[si]) ? semanas[si].label : ((si + 1) + "ª Semana");
-    html += acompStatChip(semanaVazias[si], "Sem contato - " + labelSemana);
-  }
+  html += acompStatChip(consultorasSemContato, "Sem data de último contato");
   el.innerHTML = html;
 }
 
@@ -1962,7 +1955,7 @@ function csvEscapeAcomp(v){
 }
 
 function exportarAcompExcel(){
-  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Responsável montagem", "Chek list", "1ª Semana", "2ª Semana", "3ª Semana", "4ª Semana", "Obs"];
+  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Responsável montagem", "Chek list", "Assunto", "Data do último contato", "Obs"];
   var linhasCsv = [cols.join(";")];
   acompLinhasVisiveis.forEach(function(d){
     var codigo = String(d.codigo);
@@ -1978,10 +1971,8 @@ function exportarAcompExcel(){
       linha.situacaoPg || "-",
       acompResponsaveis[norm(d.revendedora)] || linha.responsavelMontagem || "-",
       linha.checklist || "-",
-      linha.semanas[0] || "-",
-      linha.semanas[1] || "-",
-      linha.semanas[2] || "-",
-      linha.semanas[3] || "-",
+      assuntoAtualLinha(linha) || "-",
+      linha.dataUltimoContato ? linha.dataUltimoContato.split("-").reverse().join("/") : "-",
       linha.obs || ""
     ];
     linhasCsv.push(row.map(csvEscapeAcomp).join(";"));
