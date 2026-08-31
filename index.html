@@ -511,6 +511,7 @@
             <option value="">Todas</option>
             <option value="PAGO">PAGO</option>
             <option value="PENDENTE">PENDENTE</option>
+            <option value="SAIU">SAIU</option>
             <option value="__vazio__">Não informado</option>
           </select>
         </div>
@@ -1538,7 +1539,7 @@ renderResumoFaturamento();
 renderPremiacao();
 
 var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada", "Entregue", "Trânsito volta"];
-var ACOMP_PG_OPCOES = ["", "PAGO", "PENDENTE"];
+var ACOMP_PG_OPCOES = ["", "PAGO", "PENDENTE", "SAIU"];
 var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas", "Gestão de metas", "Inadimplência", "Pré-baixa", "Outros"];
 
 var acompMesSelect = document.getElementById("acomp-mes-select");
@@ -1937,6 +1938,7 @@ function renderAcompDashboard(linhas, semanas){
   html += acompStatChip(baixados, "Baixados");
   html += acompStatChip(pg["PAGO"] || 0, "PG: Pago");
   html += acompStatChip(pg["PENDENTE"] || 0, "PG: Pendente");
+  html += acompStatChip(pg["SAIU"] || 0, "PG: Saiu");
   html += acompStatChip(pg["(não informado)"] || 0, "PG: não informado");
   html += acompStatChip(chk["Em montagem"] || 0, "Chek list: Em montagem");
   html += acompStatChip(chk["Montada"] || 0, "Chek list: Montada");
