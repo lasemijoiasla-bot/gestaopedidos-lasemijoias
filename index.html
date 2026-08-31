@@ -521,6 +521,8 @@
             <option value="Em montagem">Em montagem</option>
             <option value="Montada">Montada</option>
             <option value="Despachada">Despachada</option>
+            <option value="Entregue">Entregue</option>
+            <option value="Trânsito volta">Trânsito volta</option>
             <option value="__vazio__">Não informado</option>
           </select>
         </div>
@@ -1535,7 +1537,7 @@ renderGraficoFaturamento();
 renderResumoFaturamento();
 renderPremiacao();
 
-var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada"];
+var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada", "Entregue", "Trânsito volta"];
 var ACOMP_PG_OPCOES = ["", "PAGO", "PENDENTE"];
 var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas", "Gestão de metas", "Inadimplência", "Pré-baixa", "Outros"];
 
@@ -1939,6 +1941,8 @@ function renderAcompDashboard(linhas, semanas){
   html += acompStatChip(chk["Em montagem"] || 0, "Chek list: Em montagem");
   html += acompStatChip(chk["Montada"] || 0, "Chek list: Montada");
   html += acompStatChip(chk["Despachada"] || 0, "Chek list: Despachada");
+  html += acompStatChip(chk["Entregue"] || 0, "Chek list: Entregue");
+  html += acompStatChip(chk["Trânsito volta"] || 0, "Chek list: Trânsito volta");
   html += acompStatChip(chk["(não informado)"] || 0, "Chek list: não informado");
   html += acompStatChip(consultorasSemContato, "Consultoras sem contato");
   for (var si = 0; si < 4; si++){
