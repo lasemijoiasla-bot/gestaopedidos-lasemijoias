@@ -34,6 +34,21 @@ function normConsultora(nome) {
 const CAMPOS_TEXTO = ["pedidoProximoMes", "obs"];
 const CAMPOS_SELECT = ["situacaoPg", "checklist"];
 const RESPONSAVEIS_KEY = "acompanhamento:responsaveis";
+const RETENCAO_DIAS = 90;
+
+async function limparBucketsAntigos(redis) {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - RETENCAO_DIAS);
+  const cutoffMes = `${cutoff.getFullYear()}-${String(cutoff.getMonth() + 1).padStart(2, "0")}`;
+  const keys = await redis.keys("acompanhamento:*");
+  const paraApagar = keys.filter((k) => {
+    const mesChave = k.slice("acompanhamento:".length);
+    return /^\d{4}-\d{2}$/.test(mesChave) && mesChave < cutoffMes;
+  });
+  if (paraApagar.length > 0) {
+    await redis.del(...paraApagar);
+  }
+}
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
@@ -47,6 +62,7 @@ export default async function handler(req, res) {
       const dados = raw ? JSON.parse(raw) : { linhas: {} };
       const rawResp = await redis.get(RESPONSAVEIS_KEY);
       const responsaveis = rawResp ? JSON.parse(rawResp) : {};
+      try { await limparBucketsAntigos(redis); } catch (e) { /* limpeza nao deve derrubar a leitura */ }
       res.status(200).json({ mes, linhas: dados.linhas || {}, responsaveis: responsaveis || {} });
       return;
     }

@@ -475,8 +475,12 @@
       </div>
       <div class="historico-filters">
         <div class="header-filter">
-          <label for="acomp-mes-select">Mês</label>
-          <select id="acomp-mes-select" class="col-search"></select>
+          <label for="acomp-data-de">Data de acerto - de</label>
+          <input type="date" class="col-search" id="acomp-data-de">
+        </div>
+        <div class="header-filter">
+          <label for="acomp-data-ate">Data de acerto - até</label>
+          <input type="date" class="col-search" id="acomp-data-ate">
         </div>
         <div class="header-filter">
           <label for="acomp-supervisora-select">Supervisora</label>
@@ -488,14 +492,6 @@
             <option value="data">Data de acerto (crescente)</option>
             <option value="nome">Nome da consultora (A-Z)</option>
           </select>
-        </div>
-        <div class="header-filter">
-          <label for="acomp-data-de">Data de acerto - de</label>
-          <input type="date" class="col-search" id="acomp-data-de">
-        </div>
-        <div class="header-filter">
-          <label for="acomp-data-ate">Data de acerto - até</label>
-          <input type="date" class="col-search" id="acomp-data-ate">
         </div>
         <div class="header-filter">
           <label for="acomp-status-select">Status do pedido</label>
@@ -1542,7 +1538,6 @@ var ACOMP_CHECKLIST_OPCOES = ["", "Em montagem", "Montada", "Despachada", "Entre
 var ACOMP_PG_OPCOES = ["", "PAGO", "PENDENTE", "SAIU"];
 var ACOMP_SEMANA_OPCOES = ["", "Campanha de premiação", "Desempenho de vendas", "Gestão de metas", "Inadimplência", "Pré-baixa", "Outros"];
 
-var acompMesSelect = document.getElementById("acomp-mes-select");
 var acompSupervisoraSelect = document.getElementById("acomp-supervisora-select");
 var acompOrdemSelect = document.getElementById("acomp-ordem-select");
 var acompDataDe = document.getElementById("acomp-data-de");
@@ -1596,25 +1591,26 @@ function definicaoSemanasDoMes(mesChave){
   });
 }
 
-function mesesAcompDisponiveis(){
-  var set = {};
-  todosPedidosAcompanhamento().forEach(function(d){ var m = mesReferenciaAcomp(d); if (m) { set[m] = true; } });
-  set[mesAtualPadrao()] = true;
-  return Object.keys(set).sort();
+function limitesMesAtualAcomp(){
+  var agora = new Date();
+  var primeiro = new Date(agora.getFullYear(), agora.getMonth(), 1);
+  var ultimo = new Date(agora.getFullYear(), agora.getMonth() + 1, 0);
+  function iso(d){ return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
+  return { de: iso(primeiro), ate: iso(ultimo) };
 }
 
-function populateAcompMesSelect(){
-  var meses = mesesAcompDisponiveis();
-  var valorAtual = acompMesSelect.value || mesAtualPadrao();
-  acompMesSelect.innerHTML = "";
-  meses.forEach(function(m){
-    var partes = m.split("-");
-    var opt = document.createElement("option");
-    opt.value = m;
-    opt.textContent = monthNamesCurto[parseInt(partes[1], 10) - 1] + "/" + partes[0];
-    acompMesSelect.appendChild(opt);
-  });
-  acompMesSelect.value = meses.indexOf(valorAtual) >= 0 ? valorAtual : mesAtualPadrao();
+function mesesNoIntervaloAcomp(deIso, ateIso){
+  var meses = [];
+  if (!deIso || !ateIso) { return [mesAtualPadrao()]; }
+  var partesDe = deIso.split("-");
+  var partesAte = ateIso.split("-");
+  var cursor = new Date(parseInt(partesDe[0], 10), parseInt(partesDe[1], 10) - 1, 1);
+  var fim = new Date(parseInt(partesAte[0], 10), parseInt(partesAte[1], 10) - 1, 1);
+  while (cursor <= fim) {
+    meses.push(cursor.getFullYear() + "-" + String(cursor.getMonth() + 1).padStart(2, "0"));
+    cursor.setMonth(cursor.getMonth() + 1);
+  }
+  return meses.length ? meses : [mesAtualPadrao()];
 }
 
 function populateAcompSupervisoraSelect(){
@@ -1659,16 +1655,29 @@ function linhaAcompVazia(){
 
 async function carregarAcompanhamento(){
   document.getElementById("acomp-status").textContent = "Carregando...";
-  populateAcompMesSelect();
+  if (!acompDataDe.value || !acompDataAte.value) {
+    var limites = limitesMesAtualAcomp();
+    acompDataDe.value = limites.de;
+    acompDataAte.value = limites.ate;
+  }
   populateAcompSupervisoraSelect();
   populateAcompResponsavelSelect();
-  var mes = acompMesSelect.value || mesAtualPadrao();
+  var meses = mesesNoIntervaloAcomp(acompDataDe.value, acompDataAte.value);
   try {
-    var resp = await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), { cache: "no-store" });
-    if (!resp.ok) { throw new Error("Falha ao buscar (" + resp.status + ")"); }
-    var payload = await resp.json();
-    acompDados = { linhas: payload.linhas || {} };
-    acompResponsaveis = payload.responsaveis || {};
+    var respostas = await Promise.all(meses.map(function(m){
+      return fetch("/api/acompanhamento?mes=" + encodeURIComponent(m), { cache: "no-store" }).then(function(r){
+        if (!r.ok) { throw new Error("Falha ao buscar (" + r.status + ")"); }
+        return r.json();
+      });
+    }));
+    var linhasCombinadas = {};
+    var responsaveisCombinados = {};
+    respostas.forEach(function(payload){
+      Object.assign(linhasCombinadas, payload.linhas || {});
+      Object.assign(responsaveisCombinados, payload.responsaveis || {});
+    });
+    acompDados = { linhas: linhasCombinadas };
+    acompResponsaveis = responsaveisCombinados;
     document.getElementById("acomp-status").textContent = "";
     acompCarregado = true;
     renderAcompanhamentoTabela();
@@ -1677,10 +1686,16 @@ async function carregarAcompanhamento(){
   }
 }
 
+function mesDoCodigoAcomp(codigo){
+  var cod = parseInt(codigo, 10);
+  var pedido = todosPedidosAcompanhamento().filter(function(d){ return d.codigo === cod; })[0];
+  return pedido ? mesReferenciaAcomp(pedido) : mesAtualPadrao();
+}
+
 async function salvarCampoAcomp(codigo, campo, valor, semanaIndex){
   var body = { codigo: codigo, campo: campo, valor: valor };
   if (semanaIndex !== undefined) { body.semanaIndex = semanaIndex; }
-  var mes = acompMesSelect.value || mesAtualPadrao();
+  var mes = mesDoCodigoAcomp(codigo);
   try {
     await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), {
       method: "POST",
@@ -1695,7 +1710,7 @@ async function salvarCampoAcomp(codigo, campo, valor, semanaIndex){
 async function salvarResponsavelConsultora(consultora, codigo, valor){
   acompResponsaveis[norm(consultora)] = valor;
   var body = { campo: "responsavelMontagem", consultora: consultora, codigo: codigo, valor: valor };
-  var mes = acompMesSelect.value || mesAtualPadrao();
+  var mes = mesDoCodigoAcomp(codigo);
   try {
     await fetch("/api/acompanhamento?mes=" + encodeURIComponent(mes), {
       method: "POST",
@@ -1752,17 +1767,17 @@ function renderAcompanhamentoTabela(){
   var termo = norm(acompBusca.value);
   var termoBruto = acompBusca.value.trim();
   var supervisoraFiltro = acompSupervisoraSelect.value;
-  var mes = acompMesSelect.value || mesAtualPadrao();
-  var semanas = definicaoSemanasDoMes(mes);
-
   var deVal = acompDataDe.value;
   var ateVal = acompDataAte.value;
+  var mesSemanas = deVal ? deVal.slice(0, 7) : mesAtualPadrao();
+  var semanas = definicaoSemanasDoMes(mesSemanas);
+
   var statusFiltro = acompStatusSelect.value;
   var pgFiltro = acompPgSelect.value;
   var checklistFiltro = acompChecklistSelect.value;
   var responsavelFiltro = acompResponsavelSelect.value;
 
-  var linhasPedidos = todosPedidosAcompanhamento().filter(function(d){ return mesReferenciaAcomp(d) === mes; });
+  var linhasPedidos = todosPedidosAcompanhamento();
   if (supervisoraFiltro) { linhasPedidos = linhasPedidos.filter(function(d){ return d.supervisora === supervisoraFiltro; }); }
   if (termo) { linhasPedidos = linhasPedidos.filter(function(d){ return norm(d.revendedora).indexOf(termo) >= 0 || String(d.codigo).indexOf(termoBruto) >= 0; }); }
   if (deVal) { linhasPedidos = linhasPedidos.filter(function(d){ var iso = dataBRParaISO(dataReferenciaAcomp(d)); return iso && iso >= deVal; }); }
@@ -1846,12 +1861,11 @@ function renderAcompanhamentoTabela(){
   configurarScrollTopoESticky();
 
   var resumoEl = document.getElementById("acomp-resumo");
-  var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent : mes;
   var periodoTexto = "";
   if (deVal || ateVal) {
-    periodoTexto = " (acerto de " + (deVal ? deVal.split("-").reverse().join("/") : "início") + " até " + (ateVal ? ateVal.split("-").reverse().join("/") : "fim") + ")";
+    periodoTexto = " no período de " + (deVal ? deVal.split("-").reverse().join("/") : "início") + " até " + (ateVal ? ateVal.split("-").reverse().join("/") : "fim");
   }
-  resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + " para " + mesLabel + periodoTexto + ".";
+  resumoEl.textContent = linhasPedidos.length + (linhasPedidos.length === 1 ? " pedido encontrado" : " pedidos encontrados") + periodoTexto + ".";
 
   Array.prototype.slice.call(document.querySelectorAll(".acomp-campo")).forEach(function(el){
     el.addEventListener("change", function(){
@@ -1892,13 +1906,12 @@ function renderAcompanhamentoTabela(){
 acompBusca.addEventListener("input", renderAcompanhamentoTabela);
 acompSupervisoraSelect.addEventListener("change", renderAcompanhamentoTabela);
 acompOrdemSelect.addEventListener("change", renderAcompanhamentoTabela);
-acompDataDe.addEventListener("change", renderAcompanhamentoTabela);
-acompDataAte.addEventListener("change", renderAcompanhamentoTabela);
+acompDataDe.addEventListener("change", carregarAcompanhamento);
+acompDataAte.addEventListener("change", carregarAcompanhamento);
 acompStatusSelect.addEventListener("change", renderAcompanhamentoTabela);
 acompPgSelect.addEventListener("change", renderAcompanhamentoTabela);
 acompChecklistSelect.addEventListener("change", renderAcompanhamentoTabela);
 acompResponsavelSelect.addEventListener("change", renderAcompanhamentoTabela);
-acompMesSelect.addEventListener("change", carregarAcompanhamento);
 
 function toggleAcompDuplicados(){
   acompOcultarDuplicados = !acompOcultarDuplicados;
@@ -1995,9 +2008,9 @@ function exportarAcompExcel(){
   var blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
   var url = URL.createObjectURL(blob);
   var a = document.createElement("a");
-  var mesLabel = acompMesSelect.options[acompMesSelect.selectedIndex] ? acompMesSelect.options[acompMesSelect.selectedIndex].textContent.replace("/", "-") : "acompanhamento";
+  var periodoLabel = (acompDataDe.value || "inicio") + "_a_" + (acompDataAte.value || "fim");
   a.href = url;
-  a.download = "acompanhamento_" + mesLabel + ".csv";
+  a.download = "acompanhamento_" + periodoLabel + ".csv";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
