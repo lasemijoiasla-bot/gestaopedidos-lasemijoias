@@ -1822,9 +1822,9 @@ function renderAcompanhamentoTabela(){
   var responsaveis = responsaveisMontagemLista();
 
   var html = "<table class=\"historico-table acomp-table\"><thead><tr>"
-    + "<th colspan=\"5\" class=\"acomp-divider\">Dados</th><th colspan=\"3\" class=\"acomp-divider\">Montagem</th><th colspan=\"2\" class=\"acomp-divider\">Acompanhamento</th><th rowspan=\"2\">Obs</th>"
+    + "<th colspan=\"6\" class=\"acomp-divider\">Dados</th><th colspan=\"3\" class=\"acomp-divider\">Montagem</th><th colspan=\"2\" class=\"acomp-divider\">Acompanhamento</th><th rowspan=\"2\">Obs</th>"
     + "</tr><tr>"
-    + "<th>Consultora</th><th>Nível</th><th>Supervisora</th><th>Pedido mês atual</th><th class=\"acomp-divider\">Data acerto</th>"
+    + "<th>Consultora</th><th>Cidade</th><th>Nível</th><th>Supervisora</th><th>Pedido mês atual</th><th class=\"acomp-divider\">Data acerto</th>"
     + "<th>Situação PG</th><th>Responsável montagem</th><th class=\"acomp-divider\">Chek list</th>"
     + "<th>Assunto</th><th class=\"acomp-divider\">Data do último contato</th>"
     + "</tr></thead><tbody>";
@@ -1837,6 +1837,7 @@ function renderAcompanhamentoTabela(){
     var respAtual = acompResponsaveis[norm(d.revendedora)] || linha.responsavelMontagem || "";
     html += "<tr>";
     html += "<td>" + escapeAttr(d.revendedora) + "</td>";
+    html += "<td>" + escapeAttr(d.cidade || "-") + "</td>";
     html += "<td><span class=\"badge " + nivelBadgeClass(normNivel(d.nivel)) + "\">" + nivelLabel(d.nivel) + "</span></td>";
     html += "<td>" + primeiroNomeSup + "</td>";
     var valorExibido = d.status === "baixado" ? d.valorTotal : d.valorPreBaixa;
@@ -1955,7 +1956,7 @@ function csvEscapeAcomp(v){
 }
 
 function exportarAcompExcel(){
-  var cols = ["Consultora", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Responsável montagem", "Chek list", "Assunto", "Data do último contato", "Obs"];
+  var cols = ["Consultora", "Cidade", "Nível", "Supervisora", "Pedido mês atual", "Status", "Data acerto", "Situação PG", "Responsável montagem", "Chek list", "Assunto", "Data do último contato", "Obs"];
   var linhasCsv = [cols.join(";")];
   acompLinhasVisiveis.forEach(function(d){
     var codigo = String(d.codigo);
@@ -1963,6 +1964,7 @@ function exportarAcompExcel(){
     var valorExibidoCsv = d.status === "baixado" ? d.valorTotal : d.valorPreBaixa;
     var row = [
       d.revendedora,
+      d.cidade || "-",
       nivelLabel(d.nivel),
       d.supervisora || "-",
       "#" + d.codigo + " - " + fmt(valorExibidoCsv),
