@@ -1,10 +1,39 @@
 ﻿{
-    "mes":  "2026-08",
+    "mes":  "2026-09",
     "linhas":  {
-                   "2685":  {
+                   "2788":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Gestão de metas"
+                            },
+                   "2789":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem conserto, e encomendas\n ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA ",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2822":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
@@ -12,101 +41,71 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "28/08 entrei em contato para saber se tem vandas para lançar, disse que tem, porem nao esta conseguindio entrar no jueri, por conta de senha ",
+                                "dataUltimoContato":  "2026-08-28",
+                                "assunto":  "Campanha de premiação"
                             },
-                   "2711":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2712":  {
+                   "2831":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2714":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2715":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2717":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
-                                                ""
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  "SAIU"
+                                "obs":  "FALEI COM ELA SOBRE METAS",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
                             },
-                   "2718":  {
+                   "2842":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
-                                                ""
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  ""
+                                "obs":  "entrei em contato para saber, se colocou as peças no correio, disse que o correio da cidade dela nao esta funcionando, que vai amanha dia 04/09 em outra cidade postar as peças",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-03"
                             },
-                   "2722":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2727":  {
+                   "2855":  {
                                 "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2856":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  " ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA ",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2858":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Silvia",
                                 "checklist":  "Montada",
@@ -114,1171 +113,15 @@
                                                 "",
                                                 "",
                                                 "",
-                                                ""
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  ""
-                            },
-                   "2731":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2734":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2737":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2740":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2747":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2751":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2752":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2754":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2759":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Em montagem",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2760":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2761":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "26/08 entrei em contato para saber se tem vendas para lançar, aguardando retorno "
-                            },
-                   "2762":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "Pré-baixa",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2763":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2764":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2765":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "IRMÃ LARISSA"
-                            },
-                   "2766":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "Pré-baixa",
-                                                "Pré-baixa"
-                                            ],
-                                "obs":  "24/08 entrei em contato para saber sobre as vendas para lançar se não lançar até amanha vou pedi o recolhimento do material ."
-                            },
-                   "2767":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2768":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2769":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2770":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2771":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2772":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2774":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2775":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2776":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2777":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2778":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2780":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "Pré-baixa",
-                                                "Pré-baixa"
-                                            ],
-                                "obs":  "24/08 ENTREI EM CONTATO PARA ELA ESTAR LANÇANDO AS VENDAS "
-                            },
-                   "2781":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2782":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2783":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2786":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2787":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2790":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2791":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2792":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2793":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2794":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2796":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2797":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2798":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2799":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Em montagem",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2801":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2802":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2804":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2805":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2806":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2807":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2809":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2810":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2811":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU"
-                            },
-                   "2812":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2813":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2814":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2816":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2817":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2818":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2819":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2820":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2821":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2823":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2824":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2825":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2826":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2827":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2828":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2829":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2830":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2832":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2833":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2834":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2835":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2836":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2838":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2839":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2840":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2841":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "Pré-baixa",
-                                                ""
-                                            ],
-                                "obs":  " VAMOS DAR MAIS UMA CHANCE PARA ELA "
-                            },
-                   "2843":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2844":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2845":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2846":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2847":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2848":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2849":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2850":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2851":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2852":  {
-                                "situacaoPg":  "PENDENTE",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2854":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2857":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
+                                "obs":  "tem encomenda \nENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA \n",
+                                "dataUltimoContato":  "2026-09-02"
                             },
                    "2859":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
+                                "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "semanas":  [
                                                 "",
@@ -1286,140 +129,111 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "SAIU",
+                                "dataUltimoContato":  "2026-08-31"
                             },
-                   "2860":  {
+                   "2872":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "Despachada",
                                 "semanas":  [
+                                                "Desempenho de vendas",
                                                 "",
                                                 "",
-                                                "",
-                                                ""
+                                                "Desempenho de vendas"
                                             ],
-                                "obs":  ""
+                                "obs":  "31/08 VAI INTEIRAR OS 500",
+                                "dataUltimoContato":  "2026-08-31"
                             },
-                   "2861":  {
-                                "situacaoPg":  "",
+                   "2876":  {
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
+                                "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
-                                                "Inadimplência"
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  " VAI SAIR, PASSEI PARA A NICOLLY, NAO RESPONDE",
+                                "dataUltimoContato":  "2026-09-01",
+                                "assunto":  ""
+                            },
+                   "2882":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "SAIU",
+                                "dataUltimoContato":  "2026-08-31"
+                            },
+                   "2883":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
                                             ],
                                 "obs":  "vai sair"
                             },
-                   "2862":  {
-                                "situacaoPg":  "PAGO",
+                   "2885":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2863":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
                                 "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
-                                                ""
+                                                "Desempenho de vendas"
                                             ],
-                                "obs":  "VAI BUSCAR A MALETA NO COMEÇO DO MES DE SETEMBRO "
+                                "obs":  "FALEI COM ELA SOBRE O ENVIO DAS PEÇAS, E SOBRE METAS",
+                                "dataUltimoContato":  "2026-09-02",
+                                "assunto":  "Outros"
                             },
-                   "2865":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Pré-baixa"
-                                            ],
-                                "obs":  "25/08 VAI FAZER OS 200 , VAMOS DAR MAIS UMA CHANCE PARA ELA "
-                            },
-                   "2866":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2867":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2869":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2870":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2871":  {
-                                "situacaoPg":  "PAGO",
+                   "2886":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "",
                                 "semanas":  [
+                                                "Campanha de premiação",
                                                 "",
                                                 "",
-                                                "Inadimplência",
-                                                "Outros"
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  "vai sair, por isso não foi montada, "
+                                "obs":  "LIGUEI PARA ELA PARA FALAR SOBRE A CAMPANHA E INSENTIVAR ELA A VENDER ",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-03"
                             },
-                   "2873":  {
+                   "2887":  {
                                 "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "MALETA EM TRANSITO VOLTA ",
+                                "dataUltimoContato":  "2026-09-04"
+                            },
+                   "2894":  {
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1429,64 +243,112 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  ""
+                                "obs":  "VAI SAIR - JA ENVIOU PELOS CORREIOS"
                             },
-                   "2874":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2875":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2878":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "NAO FOI ENVIADA AINDA POIS ESTA AGUARDANDO A OUTRA MALETA ANTIGA CHEGAR PARA SABER A NUMERAÇÃO DE ANEL "
-                            },
-                   "2881":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "OK"
-                            },
-                   "2882":  {
+                   "2895":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem encomenda\n ENTREI EM CONTATO PARA FALAR DA CAMPANHA, E SABER SE COLOCOU AS PEÇAS NO CORREIO, AGUARDANDO RETORNO ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2898":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2900":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS ",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Gestão de metas"
+                            },
+                   "2902":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Trânsito volta",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Outros"
+                                            ],
+                                "obs":  "VAI SAIR - MALETA JA FOI ENVIADA PARA O CORREIO "
+                            },
+                   "2903":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "31/08 Entrei em contato, para saber se tem venda para lançar, disse que tem, que vai lançar, estou aguardando ",
+                                "dataUltimoContato":  "2026-08-31"
+                            },
+                   "2904":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2905":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Entregue",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2906":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
                                 "checklist":  "",
                                 "semanas":  [
                                                 "",
@@ -1496,202 +358,36 @@
                                             ],
                                 "obs":  "SAIU"
                             },
-                   "2884":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2888":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "\n\n"
-                            },
-                   "2889":  {
+                   "2908":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
                                 "checklist":  "",
                                 "semanas":  [
+                                                "Campanha de premiação",
                                                 "",
                                                 "",
-                                                "",
-                                                ""
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  ""
+                                "obs":  "TENTEI CONVENCER ELA A ATINGIR OS 1500 ELA DISSE QUE VAI TENTAR",
+                                "dataUltimoContato":  "2026-09-04",
+                                "assunto":  "Gestão de metas"
                             },
-                   "2890":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2891":  {
+                   "2909":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
+                                "responsavelMontagem":  "",
                                 "checklist":  "Montada",
                                 "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2892":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
                                                 "Desempenho de vendas",
-                                                ""
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
                                             ],
-                                "obs":  ""
+                                "obs":  "ENTREI EM CONTATO HOJE PARA AJUDAR ELA A CORRER A TRAS DAS VENDAS , E CONSEGUIR ATINGIR A CAMPANHA DO MES  , ESTOU ACOMPANHANDO !",
+                                "dataUltimoContato":  "2026-08-03"
                             },
-                   "2893":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "vai continuar com a mesma maleta "
-                            },
-                   "2899":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2907":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2915":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2916":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "vai sair"
-                            },
-                   "2924":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ESTOU AGUARDANDO A POSTAGEM DAS PÇAS NO CORREIO E VAI VIM FAZER A MALETA AQUI \n\nTEM CONCERTO "
-                            },
-                   "2926":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "3014":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "9998":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Nicolly",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "9999":  {
+                   "2910":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
@@ -1702,14 +398,1222 @@
                                                 "",
                                                 ""
                                             ],
+                                "obs":  "tem conserto\nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA.\n",
+                                "dataUltimoContato":  "2026-09-02",
+                                "assunto":  "Campanha de premiação"
+                            },
+                   "2911":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "vai sair por questao de saude\n",
+                                "assunto":  ""
+                            },
+                   "2912":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2913":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "Campanha de premiação",
+                                                "Campanha de premiação",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE TENTAR FAZER OS 1500 PARA CONSEGUIR A CAMAPNHA MAIS ELA NAO TINHA COMO INTEIRAR",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2914":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA SABER SE TEM VENDAS PARA TA ALANÇANDO, ESTOU AGUARDANDO RETORNO",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2917":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "vai vim sabado montar a maleta - e esta correndo atras para ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2918":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "01/09 ja mandou as peças\nFALEI COM ELA SOBRE METAS E CATALOGO",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2919":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "MALETA CHEGOU DIA 31/08 = LIGUEI PARA ELA , PARA FALAR SOBRE AS CAMPANHAS DE SETEMBRO ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2920":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "entrei em contado,para saber como estao as vendas, e falar sobre a campanha "
+                            },
+                   "2921":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
                                 "obs":  ""
+                            },
+                   "2922":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2925":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI SOBRE A CAMPANHA E INSENTIVEI A VENDER MAIS ",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2927":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "LIGUEI PARA ELA , PARA FALAR DAS VENDAS E TAMBEM DA CAMAPNHA VAI TENTAR INTEIRAR OS 1.500 E VAI MANDAR A MALETA SO TERÇA 8/9",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Desempenho de vendas"
+                            },
+                   "2928":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "LIGUEI PARA ELA , ELA DISSE QUE VAI TENTAR FAZER OS 1500, ESTOU ACOMPANHANDO ELA .\ne vai postar no dia 08/09",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2929":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS, E SOBRE CORREIO",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2930":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "LIGUEI PARA ELA ,PARA PARABENIZAR SOBRE AS VENDAS E INSENTIVAR MAIS ELA PARA PODER VENDER MAIS .",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2932":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "entrei em contato para falar sobre as vendas , ela disse que vai tentar vender os 1500",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2933":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  ""
+                            },
+                   "2934":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "entrei em contato com ela para falar sobre as vendas para atingir a meta da campanha ",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2936":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE AS VENDAS PARA CONSEGUIR ATINGIR A CAMAPNHA DO MES ",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2937":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "Dei mais uma chance para ela. vai lancar os 200, e continuar com a mesma maleta, ESTA COM A MAE DOENTE ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2940":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "tentei falar com ela hoje mais ela não podia falar irei retorna amanha "
+                            },
+                   "2941":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "entrei em contato para saber se tem vendas para ta lançando, DISSE QUE IRA LANÇAR HOJE ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2942":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2943":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Outros"
+                                            ],
+                                "obs":  "JA  ATINGIU A CAMPANHA MAIS ESTOU INCENTIVANDO PARA PODER VENDER MAIS ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2944":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-02",
+                                "assunto":  "Campanha de premiação"
+                            },
+                   "2945":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Em montagem",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2946":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "2949":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Desempenho de vendas"
+                                            ],
+                                "obs":  "02/09 entrei em contato para saber se tem vendas para ta lançando, ela disse que vai sair pois esta sem tempo.",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2950":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Pré-baixa",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "ela disse que ainda vendeu so isso mais que vai correr atras ",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Campanha de premiação"
+                            },
+                   "2951":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "tem conserto\n ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2956":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem brinde, ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA ",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2958":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2960":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE METAS, E SOBRE A CASMPANHA ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "2961":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE AS VENDAS DELA E INSENTIVAR A VENDER MAIS ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2962":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA SABER SE TEM MAIS VENDAS , E TAMBEM INSENTIVEI ELA PARA VENDER MAIS PARA GANHAR A CAMAPANHA ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2963":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
+                                "obs":  ""
+                            },
+                   "2964":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ELA ME DISSE QUE VAI SAIR, POIS ESTA COM PROBLEMAS PESSOAIS",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2965":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2969":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem conserto \nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2971":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "falei com ela sobre as vendas e tambem a campanha do mes",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2972":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2974":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "VAI POSTAR AS PEÇAS DIA 14/09 PARA PODER VENDER MAIS NO FINAL DE SEMANA ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-01"
+                            },
+                   "2975":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "2976":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n\n",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2977":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2978":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2979":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "CONVERSEI COM ELA PARA FALAR SOBRE A CAMAPNHA E TAMBEM SOBRE AS VENDAS PARA ELA CONSEGUIR VENDER MAIS ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2980":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "2982":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "LIGUEI PARA ELA, PARA INSENTIVAR A VENDER MAIS E CONSEGUIR GANHAR A CAMPANHA ",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2983":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "2985":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "ENTREI  EM CONTATO PARA SABER DAS VENDAS E PARA MOTIVAR ELA SOBRE A CAMAPNHA ",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Desempenho de vendas"
+                            },
+                   "2986":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem conserto \nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n\n",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2987":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SOBRE AS VENDAS E MOTIVAR ELA PARA GANHAR A CAMPANHA ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2989":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "2990":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Gestão de metas",
+                                                "",
+                                                "",
+                                                "Gestão de metas"
+                                            ],
+                                "obs":  "LIGUEI  PARA ELA PARA FALAR DA CAMPANHA E INSENTIVAR A VENDER MAIS ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2994":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n\n"
+                            },
+                   "2995":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "LIGUEI PARA ELA PARA FALAR SOBRE A CAMPANA E TAMBEM DO SEU DESEMPENHO DE VENDAS ",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "2999":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "ela esta viajando ,disse que vai correr atras para ganha a campanha "
+                            },
+                   "3003":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3004":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "3005":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "tem encomenda\nTEM VENDA PARA LANÇAR, MAS DISSE QUE ESTA SEM TEMPO DE LANÇAR, IRA LANCAR SEGUNDA OU TERÇA FEIRA ",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-04"
+                            },
+                   "3006":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "TEM CONCERTO "
+                            },
+                   "3007":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "3008":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "entrei em contato para saber se tem vendas para lançar, aguardando retorno"
+                            },
+                   "3011":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Pré-baixa",
+                                                "",
+                                                "",
+                                                "Pré-baixa"
+                                            ],
+                                "obs":  " ENTREI EM CONTATO PARA SABER SOBRE AS VENDAS E TAMBEM FALEI SOBRE A CAMAPNHA ",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3012":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  " ENTREI EM CONTATO PARA SABER SOBRE AS VENDAS E TAMBEM FALEI SOBRE A CAMAPNHA ",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "3015":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "Campanha de premiação",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "31/08 ENTREI EM CONTATO PARA SABER SOBRE AS VENDAS E TAMBEM PARA INSENTIVAR AS VENDAS SOBRE A CAMAPNHA DA PREMIAÇAO "
+                            },
+                   "3017":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "tentei ligar  para ela , mais ela não atendeu irei retorna amanha ",
+                                "dataUltimoContato":  "2026-09-03",
+                                "assunto":  "Outros"
+                            },
+                   "3018":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA SABER DAS VENDAS, PARA ELA TAE SOBRE A CAMPANHA DE SETEMBRO",
+                                "dataUltimoContato":  "2026-09-02"
+                            },
+                   "3019":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-02",
+                                "obs":  "ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E FALAR SOBRE A CAMPANHA "
+                            },
+                   "3020":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3021":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "VAI SAIR POIS ACHOU AS PEÇAS CARAS , TENTEI CONVENCER ELA MAIS ELA NÃO QUIS CONTINUAR E NÃO CONSEGUIU VENDER , E VAI INTEIRA OS 200"
+                            },
+                   "3023":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3025":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  ""
+                            },
+                   "3026":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3028":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3030":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "FALEI COM ELA SOBRE A CAMAPNHA , TAMBEM SOBRE OS DESENVOLVIMENTO DAS VENDAS ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-04"
+                            },
+                   "3031":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-02",
+                                "obs":  "ENTREI EM CONTATO PARA SABER SE TEM MAIS VENDAS PARA TA LANÇANDO, AGUARDANDO RETORNO"
+                            },
+                   "3033":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  ""
+                            },
+                   "3035":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3036":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3037":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "LIGUEI PARA ELA PARA FALAR DA CAMPANHA E TAMBEM PARA ELA LANÇAR AS VENDAS "
+                            },
+                   "3043":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "LIGUEI PARA ELA E FALEI SOBRE AS CAMPANHAS E TAMBEM SOBRE O LANÇAMENTO DE PEÇAS "
+                            },
+                   "3044":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "LIGUEI PARA ELA , PARA FALAR SOBRE A CAMPANHA E INSENTIVAR ELA A VENDER CADA VEZ MAIS , POIS ELA ESTAVA DESANIMADA , MAIS CONVERSEI COM ELA E ELA DISSE QUE VAI CORRER ATRAS",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3048":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                "Campanha de premiação"
+                                            ],
+                                "obs":  "",
+                                "dataUltimoContato":  "2026-09-03"
+                            },
+                   "3049":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-04",
+                                "obs":  "FALEI COM ELA PARA INSENTIVAR A VENDER MAIS "
+                            },
+                   "3053":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  ""
+                            },
+                   "3057":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-02",
+                                "obs":  ""
+                            },
+                   "3059":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
+                            },
+                   "3064":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-01",
+                                "obs":  "ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E FALAR DA CAMPANHA "
                             }
                },
     "responsaveis":  {
                          "teste consultora xyz":  "Nicolly",
                          "tamara marciano rabello":  "Silvia",
                          "patricia cristina rocha costa":  "Silvia",
-                         "dalva nayara gervaes de faria":  "Kathlyn",
+                         "dalva nayara gervaes de faria":  "",
                          "caroline mendes assunção":  "Silvia",
                          "carla melo do carmo":  "Silvia",
                          "larissa braga mesquita de souza":  "Silvia",
@@ -1725,7 +1629,7 @@
                          "dionisia maria ferreira":  "Silvia",
                          "adriana aparecida basilio":  "Kathlyn",
                          "imaculada aparecida da silva de souza":  "Amanda",
-                         "tamyres aparecida furtado":  "Amanda",
+                         "tamyres aparecida furtado":  "Kathlyn",
                          "ketelly daniele guimaraes rocha":  "Kathlyn",
                          "ana paula ferreira fernandes":  "",
                          "erica aparecida silva ovidio":  "Kathlyn",
@@ -1738,7 +1642,7 @@
                          "lenara da cunha castro lopes":  "Silvia",
                          "paula kelly de lima clevelim":  "Kathlyn",
                          "daniele vieira melo nunes":  "Kathlyn",
-                         "fabiana llian de lima":  "Kathlyn",
+                         "fabiana llian de lima":  "Amanda",
                          "karolina estefane de souza rufino":  "Kathlyn",
                          "livia maria braga resende":  "Silvia",
                          "josiane dias almeida":  "Kathlyn",
@@ -1840,7 +1744,7 @@
                          "silvia cristina musso teodoro":  "Silvia",
                          "yasmin de sousa teixeira":  "Silvia",
                          "adriana maria da silva":  "Kathlyn",
-                         "natália palácio gonçalves":  "",
+                         "natália palácio gonçalves":  "Kathlyn",
                          "danubia clemente da cunha":  "",
                          "laiene aparecida da silva pereira":  "Amanda",
                          "valdilene maria de oliveira barao":  "Amanda",
@@ -1858,7 +1762,10 @@
                          "raniela da silva pereira":  "Kathlyn",
                          "aline aniceto marcolino":  "Kathlyn",
                          "poliana barbosa silva pereira":  "Silvia",
-                         "cassiana paula francisco":  "Amanda",
-                         "jessica aparecida da silveira souza":  "Silvia"
+                         "cassiana paula francisco":  "",
+                         "jessica aparecida da silveira souza":  "Silvia",
+                         "bethania consuelo de oliveira":  "Kathlyn",
+                         "drielle rodrigues silva":  "Kathlyn",
+                         "isabela paula pereira":  "Kathlyn"
                      }
 }
