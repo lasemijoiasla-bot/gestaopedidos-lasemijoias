@@ -186,7 +186,8 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "vai sair"
+                                "obs":  "vai sair",
+                                "dataUltimoContato":  "2026-09-01"
                             },
                    "2885":  {
                                 "situacaoPg":  "",
@@ -243,7 +244,8 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "VAI SAIR - JA ENVIOU PELOS CORREIOS"
+                                "obs":  "VAI SAIR - JA ENVIOU PELOS CORREIOS",
+                                "dataUltimoContato":  "2026-09-01"
                             },
                    "2895":  {
                                 "situacaoPg":  "",
@@ -356,7 +358,8 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "SAIU"
+                                "obs":  "SAIU",
+                                "dataUltimoContato":  "2026-09-01"
                             },
                    "2908":  {
                                 "situacaoPg":  "",
@@ -414,7 +417,8 @@
                                                 "Campanha de premiação"
                                             ],
                                 "obs":  "vai sair por questao de saude\n",
-                                "assunto":  ""
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-01"
                             },
                    "2912":  {
                                 "situacaoPg":  "",
