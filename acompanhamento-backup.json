@@ -612,7 +612,7 @@
                                 "dataUltimoContato":  "2026-09-03"
                             },
                    "2930":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
                                 "checklist":  "",
@@ -784,8 +784,9 @@
                                                 "",
                                                 "Campanha de premiação"
                                             ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
-                                "dataUltimoContato":  "2026-09-02"
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE metas",
+                                "dataUltimoContato":  "2026-09-09",
+                                "assunto":  "Gestão de metas"
                             },
                    "2946":  {
                                 "situacaoPg":  "",
@@ -1424,7 +1425,7 @@
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-02",
+                                "dataUltimoContato":  "2026-09-09",
                                 "obs":  "ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E FALAR SOBRE A CAMPANHA "
                             },
                    "3020":  {
@@ -1438,9 +1439,9 @@
                                                 "",
                                                 "Campanha de premiação"
                                             ],
-                                "obs":  "",
+                                "obs":  "ENTREI EM CONTATO PARA SABER COMO ESTAO AS VENDAS ",
                                 "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-03"
+                                "dataUltimoContato":  "2026-09-09"
                             },
                    "3021":  {
                                 "situacaoPg":  "SAIU",
