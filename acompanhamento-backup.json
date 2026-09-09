@@ -265,7 +265,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Em montagem",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -568,7 +568,7 @@
                                 "dataUltimoContato":  "2026-09-02"
                             },
                    "2927":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -1058,7 +1058,7 @@
                                 "dataUltimoContato":  "2026-09-03"
                             },
                    "2978":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
