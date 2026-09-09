@@ -848,7 +848,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1061,7 +1061,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
