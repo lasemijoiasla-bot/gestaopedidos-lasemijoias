@@ -525,44 +525,32 @@
   </div>
 
   <div id="tab-ranking" class="tab-content">
-    <div class="header-filter" style="width: 200px; margin-bottom: 1.25rem;">
-      <label for="ranking-mes-select">Mês</label>
-      <select id="ranking-mes-select" class="col-search"></select>
+    <div class="historico-filters">
+      <div class="header-filter">
+        <label for="ranking-ano-select">Ano</label>
+        <select id="ranking-ano-select" class="col-search"></select>
+      </div>
+      <div class="header-filter">
+        <label for="ranking-mes-select">Mês</label>
+        <select id="ranking-mes-select" class="col-search"></select>
+      </div>
+      <div class="header-filter">
+        <label for="ranking-tipo-select">Tipo de ranking</label>
+        <select id="ranking-tipo-select" class="col-search">
+          <option value="geral-ano">Geral - Ano todo</option>
+          <option value="geral-mes" selected>Geral - Mês</option>
+          <option value="basica">Básica - Mês</option>
+          <option value="vip">VIP - Mês</option>
+          <option value="premium">Premium - Mês</option>
+        </select>
+      </div>
     </div>
 
     <div class="chart-card">
       <div class="chart-header">
-        <p class="chart-title" id="ranking-geral-ano-titulo">Ranking Geral - Ano</p>
+        <p class="chart-title" id="ranking-titulo">Ranking Geral - Mês</p>
       </div>
-      <div class="tabela-scroll" id="ranking-geral-ano-tabela"></div>
-    </div>
-
-    <div class="chart-card">
-      <div class="chart-header">
-        <p class="chart-title" id="ranking-geral-mes-titulo">Ranking Geral do Mês</p>
-      </div>
-      <div class="tabela-scroll" id="ranking-geral-mes-tabela"></div>
-    </div>
-
-    <div class="chart-card">
-      <div class="chart-header">
-        <p class="chart-title">Ranking Básica</p>
-      </div>
-      <div class="tabela-scroll" id="ranking-basica-tabela"></div>
-    </div>
-
-    <div class="chart-card">
-      <div class="chart-header">
-        <p class="chart-title">Ranking VIP</p>
-      </div>
-      <div class="tabela-scroll" id="ranking-vip-tabela"></div>
-    </div>
-
-    <div class="chart-card">
-      <div class="chart-header">
-        <p class="chart-title">Ranking Premium</p>
-      </div>
-      <div class="tabela-scroll" id="ranking-premium-tabela"></div>
+      <div class="tabela-scroll" id="ranking-tabela"></div>
     </div>
   </div>
 
@@ -1780,13 +1768,37 @@ function renderResumoNovatas(){
 }
 novatasMesSelect.addEventListener("change", renderResumoNovatas);
 
+var rankingAbaAnoSelect = document.getElementById("ranking-ano-select");
 var rankingAbaMesSelect = document.getElementById("ranking-mes-select");
+var rankingAbaTipoSelect = document.getElementById("ranking-tipo-select");
+
+function anosRankingAbaDisponiveis(){
+  var set = {};
+  RANKING.forEach(function(r){ set[r.mes.slice(0, 4)] = true; });
+  set[mesAtualPadrao().slice(0, 4)] = true;
+  return Object.keys(set).sort();
+}
+
+function populateRankingAbaAnoSelect(){
+  var anos = anosRankingAbaDisponiveis();
+  var valorAtual = rankingAbaAnoSelect.value;
+  rankingAbaAnoSelect.innerHTML = "";
+  anos.forEach(function(a){
+    var opt = document.createElement("option");
+    opt.value = a;
+    opt.textContent = a;
+    rankingAbaAnoSelect.appendChild(opt);
+  });
+  rankingAbaAnoSelect.value = anos.indexOf(valorAtual) >= 0 ? valorAtual : anos[anos.length - 1];
+}
 
 function mesesRankingAbaDisponiveis(){
+  var ano = rankingAbaAnoSelect.value || mesAtualPadrao().slice(0, 4);
   var set = {};
-  RANKING.forEach(function(r){ set[r.mes] = true; });
-  set[mesAtualPadrao()] = true;
-  return Object.keys(set).sort();
+  RANKING.forEach(function(r){ if (r.mes.slice(0, 4) === ano) { set[r.mes] = true; } });
+  if (ano === mesAtualPadrao().slice(0, 4)) { set[mesAtualPadrao()] = true; }
+  var meses = Object.keys(set).sort();
+  return meses.length ? meses : [ano + "-01"];
 }
 
 function populateRankingAbaMesSelect(){
@@ -1827,25 +1839,40 @@ function agruparRankingAbaPorConsultora(lista){
   return Object.keys(grupos).map(function(k){ return grupos[k]; });
 }
 
+var RANKING_TIPO_NIVEL = { basica: "BASICA", vip: "VIP", premium: "PREMIUM" };
+var RANKING_TIPO_LABEL = { basica: "Básica", vip: "VIP", premium: "Premium" };
+
 function renderRankingAba(){
+  populateRankingAbaAnoSelect();
   populateRankingAbaMesSelect();
+  var tipo = rankingAbaTipoSelect.value;
+  var ano = rankingAbaAnoSelect.value || mesAtualPadrao().slice(0, 4);
   var mes = rankingAbaMesSelect.value || mesAtualPadrao();
-  var ano = mes.slice(0, 4);
   var mesLabel = rankingAbaMesSelect.options[rankingAbaMesSelect.selectedIndex] ? rankingAbaMesSelect.options[rankingAbaMesSelect.selectedIndex].textContent : mes;
+  rankingAbaMesSelect.disabled = (tipo === "geral-ano");
 
-  document.getElementById("ranking-geral-ano-titulo").textContent = "Ranking Geral - Ano " + ano;
-  var doAno = RANKING.filter(function(r){ return r.mes.slice(0, 4) === ano; });
-  document.getElementById("ranking-geral-ano-tabela").innerHTML = construirTabelaRankingAba(agruparRankingAbaPorConsultora(doAno), true);
+  var titulo, linhas, comNivel;
+  if (tipo === "geral-ano") {
+    titulo = "Ranking Geral - Ano " + ano;
+    var doAno = RANKING.filter(function(r){ return r.mes.slice(0, 4) === ano; });
+    linhas = agruparRankingAbaPorConsultora(doAno);
+    comNivel = true;
+  } else if (tipo === "geral-mes") {
+    titulo = "Ranking Geral - " + mesLabel;
+    linhas = agruparRankingAbaPorConsultora(RANKING.filter(function(r){ return r.mes === mes; }));
+    comNivel = true;
+  } else {
+    titulo = "Ranking " + RANKING_TIPO_LABEL[tipo] + " - " + mesLabel;
+    linhas = RANKING.filter(function(r){ return r.mes === mes && normNivel(r.nivel) === RANKING_TIPO_NIVEL[tipo]; });
+    comNivel = false;
+  }
 
-  document.getElementById("ranking-geral-mes-titulo").textContent = "Ranking Geral - " + mesLabel;
-  var doMes = RANKING.filter(function(r){ return r.mes === mes; });
-  document.getElementById("ranking-geral-mes-tabela").innerHTML = construirTabelaRankingAba(agruparRankingAbaPorConsultora(doMes), true);
-
-  document.getElementById("ranking-basica-tabela").innerHTML = construirTabelaRankingAba(doMes.filter(function(r){ return normNivel(r.nivel) === "BASICA"; }), false);
-  document.getElementById("ranking-vip-tabela").innerHTML = construirTabelaRankingAba(doMes.filter(function(r){ return normNivel(r.nivel) === "VIP"; }), false);
-  document.getElementById("ranking-premium-tabela").innerHTML = construirTabelaRankingAba(doMes.filter(function(r){ return normNivel(r.nivel) === "PREMIUM"; }), false);
+  document.getElementById("ranking-titulo").textContent = titulo;
+  document.getElementById("ranking-tabela").innerHTML = construirTabelaRankingAba(linhas, comNivel);
 }
+rankingAbaAnoSelect.addEventListener("change", function(){ populateRankingAbaMesSelect(); renderRankingAba(); });
 rankingAbaMesSelect.addEventListener("change", renderRankingAba);
+rankingAbaTipoSelect.addEventListener("change", renderRankingAba);
 
 renderResumoNovatas();
 renderGraficoNovatas();
