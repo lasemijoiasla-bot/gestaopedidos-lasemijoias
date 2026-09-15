@@ -846,6 +846,15 @@
                                 "assunto":  "Campanha de premiação",
                                 "dataUltimoContato":  "2026-09-11"
                             },
+                   "2954":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
+                                "obs":  ""
+                            },
                    "2956":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
@@ -1135,7 +1144,7 @@
                                 "assunto":  "Pré-baixa"
                             },
                    "2985":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1176,6 +1185,15 @@
                                             ],
                                 "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SOBRE AS VENDAS E MOTIVAR ELA PARA GANHAR A CAMPANHA ",
                                 "dataUltimoContato":  "2026-09-08"
+                            },
+                   "2988":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
+                                "obs":  ""
                             },
                    "2989":  {
                                 "situacaoPg":  "",
