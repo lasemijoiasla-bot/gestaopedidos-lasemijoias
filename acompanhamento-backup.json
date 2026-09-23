@@ -1576,7 +1576,7 @@
                                 "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA ( nao pode atender ligaçao)"
                             },
                    "3032":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -1771,9 +1771,9 @@
                                 "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS PARA LANÇAR ESTOU AGUARDANDO O RETORNO "
                             },
                    "3064":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
+                                "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-09-22",
@@ -1954,7 +1954,7 @@
                          "cassiana paula francisco":  "",
                          "jessica aparecida da silveira souza":  "Silvia",
                          "bethania consuelo de oliveira":  "Kathlyn",
-                         "drielle rodrigues silva":  "Kathlyn",
+                         "drielle rodrigues silva":  "",
                          "isabela paula pereira":  "",
                          "yasmin silveira beltrão":  "Amanda",
                          "ariane melo toqueiro de oliveira":  "Silvia"
