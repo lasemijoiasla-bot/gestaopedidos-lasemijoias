@@ -295,7 +295,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "FALEI COM ELA SOBRE AS VENDAS , E TAMBEM PARABENIZEI ELA PELO ESFORÇO DAS VENDAS "
@@ -506,7 +506,7 @@
                                 "dataUltimoContato":  "2026-09-03"
                             },
                    "2919":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -730,7 +730,7 @@
                                 "dataUltimoContato":  "2026-09-03"
                             },
                    "2942":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1453,7 +1453,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Campanha de premiação",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "primeiro mes ganhou colar \nENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E FALAR SOBRE A CAMPANHA, DISSE QUE NAO TEM MAIS VENDAS PARA LANÇAR E PARTICIPAR DA CAMPANHA "
@@ -1555,7 +1555,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1579,7 +1579,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Entregue",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-09-21",
                                 "obs":  "parabenizei pelas vendas "
@@ -1612,7 +1612,7 @@
                                 "dataUltimoContato":  "2026-09-22"
                             },
                    "3036":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1681,7 +1681,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "PARABENIZEI ELA SOBR AS VENDAS "
@@ -1690,7 +1690,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Em montagem",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
