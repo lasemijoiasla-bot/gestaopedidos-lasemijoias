@@ -1648,7 +1648,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "FALEI COM ELA PARA INCENTIVAR A VENDER MAIS "
@@ -1663,7 +1663,7 @@
                                 "obs":  "entrei em contato para saber se tem mais vendas = ELA DISSE QUE VAI POSTAR AS VENDAS HOJE "
                             },
                    "3044":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1957,6 +1957,9 @@
                          "drielle rodrigues silva":  "",
                          "isabela paula pereira":  "",
                          "yasmin silveira beltrão":  "Amanda",
-                         "ariane melo toqueiro de oliveira":  "Silvia"
+                         "ariane melo toqueiro de oliveira":  "Silvia",
+                         "maria tamara lopes de melo":  "Silvia",
+                         "cristiane dos santos":  "Kathlyn",
+                         "daniela de assis militão de oliveira":  "Silvia"
                      }
 }
