@@ -292,10 +292,10 @@
                                 "assunto":  "Gestão de metas"
                             },
                    "2901":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Entregue",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "FALEI COM ELA SOBRE AS VENDAS , E TAMBEM PARABENIZEI ELA PELO ESFORÇO DAS VENDAS "
@@ -1138,7 +1138,7 @@
                                 "dataUltimoContato":  "2026-09-15"
                             },
                    "2983":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
                                 "checklist":  "Montada",
@@ -1277,7 +1277,7 @@
                                 "obs":  " falei com ela sobre as vendas dela que ganhou a campanha ."
                             },
                    "3003":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1352,7 +1352,7 @@
                                 "assunto":  "Gestão de metas"
                             },
                    "3008":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1524,7 +1524,7 @@
                                 "obs":  ""
                             },
                    "3026":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1548,11 +1548,11 @@
                                                 "",
                                                 "Campanha de premiação"
                                             ],
-                                "obs":  "entrei em contato com ela para dar os parabens pelas vendas, e falar sobre a campanha",
+                                "obs":  "entrei em contato com ela para dar os parabens pelas vendas, e falar sobre a campanha \nSO VAI TERMINAR E PAGAR O ACERTO DIA 06/10",
                                 "dataUltimoContato":  "2026-09-22"
                             },
                    "3030":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -1567,10 +1567,10 @@
                                 "dataUltimoContato":  "2026-09-17"
                             },
                    "3031":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "assunto":  "Campanha de premiação",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA ( nao pode atender ligaçao)"
@@ -1612,7 +1612,7 @@
                                 "dataUltimoContato":  "2026-09-22"
                             },
                    "3036":  {
-                                "situacaoPg":  "SAIU",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1630,13 +1630,13 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Entregue",
                                 "assunto":  "Pré-baixa",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS / ELA DISSE QUE AINDA NÃO TEM VENDAS "
                             },
                    "3041":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1645,19 +1645,19 @@
                                 "obs":  "SAIU, POIS NAO ESTA CONSEGUINDO VENDER  "
                             },
                    "3042":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "FALEI COM ELA PARA INCENTIVAR A VENDER MAIS "
                             },
                    "3043":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Entregue",
                                 "assunto":  "Pré-baixa",
                                 "dataUltimoContato":  "2026-09-23",
                                 "obs":  "entrei em contato para saber se tem mais vendas = ELA DISSE QUE VAI POSTAR AS VENDAS HOJE "
@@ -1673,15 +1673,15 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "conversei com ela para incentivar as vendas dei dicas para ela ",
+                                "obs":  "ELA VAI DA UMA PARADA E VAI VOLTA DIA 10/10",
                                 "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-18"
+                                "dataUltimoContato":  "2026-09-28"
                             },
                    "3046":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Entregue",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "PARABENIZEI ELA SOBR AS VENDAS "
@@ -1702,7 +1702,7 @@
                                 "assunto":  "Gestão de metas"
                             },
                    "3049":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Entregue",
@@ -1747,10 +1747,10 @@
                                 "obs":  ""
                             },
                    "3059":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Despachada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -1762,10 +1762,10 @@
                                 "dataUltimoContato":  "2026-09-22"
                             },
                    "3060":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Entregue",
                                 "assunto":  "Pré-baixa",
                                 "dataUltimoContato":  "2026-09-22",
                                 "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS PARA LANÇAR ESTOU AGUARDANDO O RETORNO "
@@ -1780,19 +1780,19 @@
                                 "obs":  "VAI SAIR"
                             },
                    "3065":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "CONVERSEI COM ELA PARA SABER SE TEM VENDAS ELA DISSE QUE VAI LANÇAR "
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ELA DISSE QUE VAI SAIR "
                             },
                    "3089":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Pré-baixa",
                                 "dataUltimoContato":  "2026-09-17",
                                 "obs":  "MALETA CHEGOU DIA 08/09\nELA DISSE QUE SÓ TEM ESSAS VENDAS POR ENQUANTO MAIS QUE ESTA CORRENDO ATRAS "
@@ -1817,7 +1817,7 @@
                          "tatiane felipe correa peres":  "Silvia",
                          "dionisia maria ferreira":  "Silvia",
                          "adriana aparecida basilio":  "Kathlyn",
-                         "imaculada aparecida da silva de souza":  "Amanda",
+                         "imaculada aparecida da silva de souza":  "Kathlyn",
                          "tamyres aparecida furtado":  "Kathlyn",
                          "ketelly daniele guimaraes rocha":  "Kathlyn",
                          "ana paula ferreira fernandes":  "",
@@ -1836,7 +1836,7 @@
                          "livia maria braga resende":  "Silvia",
                          "josiane dias almeida":  "Kathlyn",
                          "josigleice da silva rodrigues da conceiçao":  "Silvia",
-                         "layla luiza de souza barra rezende":  "Amanda",
+                         "layla luiza de souza barra rezende":  "Kathlyn",
                          "leticia pereira costa":  "Amanda",
                          "raíssa aparecida da silva":  "Amanda",
                          "josélia de oliveira dos santos":  "Kathlyn",
@@ -1847,7 +1847,7 @@
                          "iris siqueira de oliveira":  "Silvia",
                          "nayane paula siva xavier":  "Amanda",
                          "milena alves meneguci":  "Amanda",
-                         "flávia maria lemos":  "Amanda",
+                         "flávia maria lemos":  "Kathlyn",
                          "adriana martins coelho":  "Kathlyn",
                          "cinthia fabiola de oliveira":  "Kathlyn",
                          "jessica eduarda pereira de paula":  "Silvia",
@@ -1960,6 +1960,9 @@
                          "ariane melo toqueiro de oliveira":  "Silvia",
                          "maria tamara lopes de melo":  "Silvia",
                          "cristiane dos santos":  "Kathlyn",
-                         "daniela de assis militão de oliveira":  "Silvia"
+                         "daniela de assis militão de oliveira":  "Silvia",
+                         "monica cristina pimenta freitas":  "Amanda",
+                         "camila alves teixeira":  "Amanda",
+                         "hadassa villela luiz":  "Amanda"
                      }
 }
