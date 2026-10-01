@@ -1,1437 +1,66 @@
 ﻿{
-    "mes":  "2026-09",
+    "mes":  "2026-10",
     "linhas":  {
-                   "2788":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "",
-                                "dataUltimoContato":  "",
-                                "assunto":  ""
-                            },
-                   "2789":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem conserto, e encomendas\n ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS ",
-                                "dataUltimoContato":  "2026-09-02"
-                            },
-                   "2822":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "28/08 entrei em contato para saber se tem vandas para lançar, disse que tem, porem nao esta conseguindio entrar no jueri, por conta de senha ",
-                                "dataUltimoContato":  "2026-08-28",
-                                "assunto":  "Campanha de premiação"
-                            },
-                   "2831":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-15"
-                            },
-                   "2842":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato para saber, se colocou as peças no correio, disse que o correio da cidade dela nao esta funcionando, que vai amanha dia 04/09 em outra cidade postar as peças",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2855":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-09"
-                            },
-                   "2856":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ganhou colar \n ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS",
-                                "dataUltimoContato":  "2026-09-09"
-                            },
-                   "2858":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem encomenda \nENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA \n",
-                                "dataUltimoContato":  "2026-09-02"
-                            },
-                   "2859":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU",
-                                "dataUltimoContato":  "2026-08-31"
-                            },
-                   "2872":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Desempenho de vendas",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "31/08 VAI INTEIRAR OS 500",
-                                "dataUltimoContato":  "2026-08-31"
-                            },
-                   "2876":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  " VAI SAIR, PASSEI PARA A NICOLLY, NAO RESPONDE",
-                                "dataUltimoContato":  "2026-09-01",
-                                "assunto":  ""
-                            },
-                   "2882":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU",
-                                "dataUltimoContato":  "2026-08-31"
-                            },
-                   "2883":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "vai sair",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2885":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE O ENVIO DAS PEÇAS, E SOBRE METAS",
-                                "dataUltimoContato":  "2026-09-02",
-                                "assunto":  "Outros"
-                            },
-                   "2886":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "TENTEI CONVERSAR COM ELA PARA ELA FAZER OS 2500 MAIS ELA NÃO QUIS ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2887":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "MALETA EM TRANSITO VOLTA ",
-                                "dataUltimoContato":  "2026-09-04"
-                            },
-                   "2894":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "VAI SAIR - JA ENVIOU PELOS CORREIOS",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2895":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ganhou porta joias",
-                                "dataUltimoContato":  "",
-                                "assunto":  ""
-                            },
-                   "2897":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2898":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n14/09 disse que o correio da cidade dela esta fora do ar \n\n",
-                                "dataUltimoContato":  "2026-09-14"
-                            },
-                   "2900":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS ",
-                                "dataUltimoContato":  "",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "2901":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "FALEI COM ELA SOBRE AS VENDAS , E TAMBEM PARABENIZEI ELA PELO ESFORÇO DAS VENDAS "
-                            },
-                   "2902":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Trânsito volta",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Outros"
-                                            ],
-                                "obs":  "VAI SAIR - MALETA JA FOI ENVIADA PARA O CORREIO "
-                            },
-                   "2903":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "SAIR -VAI POSTAR MATERIAL NA SEXTA 11/09 ",
-                                "dataUltimoContato":  "2026-08-31"
-                            },
-                   "2904":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS ",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2905":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2906":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "SAIU",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2908":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "TENTEI CONVENCER ELA A ATINGIR OS 1500 ELA DISSE QUE VAI TENTAR",
-                                "dataUltimoContato":  "2026-09-04",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "2909":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Desempenho de vendas",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato para saber sobre as vendas - aguardando o retorno ",
-                                "dataUltimoContato":  "2026-09-08",
-                                "assunto":  "Pré-baixa"
-                            },
-                   "2910":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "tem conserto\nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA.\n",
-                                "dataUltimoContato":  "2026-09-02",
-                                "assunto":  "Campanha de premiação"
-                            },
-                   "2911":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "vai sair por questao de saude\n",
-                                "assunto":  "",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2912":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS ",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2913":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "Campanha de premiação",
-                                                "Campanha de premiação",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE TENTAR FAZER OS 1500 PARA CONSEGUIR A CAMAPNHA MAIS ELA NAO TINHA COMO INTEIRAR",
-                                "assunto":  "",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2914":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SOBRE AS VENDAS E FALAR SOBRE A CAMPANHA, ELA DISSE QUE VAI LANÇAR OS 200, E VAI SAIR ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-11"
-                            },
-                   "2917":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "vai vim sabado montar a maleta - e esta correndo atras para ",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2918":  {
+                   "2953":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "01/09 ja mandou as peças\nFALEI COM ELA SOBRE METAS E CATALOGO",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-03"
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
                             },
-                   "2919":  {
+                   "2959":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "PARABENIZEI ELA SOBRE A CAMPANHA DE VENDAS , E INCENTIVEI ELA A VENDER MAIS "
+                            },
+                   "2992":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ELA NÃO ME RESPONDE ENCAMINHEI PARA O JURITICO ",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-18"
-                            },
-                   "2920":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
                                 "checklist":  "Despachada",
                                 "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-16",
-                                "obs":  "ENTREI EM CONTATO PARA SABER COMO ESTAO AS VENDAS, E FALAE SOBRE A CAMAPANHA, VAI POSTAR AS PÇ SEGUNDA FEIRA "
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA DE OUTUBRO\n"
                             },
-                   "2921":  {
-                                "situacaoPg":  "PAGO",
+                   "2997":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2922":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "ELA TINHA ME FALADO PARA ENVIAR AS PEÇAS DELA DEPOIS DO DIA 10/09 POIS VAI SAIR DE LUA DE MEL, E ESTA COM MEDO DE NAO CHEGAR ANTES, VAI ME AVISAR QUANDO E PARA MANDAR",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-08"
-                            },
-                   "2925":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "VAI FICA COM A MESMA MALETA  ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2927":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "LIGUEI PARA ELA , PARA FALAR DAS VENDAS E TAMBEM DA CAMAPNHA VAI TENTAR INTEIRAR OS 1.500 E VAI MANDAR A MALETA SO TERÇA 8/9",
-                                "dataUltimoContato":  "2026-09-03",
+                                "obs":  "CONVERSEI COM ELA PARA INCENTIVAR A VENDAER MAIS  E DISSE SOBRE A CAMPANHA",
+                                "dataUltimoContato":  "2026-09-26",
                                 "assunto":  "Desempenho de vendas"
                             },
-                   "2928":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "LIGUEI PARA ELA , ELA DISSE QUE VAI TENTAR FAZER OS 1500, ESTOU ACOMPANHANDO ELA .\ne vai postar no dia 08/09",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2929":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS, E SOBRE CORREIO",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2930":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "PARABENIZEI ELA SOBRE AS VENDAS ",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2932":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "ELA NÃO QUIS INTEIRAR OS 1500 ",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2933":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  ""
-                            },
-                   "2934":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "PARABENIZEI ELA SOBRE AS VENDAS ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2936":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "TENTEI FAZER ELA VENDER OS 2500 MAIS ELA NÃO QUIS ",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2937":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "Dei mais uma chance para ela. vai lancar os 200, e continuar com a mesma maleta, ESTA COM A MAE DOENTE ",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2938":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-10",
-                                "obs":  "NÃO ME RESPONDE "
-                            },
-                   "2940":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-16",
-                                "obs":  "ELA DISSE QUE TENTOU VENDER OS 1500 MAIS NÃO CONSEGUIU "
-                            },
-                   "2941":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "entrei em contato para saber se tem vendas para ta lançando, DISSE QUE IRA LANÇAR HOJE ",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2942":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA SABER COMO ESTA AS VENDAS DELA, SE VAI LANCAR OS 500 PARA CONTINUAR NA EQUIPE, OU ENTAO DEVOLVER TODO O MATERIAL\nVAI SAIR POIS ESTA SEM TEMPO PARA VENDER ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-22"
-                            },
-                   "2943":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Outros"
-                                            ],
-                                "obs":  "JA  ATINGIU A CAMPANHA MAIS ESTOU INCENTIVANDO PARA PODER VENDER MAIS ",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-01"
-                            },
-                   "2944":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
-                                "dataUltimoContato":  "2026-09-02",
-                                "assunto":  "Campanha de premiação"
-                            },
-                   "2945":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE metas",
-                                "dataUltimoContato":  "2026-09-09",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "2946":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "2949":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Desempenho de vendas"
-                                            ],
-                                "obs":  "02/09 entrei em contato para saber se tem vendas para ta lançando, ela disse que vai sair pois esta sem tempo.",
-                                "dataUltimoContato":  "2026-09-02"
-                            },
-                   "2950":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Pré-baixa",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ELA DISSE QUE ESTA CORRENDO ATRAS  PARA CONSEGUIR FAZER OS 4000",
-                                "dataUltimoContato":  "2026-09-10",
-                                "assunto":  "Outros"
-                            },
-                   "2951":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "tem conserto\n ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS ( nao pode atender ligaçao)\n",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-17"
-                            },
-                   "2954":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2955":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2956":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem brinde, ENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E TAMBEM FALAR SOBRE A CAMPANHA, FALEI COM ELA SOBRE ELA SUBIR PARA A MALETA VIP",
-                                "dataUltimoContato":  "2026-09-11"
-                            },
-                   "2958":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
-                                "dataUltimoContato":  "2026-09-02"
-                            },
-                   "2960":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "FALEI COM ELA SOBRE METAS, E SOBRE A CASMPANHA ",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-08"
-                            },
-                   "2961":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA ENVIAR AS PEÇAS MAIS AINDA NÃO ME RESPONDEU ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-16"
-                            },
-                   "2962":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO POIS ELA DISSE QUE IRIA SAIR ESTOU TENTANDO FAZER ELA FICAR ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-16"
-                            },
-                   "2963":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2964":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ELA ME DISSE QUE VAI SAIR, POIS ESTA COM PROBLEMAS PESSOAIS",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2965":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2969":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem conserto \nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  \n\n",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2971":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "CONVERSEI COM ela sobre as vendas e tambem a campanha do mes",
-                                "dataUltimoContato":  "2026-09-10",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "2972":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  ",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2974":  {
+                   "3000":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "Despachada",
                                 "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "VAI POSTAR AS PEÇAS DIA 14/09 PARA PODER VENDER MAIS NO FINAL DE SEMANA ",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-11"
-                            },
-                   "2975":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "VAI SAIR POIS O PAI DELA TEVE QUE OPERAR , ELA DISSE QUE NÃOVAI CONSEGUIR VENDER ",
-                                "dataUltimoContato":  "2026-09-16",
-                                "assunto":  "Outros"
-                            },
-                   "2976":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "TEM ENCOMENDA\nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n\n",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2977":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA, e sobre metas  (nao pode atender ligaçao)",
-                                "dataUltimoContato":  "2026-09-11"
-                            },
-                   "2978":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA  ",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2979":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "CONVERSEI COM ELA PARA FALAR SOBRE A CAMAPNHA E TAMBEM SOBRE AS VENDAS PARA ELA CONSEGUIR VENDER MAIS / ELA DISSE QUE ESTA CORRENDO ATRAS ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-10"
-                            },
-                   "2980":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "FALEI COM ELA PARA TENTAR VENDER OS 1000 , ELA DISSE QUE VAI TENTAR ",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-16"
-                            },
-                   "2982":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "ELA NÃO QUIS FAZER OS 1500 PARA GANHAR A CAMPANHA , VAI VIM MONTAR SABADO ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-15"
-                            },
-                   "2983":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ela disse que vai lançar as peças hoje sem falta e dia 19/09 vou verificar se lançou , se nao vou recolher o material ",
-                                "dataUltimoContato":  "2026-09-18",
-                                "assunto":  "Outros"
-                            },
-                   "2985":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "ENTREI  EM CONTATO PARA SABER DAS VENDAS E PARA MOTIVAR ELA SOBRE A CAMAPNHA ",
-                                "dataUltimoContato":  "2026-09-08",
+                                "obs":  "CONVERSEI COM ELA PARA INCENTIVAR A VENDAER MAIS  E DISSE SOBRE A CAMPANHA",
+                                "dataUltimoContato":  "2026-09-26",
                                 "assunto":  "Desempenho de vendas"
                             },
-                   "2986":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem conserto \nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E SOBRE AS VENDAS\n\n",
-                                "dataUltimoContato":  "2026-09-17"
-                            },
-                   "2987":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SOBRE AS VENDAS E MOTIVAR ELA PARA GANHAR A CAMPANHA ",
-                                "dataUltimoContato":  "2026-09-08"
-                            },
-                   "2988":  {
+                   "3001":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
-                            },
-                   "2989":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "entrei em contato para falar das vendas e incentivei ela a vender mais para conseguir a campanha ",
-                                "dataUltimoContato":  "2026-09-15",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "2990":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Gestão de metas",
-                                                "",
-                                                "",
-                                                "Gestão de metas"
-                                            ],
-                                "obs":  "VAI VIM FAZER A MALETA QUARTA ",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-15"
-                            },
-                   "2994":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-11",
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA , E  DESEJA OS PARABENS QUE ELA CONSEGUIU OS 1.500, PARA TA PARTICIPANDO DA CAMPANHA \n\n"
-                            },
-                   "2995":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "LIGUEI PARA ELA PARA FALAR SOBRE A CAMPANA E TAMBEM DO SEU DESEMPENHO DE VENDAS ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-03"
-                            },
-                   "2996":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-16",
-                                "obs":  "ENTREI EM CONTATO COM ELA , ELA DISSE QUE VIA TENTAR VENDER MAIS "
-                            },
-                   "2999":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Entregue",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-08",
-                                "obs":  " falei com ela sobre as vendas dela que ganhou a campanha ."
-                            },
-                   "3003":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato para saber como esta as vendas, disse que tem para lançar porem esta sem tempo. e disse que vai da uma pausa pois vai viajar, so volta em novembro ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-17"
-                            },
-                   "3004":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ELA ESTA INTERNADA ",
-                                "dataUltimoContato":  "2026-09-15",
-                                "assunto":  "Campanha de premiação"
-                            },
-                   "3005":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "tem encomenda\nENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA ",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-17"
-                            },
-                   "3006":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "entrei em contato para falar se tem mais vendas e tambem incentivei ela a vender para ganhar a campanha  ",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-08"
-                            },
-                   "3007":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA INCENTIVAR A VENDER MAIS ELA DISSE QUE VAI TENTAR ",
-                                "dataUltimoContato":  "2026-09-16",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "3008":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-18",
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM VENDAS PARA TA ALANÇANDO, AGUARDANDO RETORNO, FALEI TNM SOBRE A CAMPANHA "
-                            },
-                   "3009":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-16",
-                                "obs":  "PARABENIZEI ELA SOBRE AS VENDAS "
-                            },
-                   "3010":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-21",
-                                "obs":  "vai mandar a maleta hoje  a tarde"
-                            },
-                   "3011":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Pré-baixa",
-                                                "",
-                                                "",
-                                                "Pré-baixa"
-                                            ],
-                                "obs":  "vai mandar as peças so dia 22/09",
-                                "dataUltimoContato":  "2026-09-21"
-                            },
-                   "3012":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Silvia",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  " ENTREI EM CONTATO PARA SABER SOBRE AS VENDAS E TAMBEM FALAR SOBRE A CAMAPNHA ",
-                                "dataUltimoContato":  "2026-09-18"
-                            },
-                   "3015":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Entregue",
-                                "semanas":  [
-                                                "Campanha de premiação",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "PARABENIZEI ELA SOBRE AS VENDAS ",
-                                "dataUltimoContato":  "2026-09-16"
-                            },
-                   "3017":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "Montada",
                                 "semanas":  [
@@ -1440,371 +69,856 @@
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "ENTREI EM CONTATO COM ELA , ELA DISSE QUE SO TEM ESSAS VENDAS QUE NÃO CONSEGUIU ATINGIR A CAMPANHA",
-                                "dataUltimoContato":  "2026-09-16",
-                                "assunto":  "Outros"
-                            },
-                   "3018":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA SABER DAS VENDAS, E FALAR SOBRE A CAMPANHA, DISSE QUE VAI SAIR POIS O PRAZO E MT POUCO ",
-                                "dataUltimoContato":  "2026-09-18"
+                                "obs":  "CONVERSEI COM ELA PARA INCENTIVAR A VENDAER MAIS  E DISSE SOBRE A CAMPANHA",
+                                "dataUltimoContato":  "2026-09-26",
+                                "assunto":  "Gestão de metas"
                             },
                    "3019":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "primeiro mes ganhou colar \nENTREI EM CONTATO PARA DA OS PARABENS PELAS VENDAS, E FALAR SOBRE A CAMPANHA, DISSE QUE NAO TEM MAIS VENDAS PARA LANÇAR E PARTICIPAR DA CAMPANHA "
-                            },
-                   "3020":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA SABER COMO ESTAO AS VENDAS \n( nao pode atender ligaçao) VAI SAIR",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-16"
-                            },
-                   "3021":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  ""
-                            },
-                   "3022":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-16",
-                                "obs":  "falei com ela sobre as vendas e correr atras para conseguir vender mais = ELA DISSE QUE VAI TENTAR "
-                            },
-                   "3023":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "falei com ela sobre metas\nVAI SAIR, DISSE QUE O PRAZO DE PAGAMENTO E POUCO VAI FAZER O PAGAMENTO DIA 20/09",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-18"
-                            },
-                   "3025":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  ""
-                            },
-                   "3026":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "falei com ela sobre metas e sobre a campanha \ndisse que teve problemas no salao dela, por isso nao conseguiu vender, demos uma chance para ela, vai continuar com a msm maleta",
-                                "dataUltimoContato":  "2026-09-14"
-                            },
-                   "3028":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato com ela para dar os parabens pelas vendas, e falar sobre a campanha \nSO VAI TERMINAR E PAGAR O ACERTO DIA 06/10",
-                                "dataUltimoContato":  "2026-09-22"
-                            },
-                   "3030":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA TENTAR VENDER MAIS UM POUCO ",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-17"
-                            },
-                   "3031":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "ENTREI EM CONTATO PARA FALAR SOBRE A CAMPANHA ( nao pode atender ligaçao)"
-                            },
-                   "3032":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-21",
-                                "obs":  "parabenizei pelas vendas "
-                            },
-                   "3033":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  ""
-                            },
-                   "3035":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA, E FALAR PARABENS PELAS VENDAS",
-                                "dataUltimoContato":  "2026-09-22"
-                            },
-                   "3036":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato para saber das vendas, e falei sobre a campanha/ CONTINUAR COM A MESMA MALETA + \nNAO CONSEGUIU VENDER POR CONTA DO PRAZO, MALETA CHEGOU ATRASADA , DEMOS MAIS UMA CHANCE PARA ELA,  ",
-                                "dataUltimoContato":  "2026-09-14",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "3037":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS / ELA DISSE QUE AINDA NÃO TEM VENDAS "
-                            },
-                   "3041":  {
-                                "situacaoPg":  "SAIU",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "SAIU, POIS NAO ESTA CONSEGUINDO VENDER  "
-                            },
-                   "3042":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "FALEI COM ELA PARA INCENTIVAR A VENDER MAIS "
-                            },
-                   "3043":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-23",
-                                "obs":  "entrei em contato para saber se tem mais vendas = ELA DISSE QUE VAI POSTAR AS VENDAS HOJE "
-                            },
-                   "3044":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                ""
-                                            ],
-                                "obs":  "ELA VAI DA UMA PARADA E VAI VOLTA DIA 10/10",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-28"
-                            },
-                   "3046":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "PARABENIZEI ELA SOBR AS VENDAS "
-                            },
-                   "3048":  {
-                                "situacaoPg":  "",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Montada",
-                                "semanas":  [
-                                                "",
-                                                "",
-                                                "",
-                                                "Campanha de premiação"
-                                            ],
-                                "obs":  "entrei em contato para saber das vendas, e falei sobre a campanha\ndisse que ira lançar as pç hj ",
-                                "dataUltimoContato":  "2026-09-22",
-                                "assunto":  "Gestão de metas"
-                            },
-                   "3049":  {
-                                "situacaoPg":  "PAGO",
-                                "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "",
-                                "checklist":  "Entregue",
-                                "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "conversamos sobre as vendas "
-                            },
-                   "3053":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Despachada",
-                                "assunto":  "Gestão de metas",
-                                "dataUltimoContato":  "2026-09-18",
-                                "obs":  "entrei em contato para saber das vendas, e falei sobre a campanha. DEMOS MAIS UMA CHANCE PARA ELA , VAI INTEIRAR OS 200, E CONTINUAR COM A MSM MALETA \n"
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  ""
                             },
-                   "3054":  {
+                   "3024":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA ",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24"
+                            },
+                   "3025":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "vai sair ficou 7 dias sem vender nada, dei mais 3 dias para ela tentar vender algo, nao conseguiu vender, pedi o recolhimento do material",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-28"
+                            },
+                   "3038":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI COM CONTATO PARA FALAR SOBRE A CAMPANHA, E DA OS PARABENS PELAS VENDAS "
+                            },
+                   "3039":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "NÃO ME RESPONDE E NÃO ME ATENDE "
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI COM CONTATO PARA FALAR SOBRE A CAMPANHA \nVai lançar mais peças, disse que o correio na cidade dela so abre na sexta feira "
                             },
-                   "3056":  {
-                                "situacaoPg":  "PAGO",
+                   "3045":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA SOBRE A CAMPANHA DA PREMIAÇÃO"
+                            },
+                   "3050":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
-                                "assunto":  "",
-                                "dataUltimoContato":  "",
-                                "obs":  ""
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3051":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-21",
+                                "obs":  "VAI SAIR, POIS NAO ESTA TENDO TEMPO PARA VENDER"
+                            },
+                   "3055":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA, DISSE QUE ESTA TRANQUILA SOBRE OS PREMIOS, QUE NAO QUER PARTICIPAR"
                             },
                    "3057":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Kathlyn",
+                                "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "assunto":  "Campanha de premiação",
-                                "dataUltimoContato":  "2026-09-02",
-                                "obs":  ""
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
                             },
-                   "3059":  {
-                                "situacaoPg":  "PAGO",
+                   "3058":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA SOBRE A CAMAPNHA E INCENTIVEI A VENDER MAIS "
+                            },
+                   "3061":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Despachada",
+                                "checklist":  "",
                                 "semanas":  [
                                                 "",
                                                 "",
                                                 "",
                                                 ""
                                             ],
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS ESTOU AGUARDANDO O RETORNO ",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-22"
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA ",
+                                "dataUltimoContato":  "2026-10-01",
+                                "assunto":  "Campanha de premiação"
                             },
-                   "3060":  {
+                   "3062":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3063":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3067":  {
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
-                                "responsavelMontagem":  "Amanda",
-                                "checklist":  "Entregue",
-                                "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS PARA LANÇAR ESTOU AGUARDANDO O RETORNO "
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
+                                "obs":  ""
                             },
-                   "3064":  {
-                                "situacaoPg":  "SAIU",
+                   "3068":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3069":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "conversei com ela para falar sobre as vendas e mandei umas dicas para ela FALEI COM ELA SOBRE A CAMAPNHA "
+                            },
+                   "3071":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER COMO ESTA AS VENDAS, E FALEI SOBRE A CAMPANHA "
+                            },
+                   "3073":  {
+                                "situacaoPg":  "PAGO",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Despachada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FLAR DA CAMPANHA, "
+                            },
+                   "3074":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "assunto":  "Desempenho de vendas",
-                                "dataUltimoContato":  "2026-09-22",
-                                "obs":  "VAI SAIR"
+                                "dataUltimoContato":  "2026-09-16",
+                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER, COMO ESTA AS VENDAS DELA "
                             },
-                   "3065":  {
-                                "situacaoPg":  "SAIU",
+                   "3076":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Pré-baixa",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ELA DISSE QUE TEM VENDAS PARA LANÇAR ESTOU AGUARDANDO "
+                            },
+                   "3077":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3078":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3079":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "semanas":  [
+                                                "",
+                                                "",
+                                                "",
+                                                ""
+                                            ],
+                                "obs":  "ela disse que vai sair ",
+                                "dataUltimoContato":  "2026-09-28",
+                                "assunto":  "Pré-baixa"
+                            },
+                   "3080":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3081":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3082":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Pré-baixa",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA PARA SABER SE TEM MAIS VENDAS PARA LANÇAR "
+                            },
+                   "3083":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3084":  {
+                                "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
                                 "assunto":  "Outros",
-                                "dataUltimoContato":  "2026-09-24",
-                                "obs":  "ELA DISSE QUE VAI SAIR "
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "INCENTIVEI ELA A VENDER MAIS PARA CONSEGUIR A CAMAPNHA - ELA DISSE QUE NÃO QUERIA INTEIRAR OS 1.000 E JA MANDOU A MALETA "
                             },
-                   "3089":  {
+                   "3085":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA, E SABER COMO ESTA AS VENDAS DELA, DISSE QUE O MES 09 FOI MT CORRIDO PARA ELA, MAIS QUE VAI TENTAR OS 500 PARA CONTINUAR NA EQUIPE"
+                            },
+                   "3087":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Gestão de metas",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "PARABENIZEI ELA E TAMBEM INCENTIVEI A VENDER MAIS  "
+                            },
+                   "3088":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Pré-baixa",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA PARA SABER SE TEM MAIS VENDAS PARA LANÇAR "
+                            },
+                   "3092":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3093":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ELA DISSE QUE TA MUITO CORRIDO PARA ELA MAIS QUE VAI TENTAR VENDER "
+                            },
+                   "3095":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3096":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3097":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-28",
+                                "obs":  "CONVERSEI COM ELA PARA DAR DICAS PARA PODER VENDER MAIS , ESTOU ACOMPANHANDO ELA "
+                            },
+                   "3098":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3099":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA ENTREI EM CONTATO PARA SABER DAS VENDAS DELA, ELA DISSE QUE VAI INTEIRAR OS 500, E VAI DA UMA PAUSA POIS ESTA COM A MAE DOENTE AINDA, RETORNA DEPOIS "
+                            },
+                   "3100":  {
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "PARABENIZEI ELA SOBRE A CAMPANHA DE VENDAS , E INCENTIVEI ELA A VENDER MAIS "
+                            },
+                   "3101":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3102":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "INCENTIVEI ELA A VENDER MAIS PARA CONSEGUIR A CAMAPNHA "
+                            },
+                   "3103":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Amanda",
+                                "checklist":  "",
                                 "assunto":  "Pré-baixa",
-                                "dataUltimoContato":  "2026-09-17",
-                                "obs":  "MALETA CHEGOU DIA 08/09\nELA DISSE QUE SÓ TEM ESSAS VENDAS POR ENQUANTO MAIS QUE ESTA CORRENDO ATRAS "
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ENTREI EM CONTATO COM ELA PARA SABER SE TEM MAIS VENDAS "
+                            },
+                   "3104":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA PARA PODER VENDER MAIS E INCENTIVEI "
+                            },
+                   "3105":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3106":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-10-01",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA \nENTREI EM CONTATO PARA SABER COMO ESTA AS VENDAS DELA, DISSE QUE TEM PARA LANÇAR "
+                            },
+                   "3107":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3108":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-28",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA \nSAIU"
+                            },
+                   "3109":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "INCENTIVEI A VENDER MAIS PARA GANHAR A CAMPANHA "
+                            },
+                   "3110":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ELA ESTA VIAJANDO "
+                            },
+                   "3111":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3112":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3114":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3118":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA ENTREI EM CONTATO COM ELA PARA SABER SE TEM VENDAS PARA LANÇAR, ELA DISSE QUE NAO VENDEU NADA, E QUE VAI SAIR, POIS ACHOU O PRAZO DE PAGAMENTO CURTO"
+                            },
+                   "3119":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-23",
+                                "obs":  "vai sair ficou 7 dias sem vender nada, dei mais 3 dias para ela tentar vender algo, nao conseguiu vender, pedi o recolhimento do material"
+                            },
+                   "3120":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3121":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA SOBRE AS VENDAS E A CAMPANHA "
+                            },
+                   "3122":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ESTA CORRENDO ATRAS PARA GANHAR A CAMPANHA "
+                            },
+                   "3123":  {
+                                "situacaoPg":  "SAIU",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "VAI SAIR, FICOU 7 DIAS COM A MALETA NAO VENDEU NADA, DEI MAIS 3 DIAS NAO VENDEU NADA, PEDI A DEVOLUCAO DO MATERIAL"
+                            },
+                   "3124":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3126":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "PERGUNTEI PARA ELA COMO ESTA INDO AS VENDAS "
+                            },
+                   "3127":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Desempenho de vendas",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "PARABENIZEI ELA SOBRE AS VENDAS E TAMBEM INCENTIVEI A VENDER MAIS "
+                            },
+                   "3128":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3129":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI COM ELA PARA LANÇAR AS VENDAS "
+                            },
+                   "3130":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3133":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3134":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Pré-baixa",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "DISSE QUE AINDA NÃO TEM VENDA MAIS QUE IA CORRER ATRAS DAS VENDAS "
+                            },
+                   "3136":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-29",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA, E DA OS PARABENS PELAS VENDAS "
+                            },
+                   "3140":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Pré-baixa",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI PARA ELA SE TEM VENDAS PARA LANÇAR E TAMBEM FALEI SOBRE  A CAMPANHA "
+                            },
+                   "3141":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Kathlyn",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ELA NÃO TEM TEMPO DE LANÇAR "
+                            },
+                   "3143":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "ESTA CORRENDO ATRAS PARA CONSEGUIR A CAMAPNHA "
+                            },
+                   "3147":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3149":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI SOBRE A CAMPANHA "
+                            },
+                   "3150":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "FALEI COM ELA SOBRE A CAMPANHA DE OUTUBRO"
+                            },
+                   "3151":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Outros",
+                                "dataUltimoContato":  "2026-09-26",
+                                "obs":  "FALEI SOBRE A CAMPANHA "
+                            },
+                   "3154":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3159":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3161":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3162":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3163":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3167":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3183":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-30",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3186":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "Silvia",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3187":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3188":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3189":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3192":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3193":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3197":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3200":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-24",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
+                            },
+                   "3214":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "",
+                                "assunto":  "Campanha de premiação",
+                                "dataUltimoContato":  "2026-09-30",
+                                "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA \nE PARA SABER COMO ESTA AS VENDAS DELA "
                             }
                },
     "responsaveis":  {
