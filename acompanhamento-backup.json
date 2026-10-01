@@ -32,7 +32,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "semanas":  [
                                                 "",
                                                 "",
@@ -59,7 +59,7 @@
                                 "assunto":  "Desempenho de vendas"
                             },
                    "3001":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
                                 "checklist":  "Montada",
@@ -117,7 +117,7 @@
                                 "dataUltimoContato":  "2026-09-28"
                             },
                    "3038":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -303,7 +303,7 @@
                                 "obs":  "ENTREI EM CONTATO PARA FALAR DA CAMPANHA "
                             },
                    "3079":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "SAIU",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -375,7 +375,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Gestão de metas",
                                 "dataUltimoContato":  "2026-09-26",
                                 "obs":  "PARABENIZEI ELA E TAMBEM INCENTIVEI A VENDER MAIS  "
