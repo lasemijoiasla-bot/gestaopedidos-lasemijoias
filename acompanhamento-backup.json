@@ -129,7 +129,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Campanha de premiação",
                                 "dataUltimoContato":  "2026-09-29",
                                 "obs":  "ENTREI COM CONTATO PARA FALAR SOBRE A CAMPANHA \nVai lançar mais peças, disse que o correio na cidade dela so abre na sexta feira "
@@ -231,7 +231,7 @@
                                 "obs":  ""
                             },
                    "3068":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
