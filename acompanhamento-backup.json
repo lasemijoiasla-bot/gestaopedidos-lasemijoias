@@ -122,7 +122,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-11-06",
                                 "obs":  "ENTREI EM CONTATO COM ELA MAIS ELA AINDA NÃO ME RETORNO "
@@ -401,7 +401,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Despachada",
                                 "assunto":  "Gestão de metas",
                                 "dataUltimoContato":  "2026-11-18",
                                 "obs":  "ENTREI EM CONTATO PARA PARABENIZAR PELAS VENDAS, E EINCENTIVEI ELA A VENDER MAIS, ME DISSE QUIE ESTA CORRENDO ATRAS, QUE TEM VENDAS PARA LANÇAR "
@@ -698,7 +698,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Gestão de metas",
                                 "dataUltimoContato":  "2026-11-05",
                                 "obs":  "FALEI COM ELA SOBRE A CAMPNHA E INCENTIVEI ELA A VENDER MAIS ELA DISSE QUE SUAS CLIENTES NÃO ESTA GOSTANDO DOS PREÇOS "
@@ -851,7 +851,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "Montada",
+                                "checklist":  "Entregue",
                                 "assunto":  "Pré-baixa",
                                 "dataUltimoContato":  "2026-11-17",
                                 "obs":  "FALEI COM ELA , ELA DISSE QUE AINDA NÃO TEM VENDAS POIS NÃO ESTA COM TEMPO PARA VENDER "
@@ -869,7 +869,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Amanda",
-                                "checklist":  "",
+                                "checklist":  "Entregue",
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-11-23",
                                 "obs":  "ELA QUERIA SAIR MAIS CONVENCI ELA A FICAR  VAI VIM 24/11 FAZER A MALETA "
@@ -1013,7 +1013,7 @@
                                 "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "Montada",
+                                "checklist":  "Entregue",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-11-18",
                                 "obs":  "VAMOS DAR MAIS UMA CHANCE PARA ELA , POIS ELA DISSE QUE O MES FOI FRACO "
@@ -1094,7 +1094,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Gestão de metas",
                                 "dataUltimoContato":  "2026-11-18",
                                 "obs":  "DEI UMAS DICAS PARA ELA, ELA ME DISSE QUE ESTA CORRENDO ATRAS, E QUE TEM MAIS VENDAS PARA LANÇAR "
@@ -1103,7 +1103,7 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "",
                                 "dataUltimoContato":  "",
                                 "obs":  ""
@@ -1148,13 +1148,13 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "Kathlyn",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Desempenho de vendas",
                                 "dataUltimoContato":  "2026-11-23",
                                 "obs":  "SEMPRE FALO COM ELA INCENTIVEI ELA A VENDER PARA CHEGAR NOS 4 MIL , ELA DISSE QUE VAI CORRER ATRAS "
                             },
                    "3358":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "Montada",
@@ -1175,13 +1175,13 @@
                                 "situacaoPg":  "",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
-                                "checklist":  "",
+                                "checklist":  "Montada",
                                 "assunto":  "Gestão de metas",
                                 "dataUltimoContato":  "2026-11-18",
                                 "obs":  " CHAMEI ELA PARA SABER DAS VENDAS, E DA UMAS DICAS PARA ELA, AGUARDANDO RETORNO "
                             },
                    "3364":  {
-                                "situacaoPg":  "",
+                                "situacaoPg":  "PAGO",
                                 "pedidoProximoMes":  "",
                                 "responsavelMontagem":  "",
                                 "checklist":  "",
@@ -1224,6 +1224,15 @@
                                 "assunto":  "Outros",
                                 "dataUltimoContato":  "2026-11-19",
                                 "obs":  "ENTREI EM CONTATO COM ELA HOJE PARA SABER SE TEM VENDAS ESTOU AGUARDANDO O RETORNO "
+                            },
+                   "3373":  {
+                                "situacaoPg":  "",
+                                "pedidoProximoMes":  "",
+                                "responsavelMontagem":  "",
+                                "checklist":  "Montada",
+                                "assunto":  "",
+                                "dataUltimoContato":  "",
+                                "obs":  ""
                             },
                    "3376":  {
                                 "situacaoPg":  "",
@@ -1494,6 +1503,7 @@
                          "rebecca coelho falconi machado":  "Silvia",
                          "ivete caovila petruci":  "Kathlyn",
                          "liana aparecida soares":  "Kathlyn",
-                         "thatiana fonseca domingues":  "Silvia"
+                         "thatiana fonseca domingues":  "Silvia",
+                         "jamily leite de souza":  "Silvia"
                      }
 }
